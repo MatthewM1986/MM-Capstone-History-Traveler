@@ -3,7 +3,7 @@ import { Route, Redirect } from "react-router-dom"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 
-export const historyTraveler = () => (
+export const HistoryTraveler = () => (
     <>
         < Route render={() => {
             // The user id is saved under the key app_user_id in local Storage. Change below if needed!
