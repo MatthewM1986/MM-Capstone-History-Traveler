@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import HistoryTraveler from './HistoryTraveler';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <HistoryTraveler />
   </React.StrictMode>,
   document.getElementById('root')
 );
