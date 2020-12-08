@@ -2,6 +2,8 @@ import React from "react"
 import { Route, Redirect } from "react-router-dom"
 import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
+import { ApplicationView } from "./ApplicationView"
+import { NavBar } from "./nav/NavBar"
 
 export const HistoryTraveler = () => (
     <>
@@ -11,7 +13,7 @@ export const HistoryTraveler = () => (
                 return (
                     <>
                         <Route render={props => <NavBar {...props} />} />
-                        <Route render={props => <ApplicationViews {...props} />} />
+                        <Route render={props => <ApplicationView {...props} />} />
                     </>
                 )
             } else {
