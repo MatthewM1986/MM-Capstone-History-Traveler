@@ -1,10 +1,94 @@
 {
-  "travelers": [
-    {
-      "email": "mrjm2005@yahoo.com",
-      "password": "abcd123",
-      "name": "Matthew  Machurek",
-      "id": 1
-    }
-  ]
+    "travelers": [
+        {
+            "email": "mrjm2005@yahoo.com",
+            "password": "abcd123",
+            "name": "Matthew  Machurek",
+            "id": 1
+        },
+        {
+            "email": "aubreydylana@yahoo.com",
+            "password": "123abcd",
+            "name": "Dylana  Miller",
+            "id": 2
+        }
+    ],
+    "landmarks": [
+        {
+            "id": 1,
+            "name": "Savannah",
+            "age": 1733,
+            "address": "Atlantic Coast",
+            "hours": "8-6",
+            "pricing": 12,
+            "discription": "First city of Georgia",
+            "website": "savvanahga.com",
+            "imageURL": "",
+            "typeId": 5,
+            "destinationId": 1
+        }
+    ],
+    "destinations": [
+        {
+            "id": 1,
+            "name": "Savannah",
+            "stateId": 1
+        },
+        {
+            "id": 2,
+            "name": "Chattanooga",
+            "stateId": 2
+        },
+        {
+            "id": 3,
+            "name": "Nashville",
+            "stateId": 2
+        }
+    ],
+    "states": [
+        {
+            "id": 1,
+            "name": "Georgia"
+        },
+        {
+            "id": 2,
+            "name": "Tennessee"
+        }
+    ],
+    "types": [
+        {
+            "id": 1,
+            "type": "house"
+        },
+        {
+            "id": 2,
+            "type": "business"
+        },
+        {
+            "id": 3,
+            "type": "fort"
+        },
+        {
+            "id": 4,
+            "type": "battlefield"
+        },
+        {
+            "id": 5,
+            "type": "marker"
+        },
+        {
+            "id": 6,
+            "type": "monument"
+        },
+        {
+            "id": 7,
+            "type": "graveyard"
+        },
+        {
+            "id": 8,
+            "type": "museum"
+        }
+    ],
+    "trips": [],
+    "landmarkTrips": []
 }
