@@ -14,6 +14,8 @@ export const HistoryTraveler = () => (
                 return (
                     <>
                         <Route render={props => <NavBar {...props} />} />
+                        <h2>Begin Your History Travels Now!</h2>
+                        <h3>Choose a Destination to Begin</h3>
                         <Route render={props => <ApplicationView {...props} />} />
                     </>
                 )
