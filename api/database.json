@@ -21,14 +21,14 @@
             "address": "Atlantic Coast",
             "hours": "8-6",
             "pricing": 12,
-            "discription": "First city of Georgia",
-            "website": "savvanahga.com",
+            "description": "First city of Georgia",
+            "website": "savannahga.com",
             "imageURL": "",
             "typeId": 5,
-            "destinationId": 1
+            "cityId": 1
         }
     ],
-    "destinations": [
+    "cities": [
         {
             "id": 1,
             "name": "Savannah",
