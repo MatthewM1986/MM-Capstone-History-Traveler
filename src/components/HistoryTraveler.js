@@ -4,6 +4,7 @@ import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { ApplicationView } from "./ApplicationView"
 import { NavBar } from "./nav/NavBar"
+import "./HistoryTraveler.css"
 
 export const HistoryTraveler = () => (
     <>

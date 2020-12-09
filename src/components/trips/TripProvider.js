@@ -14,7 +14,7 @@ export const TripProvider = (props) => {
     const [tripsArray, setTrips] = useState([])
     // useState returns [initial value of state variable, a function to set the value of the state variable]
 
-    const getLandmarks = () => {
+    const getTrips = () => {
         return fetch("http://localhost:8088/trips")
             .then(res => res.json())
             .then(setTrips)
