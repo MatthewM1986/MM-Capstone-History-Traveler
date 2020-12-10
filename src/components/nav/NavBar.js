@@ -20,12 +20,6 @@ export const NavBar = () => {
     }, [])
 
     return (
-        // <select>
-        //     <option value="0">Choose City</option>
-        //     <option value="savannah">Savannah</option>
-        //     <option value="chattanooga">Chattanooga</option>
-        //     <option value="nashville">Nashville</option>
-        // </select >
         <div>
             <select defaultValue="" name="city" ref={city} id="destinationCity" className="form-control" >
                 <option value="0">Select a City</option>

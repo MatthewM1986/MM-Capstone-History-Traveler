@@ -23,9 +23,35 @@
             "pricing": 12,
             "description": "First city of Georgia",
             "website": "savannahga.com",
-            "imageURL": "",
+            "imageURL": "https://i0.wp.com/www.worth.com/wp-content/uploads/2020/10/Savannah-2-scaled-e1601647559580.jpg?w=1208&ssl=1",
             "typeId": 5,
             "cityId": 1
+        },
+        {
+            "id": 2,
+            "name": "Chattanooga",
+            "age": 1790,
+            "address": "Smokey Mountains",
+            "hours": "8-6",
+            "pricing": 10,
+            "description": "Can see 7 states from Lookout Mountain",
+            "website": "chattanoogatn.com",
+            "imageURL": "No Image",
+            "typeId": 5,
+            "cityId": 2
+        },
+        {
+            "id": 3,
+            "name": "Nashville",
+            "age": 1796,
+            "address": "Middle Tennessee",
+            "hours": "8-6",
+            "pricing": 15,
+            "description": "Capital of Tennessee",
+            "website": "nashvilletn.com",
+            "imageURL": "No Image",
+            "typeId": 5,
+            "cityId": 3
         }
     ],
     "cities": [

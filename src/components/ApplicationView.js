@@ -1,24 +1,24 @@
 import React from "react"
 import { Route } from "react-router-dom"
 import { CityProvider } from "./cities/CityProvider"
-import { CityList } from "./cities/CityList"
 import { TripProvider } from "./trips/TripProvider"
 import { TripList } from "./trips/TripList"
 import { LandmarkProvider } from "./landmarks/LandmarkProvider"
+import { LandmarkList } from "./landmarks/LandmarkList"
 
 export const ApplicationView = () => {
     return (
         <>
-            {/* 
-            <CityProvider>
-                <LandmarkProvider>
-                    <Route exact path="/">
-                        <CityList />
+            <LandmarkProvider>
+                <CityProvider>
+                    <Route>
+                        {/* <Route exact path="/"> */}
+                        <LandmarkList />
                     </Route>
-                </LandmarkProvider>
-            </CityProvider>
+                </CityProvider>
+            </LandmarkProvider>
 
-            <TripProvider>
+            {/* <TripProvider>
                 <LandmarkProvider>
                     <CityProvider>
                         <Route exact path="/">

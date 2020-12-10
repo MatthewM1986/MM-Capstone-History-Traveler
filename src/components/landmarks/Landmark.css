@@ -10,3 +10,9 @@
       padding: 1em;
       border: 1px solid goldenrod;
   }
+
+  img {
+           max-width:100%;
+        height: auto;
+      border: black 3px solid; 
+  }
