@@ -2,10 +2,12 @@ import React, { useContext, useEffect } from "react"
 import { LandmarkContext } from "./LandmarkProvider"
 import { LandmarkHTML } from "./LandmarkHTML"
 import "./Landmark.css"
+import { TypeContext } from "../types/TypeProvider"
 
 export const LandmarkList = () => {
     // This state changes when `getLandmarks()` is invoked below
     const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
+    const { typesArray, getTypes } = useContext(TypeContext)
 
     /*
         What's the effect this is reponding to? Component was
@@ -13,15 +15,18 @@ export const LandmarkList = () => {
         then gets the data, then re-renders.
     */
     useEffect(() => {
-        console.log("LandmarkList: Initial render before data")
-        getLandmarks()
+        getTypes()
+            .then(getLandmarks)
     }, [])
 
     return (
         <div className="landmarks">
             {
-                landmarksArray.map(lm => <LandmarkHTML key={lm.id} landmarkObj={lm} />)
-            }
+                landmarksArray.map(lm => {
+                    const typeOfLandmark = typesArray.find(t => t.id === lm.typeId)
+                    console.log("typeid", typesArray, lm.typeId)
+                    return < LandmarkHTML key={lm.id} typeObj={typeOfLandmark} landmarkObj={lm} />
+                })}
         </div>
     )
 }
