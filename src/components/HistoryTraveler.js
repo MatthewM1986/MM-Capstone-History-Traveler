@@ -6,6 +6,7 @@ import { ApplicationView } from "./ApplicationView"
 import { NavBar } from "./nav/NavBar"
 import "./HistoryTraveler.css"
 import { CityProvider } from "./cities/CityProvider"
+import { TripProvider } from "./trips/TripProvider"
 
 export const HistoryTraveler = () => (
     <>
@@ -15,10 +16,14 @@ export const HistoryTraveler = () => (
                 return (
                     <>
                         <CityProvider>
-                            <Route render={props => <NavBar {...props} />} />
+                            <TripProvider>
+                                <Route render={props => <NavBar {...props} />} />
+                            </TripProvider>
                         </CityProvider>
+
                         <h2>Begin Your History Travels Now!</h2>
                         <h3>Choose a Destination to Begin</h3>
+
                         <Route render={props => <ApplicationView {...props} />} />
                     </>
                 )

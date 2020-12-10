@@ -18,7 +18,6 @@ export const TripProvider = (props) => {
         return fetch("http://localhost:8088/trips")
             .then(res => res.json())
             .then(setTrips)
-        // .then(parsedLocations => setLocations(parsedLocations))
     }
 
     return (

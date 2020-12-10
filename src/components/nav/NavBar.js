@@ -2,14 +2,21 @@
 import React, { useContext, useRef, useEffect } from "react"
 import "./NavBar.css"
 import { CityContext } from "../cities/CityProvider"
+import { TripContext } from "../trips/TripProvider"
 
 
 export const NavBar = () => {
     const { citiesArray, getCities } = useContext(CityContext)
+    const { tripsArray, getTrips } = useContext(TripContext)
     const city = useRef(null)
+    const trip = useRef(null)
 
     useEffect(() => {
         getCities()
+    }, [])
+
+    useEffect(() => {
+        getTrips()
     }, [])
 
     return (
@@ -19,16 +26,28 @@ export const NavBar = () => {
         //     <option value="chattanooga">Chattanooga</option>
         //     <option value="nashville">Nashville</option>
         // </select >
-        <select defaultValue="" name="city" ref={city} id="destinationCity" className="form-control" >
-            <option value="0">Select a City</option>
-            {
-                citiesArray.map(city => (
-                    <option key={city.id} value={city.id}>
-                        {city.name}
-                    </option>
-                ))
-            }
-        </select >
+        <div>
+            <select defaultValue="" name="city" ref={city} id="destinationCity" className="form-control" >
+                <option value="0">Select a City</option>
+                {
+                    citiesArray.map(city => (
+                        <option key={city.id} value={city.id}>
+                            {city.name}
+                        </option>
+                    ))
+                }
+            </select >
+            < select defaultValue="" name="trip" ref={trip} id="createdTrip" className="form-control" >
+                <option value="0">Select Your Trip</option>
+                {
+                    tripsArray.map(trip => (
+                        <option key={trip.id} value={trip.id}>
+                            {trip.name}
+                        </option>
+                    ))
+                }
+            </select >
+        </div>
     )
 }
 
@@ -58,13 +77,6 @@ export const NavBar = () => {
 
 
 
-//}
-
-// ReactDOM.render(
-//     <NavBar />,
-//     document.getElementById('root')
-// );
-
 
 
 
@@ -83,28 +95,6 @@ export const NavBar = () => {
 // }
 
 
-
-
-
-
-// export const NavBar = (props) => {
-//     const { citiesArray, getcities } = useContext(CityContext)
-//     const city = useRef(null)
-//     return (
-
-//         <div className="navbar">
-//             <label htmlFor="cities">Choose City </label>
-//             <select defaultValue="" name="city" ref={city} id="" className="navbar__item" >
-//                 <option value="0">Select a City</option>
-//                 {citiesArray.map(e => (
-//                     <option key={e.id} value={e.id}>
-//                         {e.name}
-//                     </option>
-//                 ))}
-//             </select>
-//         </div>
-//     )
-// }
 
 
 
@@ -147,6 +137,8 @@ export const NavBar = () => {
 //         }
 //     }, [])
 // }
+
+
 
 // export const NavBar = () => {
 //     const [listOpen, setListOpen] = react.useState(false);
