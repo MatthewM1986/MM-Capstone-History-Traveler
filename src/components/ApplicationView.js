@@ -6,7 +6,7 @@ import { TripProvider } from "./trips/TripProvider"
 import { TripList } from "./trips/TripList"
 import { LandmarkProvider } from "./landmarks/LandmarkProvider"
 
-export const ApplicationView = (props) => {
+export const ApplicationView = () => {
     return (
         <>
             {/* 

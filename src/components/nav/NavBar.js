@@ -1,31 +1,63 @@
 
-import React from "react"
-import ReactDOM from "react-dom"
-import { Link } from "react-router-dom"
+import React, { useContext, useRef, useEffect } from "react"
 import "./NavBar.css"
+import { CityContext } from "../cities/CityProvider"
 
-// class NavBar extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = { value: '0' };
-
-//         this.handleChange = this.handleChange.bind(this);
-//     }
-
-//     handleChange(event) {
-//         this.setState({ value: event.target.value });
-//     }
 
 export const NavBar = () => {
+    const { citiesArray, getCities } = useContext(CityContext)
+    const city = useRef(null)
+
+    useEffect(() => {
+        getCities()
+    }, [])
+
     return (
-        <select>
-            <option value="0">Choose City</option>
-            <option value="savannah">Savannah</option>
-            <option value="chattanooga">Chattanooga</option>
-            <option value="nashville">Nashville</option>
+        // <select>
+        //     <option value="0">Choose City</option>
+        //     <option value="savannah">Savannah</option>
+        //     <option value="chattanooga">Chattanooga</option>
+        //     <option value="nashville">Nashville</option>
+        // </select >
+        <select defaultValue="" name="city" ref={city} id="destinationCity" className="form-control" >
+            <option value="0">Select a City</option>
+            {
+                citiesArray.map(city => (
+                    <option key={city.id} value={city.id}>
+                        {city.name}
+                    </option>
+                ))
+            }
         </select >
-    );
+    )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //}
 
 // ReactDOM.render(
@@ -78,7 +110,24 @@ export const NavBar = () => {
 
 
 
-
+// export const NavBar = () => {
+//     const destinations = require("../api/database.json")
+//     return (
+//         // <select>
+//         //     <option value="0">Choose City</option>
+//         //     <option value="savannah">Savannah</option>
+//         //     <option value="chattanooga">Chattanooga</option>
+//         //     <option value="nashville">Nashville</option>
+//         // </select >
+//         <select>
+//             {destinations.cities.map(city => (
+//                 <option key={city.id} value={city.id}>
+//                     {city.name}
+//                 </option>
+//             ))}
+//         </select>
+//     );
+// }
 
 
 
