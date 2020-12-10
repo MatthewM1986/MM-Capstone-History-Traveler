@@ -25,6 +25,7 @@ export const HistoryTraveler = () => (
                         <h3>Choose a Destination to Begin</h3>
 
                         <Route render={props => <ApplicationView {...props} />} />
+
                     </>
                 )
             } else {
