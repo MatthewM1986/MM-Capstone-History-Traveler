@@ -5,6 +5,8 @@ import { Register } from "./auth/Register"
 import { ApplicationView } from "./ApplicationView"
 import { NavBar } from "./nav/NavBar"
 import "./HistoryTraveler.css"
+import { CityProvider } from "./cities/CityProvider"
+import { TripProvider } from "./trips/TripProvider"
 
 export const HistoryTraveler = () => (
     <>
@@ -13,9 +15,15 @@ export const HistoryTraveler = () => (
             if (localStorage.getItem("app_user_id")) {
                 return (
                     <>
-                        <Route render={props => <NavBar {...props} />} />
+                        <CityProvider>
+                            <TripProvider>
+                                <Route render={props => <NavBar {...props} />} />
+                            </TripProvider>
+                        </CityProvider>
+
                         <h2>Begin Your History Travels Now!</h2>
                         <h3>Choose a Destination to Begin</h3>
+
                         <Route render={props => <ApplicationView {...props} />} />
                     </>
                 )

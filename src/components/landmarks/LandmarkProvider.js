@@ -18,7 +18,6 @@ export const LandmarkProvider = (props) => {
         return fetch("http://localhost:8088/landmarks")
             .then(res => res.json())
             .then(setLandmarks)
-        // .then(parsedLocations => setLocations(parsedLocations))
     }
 
     return (

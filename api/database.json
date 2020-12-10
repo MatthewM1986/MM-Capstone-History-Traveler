@@ -89,6 +89,11 @@
             "type": "museum"
         }
     ],
-    "trips": [],
+    "trips": [
+        {
+            "id": 1,
+            "name": "Savannah Trip"
+        }
+    ],
     "landmarkTrips": []
 }

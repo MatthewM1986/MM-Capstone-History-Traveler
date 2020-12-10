@@ -18,7 +18,6 @@ export const TypeProvider = (props) => {
         return fetch("http://localhost:8088/types")
             .then(res => res.json())
             .then(setTypes)
-        // .then(parsedLocations => setLocations(parsedLocations))
     }
 
     return (
