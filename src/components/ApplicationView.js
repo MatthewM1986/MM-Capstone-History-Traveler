@@ -1,6 +1,7 @@
 import React from "react"
 import { Route } from "react-router-dom"
 import { CityProvider } from "./cities/CityProvider"
+import { CityList } from "./cities/CityList"
 import { TypeProvider } from "./types/TypeProvider"
 import { TripProvider } from "./trips/TripProvider"
 import { TripList } from "./trips/TripList"
@@ -13,10 +14,13 @@ export const ApplicationView = () => {
             <TypeProvider>
                 <LandmarkProvider>
                     <CityProvider>
-                        <Route>
-                            {/* <Route exact path="/"> */}
-                            <LandmarkList />
-                        </Route>
+                        {/* <Route>
+                            <LandmarkList /> */}
+                        {/* </Route> */}
+
+                        <Route exact path="/:cityId(\d+)" render={
+                            props => <CityList {...props} />
+                        } />
                     </CityProvider>
                 </LandmarkProvider>
             </TypeProvider>

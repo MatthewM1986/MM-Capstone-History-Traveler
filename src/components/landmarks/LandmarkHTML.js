@@ -1,7 +1,7 @@
 import React from "react"
 import "./Landmark.css"
 
-export const LandmarkHTML = ({ landmarkObj, typeObj }) => (
+export const LandmarkHTML = ({ typeObj, landmarkObj }) => (
     <section className="landmark">
         <h3 className="landmark__name">{landmarkObj.name}</h3>
         <div className="landmark__image"><img src={landmarkObj.imageURL}></img></div>

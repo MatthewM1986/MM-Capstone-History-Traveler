@@ -20,10 +20,15 @@ export const CityProvider = (props) => {
             .then(setCities)
     }
 
+    const getLandmarksByCityId = (id) => {
+        return fetch(`http://localhost:8088/cities/${id}?_expand=landmarks`)
+            .then(res => res.json())
+    }
+
     return (
         <CityContext.Provider value={
             {
-                citiesArray, getCities
+                citiesArray, getCities, getLandmarksByCityId
             }
         }>
             {props.children}

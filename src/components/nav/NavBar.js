@@ -1,6 +1,7 @@
 
 import React, { useContext, useRef, useEffect } from "react"
 import "./NavBar.css"
+import { Link } from "react-router-dom"
 import { CityContext } from "../cities/CityProvider"
 import { TripContext } from "../trips/TripProvider"
 
@@ -44,12 +45,6 @@ export const NavBar = () => {
         </div>
     )
 }
-
-
-
-
-
-
 
 
 
