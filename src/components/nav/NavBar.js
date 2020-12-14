@@ -4,7 +4,8 @@ import "./NavBar.css"
 import { Link } from "react-router-dom"
 import { CityContext } from "../cities/CityProvider"
 import { TripContext } from "../trips/TripProvider"
-
+import { Home } from "../home/Home"
+import { Route } from "react-router-dom"
 
 export const NavBar = (props) => {
     const { citiesArray, getCities } = useContext(CityContext)
@@ -21,28 +22,20 @@ export const NavBar = (props) => {
     }, [])
 
     const handleCitySelect = () => {
-        //if city.current.value = 0 then push to home
-        props.history.push(`/landmarks/${city.current.value}`)
+        //*if current city value = 0 then push to home (make sure == and not ===)
+        if (city.current.value == 0) {
+            props.history.push("/")
+
+        } else if (city.current.value !== 0) {
+            props.history.push(`/landmarks/${city.current.value}`)
+        }
         console.log("city", city.current.value)
     }
 
-    // * New code
-    // class ChosenCity extends Component {
-    //     cities = {
-    //         cities: [],
-    //         selectedCity: ""
-    //     };
-
-    // componentDidMount() { }
-
-    // render(); {
     return (
         <div>
-            {/* New Code */}
             <select defaultValue=""
-                /* defaultvalue={this.city.getCities} */
                 onChange={handleCitySelect}
-                // Old Code
                 name="city" ref={city} id="destinationCity" className="form-control">
                 <option value="0">Select a City</option>
                 {
@@ -69,7 +62,6 @@ export const NavBar = (props) => {
         </div >
     )
 }
-// }
 
 
 
@@ -131,25 +123,6 @@ export const NavBar = (props) => {
 //             ))}
 //         </select>
 //     );
-// }
-
-
-
-// const Dropdown = ({ callbackFromParent }) => {
-//     const node = react.useRef()
-//     const handleClick = (e) => {
-//         if (node.current.contains(e.target)) {
-//             callbackFromParent(true)
-//             return
-//         }
-//         callbackFromParent(false)
-//     }
-//     react.useEffect(() => {
-//         document.addEventListener('mousedown', handleClick)
-//         return () => {
-//             document.removeEventListener('mousedown', handleClick)
-//         }
-//     }, [])
 // }
 
 

@@ -31,7 +31,7 @@ export const ApplicationView = () => {
                 <LandmarkProvider>
                     <CityProvider>
                         <Route>
-                            <LandmarkList />
+                            <CityList />
                         </Route>
                     </CityProvider>
                 </LandmarkProvider >
