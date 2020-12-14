@@ -1,11 +1,13 @@
 
 import React, { useContext, useRef, useEffect } from "react"
 import "./NavBar.css"
+import { Link } from "react-router-dom"
 import { CityContext } from "../cities/CityProvider"
 import { TripContext } from "../trips/TripProvider"
+import { Home } from "../home/Home"
+import { Route } from "react-router-dom"
 
-
-export const NavBar = () => {
+export const NavBar = (props) => {
     const { citiesArray, getCities } = useContext(CityContext)
     const { tripsArray, getTrips } = useContext(TripContext)
     const city = useRef(null)
@@ -19,9 +21,22 @@ export const NavBar = () => {
         getTrips()
     }, [])
 
+    const handleCitySelect = () => {
+        //*if current city value = 0 then push to home (make sure == and not ===)
+        if (city.current.value == 0) {
+            props.history.push("/")
+
+        } else if (city.current.value !== 0) {
+            props.history.push(`/landmarks/${city.current.value}`)
+        }
+        console.log("city", city.current.value)
+    }
+
     return (
         <div>
-            <select defaultValue="" name="city" ref={city} id="destinationCity" className="form-control" >
+            <select defaultValue=""
+                onChange={handleCitySelect}
+                name="city" ref={city} id="destinationCity" className="form-control">
                 <option value="0">Select a City</option>
                 {
                     citiesArray.map(city => (
@@ -31,6 +46,9 @@ export const NavBar = () => {
                     ))
                 }
             </select >
+
+
+
             < select defaultValue="" name="trip" ref={trip} id="createdTrip" className="form-control" >
                 <option value="0">Select Your Trip</option>
                 {
@@ -41,15 +59,9 @@ export const NavBar = () => {
                     ))
                 }
             </select >
-        </div>
+        </div >
     )
 }
-
-
-
-
-
-
 
 
 
@@ -111,25 +123,6 @@ export const NavBar = () => {
 //             ))}
 //         </select>
 //     );
-// }
-
-
-
-// const Dropdown = ({ callbackFromParent }) => {
-//     const node = react.useRef()
-//     const handleClick = (e) => {
-//         if (node.current.contains(e.target)) {
-//             callbackFromParent(true)
-//             return
-//         }
-//         callbackFromParent(false)
-//     }
-//     react.useEffect(() => {
-//         document.addEventListener('mousedown', handleClick)
-//         return () => {
-//             document.removeEventListener('mousedown', handleClick)
-//         }
-//     }, [])
 // }
 
 
