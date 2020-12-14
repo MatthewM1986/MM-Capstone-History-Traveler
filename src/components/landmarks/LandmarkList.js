@@ -4,7 +4,7 @@ import { LandmarkHTML } from "./LandmarkHTML"
 import "./Landmark.css"
 import { TypeContext } from "../types/TypeProvider"
 
-export const LandmarkList = () => {
+export const LandmarkList = (props) => {
     // This state changes when `getLandmarks()` is invoked below
     const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
     const { typesArray, getTypes } = useContext(TypeContext)
@@ -22,7 +22,7 @@ export const LandmarkList = () => {
     return (
         <div className="landmarks">
             {
-                landmarksArray.map(lm => {
+                landmarksArray.filter(lm => lm.cityId === +props.match.params.cityId).map(lm => {
                     const typeOfLandmark = typesArray.find(t => t.id === lm.typeId)
                     // console.log("typeid", typesArray, lm.typeId)
                     return < LandmarkHTML key={lm.id} typeObj={typeOfLandmark} landmarkObj={lm} />

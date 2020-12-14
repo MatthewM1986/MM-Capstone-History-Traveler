@@ -16,7 +16,7 @@
     "landmarks": [
         {
             "id": 1,
-            "name": "Savannah",
+            "name": "Savannah Hotel",
             "age": 1733,
             "address": "Atlantic Coast",
             "hours": "8-6",
@@ -29,7 +29,7 @@
         },
         {
             "id": 2,
-            "name": "Chattanooga",
+            "name": "Chattanooga Hotel",
             "age": 1790,
             "address": "Smokey Mountains",
             "hours": "8-6",
@@ -42,7 +42,7 @@
         },
         {
             "id": 3,
-            "name": "Nashville",
+            "name": "Nashville Hotel",
             "age": 1796,
             "address": "Middle Tennessee",
             "hours": "8-6",

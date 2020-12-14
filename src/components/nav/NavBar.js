@@ -6,7 +6,7 @@ import { CityContext } from "../cities/CityProvider"
 import { TripContext } from "../trips/TripProvider"
 
 
-export const NavBar = () => {
+export const NavBar = (props) => {
     const { citiesArray, getCities } = useContext(CityContext)
     const { tripsArray, getTrips } = useContext(TripContext)
     const city = useRef(null)
@@ -20,9 +20,30 @@ export const NavBar = () => {
         getTrips()
     }, [])
 
+    const handleCitySelect = () => {
+        //if city.current.value = 0 then push to home
+        props.history.push(`/landmarks/${city.current.value}`)
+        console.log("city", city.current.value)
+    }
+
+    // * New code
+    // class ChosenCity extends Component {
+    //     cities = {
+    //         cities: [],
+    //         selectedCity: ""
+    //     };
+
+    // componentDidMount() { }
+
+    // render(); {
     return (
         <div>
-            <select defaultValue="" name="city" ref={city} id="destinationCity" className="form-control" >
+            {/* New Code */}
+            <select defaultValue=""
+                /* defaultvalue={this.city.getCities} */
+                onChange={handleCitySelect}
+                // Old Code
+                name="city" ref={city} id="destinationCity" className="form-control">
                 <option value="0">Select a City</option>
                 {
                     citiesArray.map(city => (
@@ -32,6 +53,9 @@ export const NavBar = () => {
                     ))
                 }
             </select >
+
+
+
             < select defaultValue="" name="trip" ref={trip} id="createdTrip" className="form-control" >
                 <option value="0">Select Your Trip</option>
                 {
@@ -42,9 +66,10 @@ export const NavBar = () => {
                     ))
                 }
             </select >
-        </div>
+        </div >
     )
 }
+// }
 
 
 

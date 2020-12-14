@@ -3,6 +3,7 @@ import { CityContext } from "./CityProvider"
 import { CityHTML } from "./CityHTML"
 import { LandmarkContext } from "../landmarks/LandmarkProvider"
 import { LandmarkHTML } from "../landmarks/LandmarkHTML"
+import "../landmarks/Landmark.css"
 
 export const CityList = () => {
     const { citiesArray, getCities } = useContext(CityContext)
