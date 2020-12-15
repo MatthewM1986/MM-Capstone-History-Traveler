@@ -9,10 +9,21 @@
       margin: 1em;
       padding: 1em;
       border: 1px solid goldenrod;
+      max-width: auto;
+      height: auto;
+  }
+
+    .landmarkCard {
+      flex-basis: 28%;
+      margin: 1em;
+      padding: 1em;
+      border: 1px solid goldenrod;
+      max-width:200px;
+      height: auto;
   }
 
   img {
-           max-width:100%;
+           max-width:200px;
         height: auto;
       border: black 3px solid; 
   }

@@ -7,6 +7,7 @@ import { TripProvider } from "./trips/TripProvider"
 import { TripList } from "./trips/TripList"
 import { LandmarkProvider } from "./landmarks/LandmarkProvider"
 import { LandmarkList } from "./landmarks/LandmarkList"
+import { LandmarkDetails } from "./landmarks/LandmarkDetail"
 import { Home } from "./home/Home"
 
 
@@ -23,16 +24,22 @@ export const ApplicationView = () => {
                         <Route exact path="/landmarks/:cityId(\d+)" render={
                             props => <LandmarkList {...props} />
                         } />
+
+                        <Route exact path="/landmark/detail/:landmarkId(\d+)" render={
+                            props => <LandmarkDetails {...props} />
+                        } />
+
                     </CityProvider>
                 </LandmarkProvider>
             </TypeProvider>
 
-            {/* <TypeProvider>
+            {/* 
+            <TypeProvider>
                 <LandmarkProvider>
                     <CityProvider>
-                        <Route>
-                            <CityList />
-                        </Route>
+                        <Route path="/landmarks/:cityId(\d+)/:landmarkId(\d+)" render={
+                            props => <LandmarkDetails {...props} />
+                        } />
                     </CityProvider>
                 </LandmarkProvider >
             </TypeProvider > */}

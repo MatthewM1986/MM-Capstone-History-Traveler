@@ -10,6 +10,7 @@ import { Route } from "react-router-dom"
 export const NavBar = (props) => {
     const { citiesArray, getCities } = useContext(CityContext)
     const { tripsArray, getTrips } = useContext(TripContext)
+
     const city = useRef(null)
     const trip = useRef(null)
 
@@ -23,7 +24,7 @@ export const NavBar = (props) => {
 
     const handleCitySelect = () => {
         //*if current city value = 0 then push to home (make sure == and not ===)
-        if (city.current.value == 0) {
+        if (city.current.value === "0") {
             props.history.push("/")
 
         } else if (city.current.value !== 0) {
