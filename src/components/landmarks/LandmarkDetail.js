@@ -5,18 +5,20 @@ import "./Landmark.css"
 import { TypeContext } from "../types/TypeProvider"
 
 export const LandmarkDetails = (props) => {
-    const { landmarksArray, getLandmarks, addLandmark, getLandmarkById } = useContext(LandmarkContext)
+    const { landmarksArray, getLandmarks, addLandmark } = useContext(LandmarkContext)
     const { typesArray, getTypes } = useContext(TypeContext)
 
-    // const [landmark, setLandmarks] = useState({})
+    const [landmark, setLandmark] = useState({})
 
     useEffect(() => {
-        // const landmarkId = parseInt(props.match.params.landmarkId)
-        // getLandmarkById(landmarkId)
         getTypes()
             .then(getLandmarks)
-        // .then(setLandmarks)
     }, [])
+
+    useEffect(() => {
+        const landmark = landmarksArray.find(lm => lm.id === +props.match.params.landmarkId) || {}
+        setLandmark(landmark)
+    }, [landmarksArray])
 
     return (
         <section className="landmarkDetail">
@@ -24,6 +26,7 @@ export const LandmarkDetails = (props) => {
                 {
                     landmarksArray.map(lm => {
                         const typeOfLandmark = typesArray.find(t => t.id === lm.typeId)
+                        // console.log("details", lm)
                         return < LandmarkHTML key={lm.id} typeObj={typeOfLandmark} landmarkObj={lm} />
                     })}
             </div>

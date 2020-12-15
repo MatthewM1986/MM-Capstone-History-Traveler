@@ -10,6 +10,7 @@ import { Route } from "react-router-dom"
 export const NavBar = (props) => {
     const { citiesArray, getCities } = useContext(CityContext)
     const { tripsArray, getTrips } = useContext(TripContext)
+
     const city = useRef(null)
     const trip = useRef(null)
 

@@ -2,12 +2,10 @@ import React, { useContext, useEffect } from "react"
 import { LandmarkContext } from "./LandmarkProvider"
 import { LandmarkHTML } from "./LandmarkHTML"
 import "./Landmark.css"
-import { CityContext } from "../cities/CityProvider"
 
 export const LandmarkList = (props) => {
     // This state changes when `getLandmarks()` is invoked below
     const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
-    const { citiesArray, getCities } = useContext(CityContext)
     /*
         What's the effect this is reponding to? Component was
         "mounted" to the DOM. React renders blank HTML first,
@@ -22,13 +20,13 @@ export const LandmarkList = (props) => {
             {/* <h1>${city.id}</h1> */}
             {
                 landmarksArray.filter(lm => lm.cityId === +props.match.params.cityId).map(landmarkObj => {
-                    console.log("before map", landmarksArray.filter(lm => lm.cityId === +props.match.params.cityId))
-                    // console.log("landmark object", landmarkObj)
+                    // console.log("before map", landmarksArray.filter(lm => lm.cityId === +props.match.params.cityId)
                     return (
                         <div className="landmark">
                             <h3 className="landmark__name">{landmarkObj.name}</h3>
                             <div className="landmark__image"><img src={landmarkObj.imageURL}></img></div>
-                            < button key={landmarkObj.id} to={`/landmarks/${landmarkObj.id}`} >Details</button>
+                            < button key={landmarkObj.id} onClick={() => { "/landmarks/:cityId(\d+)/:landmarkId(\d+)" }} >Details</button>
+                            {/* console.log("button click", onClick) */}
                         </div>)
                 })}
         </div>
@@ -36,7 +34,9 @@ export const LandmarkList = (props) => {
 }
 
 
-
+{/* <button onClick={() => props.history.push("/landamrks/landmarkId")}>
+    Add Employee
+            </button> */}
 
 
 
