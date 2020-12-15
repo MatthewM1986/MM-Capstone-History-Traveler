@@ -1,7 +1,15 @@
+
+.landmarks_container {
+      display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .landmarks {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    border: 3px solid goldenrod;
   }
   
   .landmark {

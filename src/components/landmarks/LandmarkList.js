@@ -16,28 +16,24 @@ export const LandmarkList = (props) => {
     }, [])
 
     return (
-        <div>
-            {/* <h1>${city.id}</h1> */}
-            {
-                landmarksArray.filter(lm => lm.cityId === +props.match.params.cityId).map(landmarkObj => {
-                    // console.log("before map", landmarksArray.filter(lm => lm.cityId === +props.match.params.cityId)
-                    return (
-                        <div key={landmarkObj.id} className="landmarkCard">
-                            <h3 className="landmark__name">{landmarkObj.name}</h3>
-                            <div className="landmark__image"><img src={landmarkObj.imageURL}></img></div>
-                            < button onClick={() => props.history.push(`/landmark/detail/${landmarkObj.id}`)} >Details</button>
-                            {/* < button key={landmarkObj.id} onClick={() => { "/landmarks/:cityId(\d+)/:landmarkId(\d+)" }} >Details</button> */}
-                            {/* console.log("button click", onClick) */}
-                        </div>)
-                })}
-        </div>
+        <section className="landmarks_container">
+            <div className="landmarks">
+                {/* <h1>${city.id}</h1> */}
+                {
+                    landmarksArray.filter(lm => lm.cityId === +props.match.params.cityId).map(landmarkObj => {
+                        // console.log("before map", landmarksArray.filter(lm => lm.cityId === +props.match.params.cityId)
+                        return (
+                            <div key={landmarkObj.id} className="landmarkCard">
+                                <h3 className="landmark__name">{landmarkObj.name}</h3>
+                                <div className="landmark__image"><img src={landmarkObj.imageURL}></img></div>
+                                < button onClick={() => props.history.push(`/landmark/detail/${landmarkObj.id}`)} >Details</button>
+                                {/* console.log("button click", onClick) */}
+                            </div>)
+                    })}
+            </div>
+        </section>
     )
 }
-
-
-{/* <button onClick={() => props.history.push("/landamrks/landmarkId")}>
-    Add Employee
-            </button> */}
 
 
 

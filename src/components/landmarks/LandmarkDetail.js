@@ -30,7 +30,8 @@ export const LandmarkDetails = (props) => {
     return (
         <div className="landmark">
             < LandmarkHTML key={landmark.id} typeObj={typeOfLandmark} landmarkObj={landmark} />
-
+            <br></br>
+            < button onClick={() => props.history.push(`/landmark/itinerary`)} >Add</button>
         </div>
     )
 }

@@ -28,17 +28,16 @@ export const ApplicationView = () => {
                         <Route exact path="/landmark/detail/:landmarkId(\d+)" render={
                             props => <LandmarkDetails {...props} />
                         } />
-
                     </CityProvider>
                 </LandmarkProvider>
             </TypeProvider>
 
-            {/* 
-            <TypeProvider>
+
+            {/* <TypeProvider>
                 <LandmarkProvider>
                     <CityProvider>
-                        <Route path="/landmarks/:cityId(\d+)/:landmarkId(\d+)" render={
-                            props => <LandmarkDetails {...props} />
+                        <Route path="/landmarks/:cityId(\d+)" render={
+                            props => <LandmarkItinerary {...props} />
                         } />
                     </CityProvider>
                 </LandmarkProvider >
