@@ -1,8 +1,9 @@
 import React from "react"
 import "./Landmark.css"
+import { Link } from "react-router-dom"
 
 export const LandmarkHTML = ({ typeObj, landmarkObj }) => (
-    <section className="landmark">
+    <section>
         <h3 className="landmark__name">{landmarkObj.name}</h3>
         <div className="landmark__image"><img src={landmarkObj.imageURL}></img></div>
         <h5>Type of Landmark</h5>
@@ -18,7 +19,7 @@ export const LandmarkHTML = ({ typeObj, landmarkObj }) => (
         <h5>Address</h5>
         <div className="landmark__address">{landmarkObj.address}</div>
         <h5>Website</h5>
-        <div className="landmark__website"><a href={landmarkObj.websiteURL}></a></div>
+        <div className="landmark__website"><a target="_blank" href={landmarkObj.websiteURL}>{landmarkObj.websiteURL}</a></div>
     </section >
 )
 

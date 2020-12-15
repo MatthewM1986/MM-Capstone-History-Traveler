@@ -25,7 +25,7 @@ export const ApplicationView = () => {
                             props => <LandmarkList {...props} />
                         } />
 
-                        <Route exact path="/landmarks/:cityId(\d+)/:landmarkId(\d+)" render={
+                        <Route exact path="/landmark/detail/:landmarkId(\d+)" render={
                             props => <LandmarkDetails {...props} />
                         } />
 

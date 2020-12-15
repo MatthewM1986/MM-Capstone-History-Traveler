@@ -9,6 +9,7 @@ export const LandmarkDetails = (props) => {
     const { typesArray, getTypes } = useContext(TypeContext)
 
     const [landmark, setLandmark] = useState({})
+    const [typeOfLandmark, setTypeOfLandmark] = useState({})
 
     useEffect(() => {
         getTypes()
@@ -20,24 +21,16 @@ export const LandmarkDetails = (props) => {
         setLandmark(landmark)
     }, [landmarksArray])
 
+    useEffect(() => {
+        const typeOfLandmark = typesArray.find(t => t.id === landmark.typeId) || {}
+        setTypeOfLandmark(typeOfLandmark)
+    }, [landmark])
+
+
     return (
-        <section className="landmarkDetail">
-            <div className="landmark">
-                {
-                    landmarksArray.map(lm => {
-                        const typeOfLandmark = typesArray.find(t => t.id === lm.typeId)
-                        // console.log("details", lm)
-                        return < LandmarkHTML key={lm.id} typeObj={typeOfLandmark} landmarkObj={lm} />
-                    })}
-            </div>
-            {/* <button className="btn--add"
-                onClick={() => {
-                    addLandmark(landmark.id)
-                    // .then(() => {
-                    //     props.history.push("/animals")
-                    // })
-                }}
-            >Add</button> */}
-        </section>
+        <div className="landmark">
+            < LandmarkHTML key={landmark.id} typeObj={typeOfLandmark} landmarkObj={landmark} />
+
+        </div>
     )
 }

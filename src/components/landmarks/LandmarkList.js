@@ -22,10 +22,11 @@ export const LandmarkList = (props) => {
                 landmarksArray.filter(lm => lm.cityId === +props.match.params.cityId).map(landmarkObj => {
                     // console.log("before map", landmarksArray.filter(lm => lm.cityId === +props.match.params.cityId)
                     return (
-                        <div className="landmark">
+                        <div key={landmarkObj.id} className="landmarkCard">
                             <h3 className="landmark__name">{landmarkObj.name}</h3>
                             <div className="landmark__image"><img src={landmarkObj.imageURL}></img></div>
-                            < button key={landmarkObj.id} onClick={() => { "/landmarks/:cityId(\d+)/:landmarkId(\d+)" }} >Details</button>
+                            < button onClick={() => props.history.push(`/landmark/detail/${landmarkObj.id}`)} >Details</button>
+                            {/* < button key={landmarkObj.id} onClick={() => { "/landmarks/:cityId(\d+)/:landmarkId(\d+)" }} >Details</button> */}
                             {/* console.log("button click", onClick) */}
                         </div>)
                 })}
