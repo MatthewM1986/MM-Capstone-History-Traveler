@@ -20,10 +20,15 @@ export const LandmarkProvider = (props) => {
             .then(setLandmarks)
     }
 
+    const getLandmarkById = (id) => {
+        return fetch(`http://localhost:8088/cities/${id}?_expand=landmarks`)
+            .then(res => res.json())
+    }
+
     return (
         <LandmarkContext.Provider value={
             {
-                landmarksArray, getLandmarks
+                landmarksArray, getLandmarks, getLandmarkById
             }
         }>
             {props.children}
