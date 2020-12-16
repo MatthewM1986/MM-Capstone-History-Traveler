@@ -31,6 +31,9 @@ export const LandmarkList = (props) => {
                             </div>)
                     })}
             </div>
+            <div className="landmarks">
+
+            </div>
         </section>
     )
 }
