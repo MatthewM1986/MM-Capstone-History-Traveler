@@ -23,7 +23,7 @@ export const NavBar = (props) => {
     }, [])
 
     const handleCitySelect = () => {
-        //*if current city value = 0 then push to home (make sure == and not ===)
+        //*=== needs "" wrapped around value if not a sting, or just put == instead of ===
         if (city.current.value === "0") {
             props.history.push("/")
 
