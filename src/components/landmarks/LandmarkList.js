@@ -3,6 +3,8 @@ import { LandmarkContext } from "./LandmarkProvider"
 import { LandmarkHTML } from "./LandmarkHTML"
 import "./Landmark.css"
 
+
+
 export const LandmarkList = (props) => {
     // This state changes when `getLandmarks()` is invoked below
     const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
@@ -11,6 +13,9 @@ export const LandmarkList = (props) => {
         "mounted" to the DOM. React renders blank HTML first,
         then gets the data, then re-renders.
     */
+
+    // const tripName = useRef(null)
+
     useEffect(() => {
         getLandmarks()
     }, [])
@@ -18,7 +23,7 @@ export const LandmarkList = (props) => {
     return (
         <section className="landmarks_container">
             <div className="landmarks">
-                {/* <h1>${city.id}</h1> */}
+                {/* <h1>${cities.name}</h1> */}
                 {
                     landmarksArray.filter(lm => lm.cityId === +props.match.params.cityId).map(landmarkObj => {
                         // console.log("before map", landmarksArray.filter(lm => lm.cityId === +props.match.params.cityId)
@@ -26,15 +31,12 @@ export const LandmarkList = (props) => {
                             <div key={landmarkObj.id} className="landmarkCard">
                                 <h3 className="landmark__name">{landmarkObj.name}</h3>
                                 <div className="landmark__image"><img src={landmarkObj.imageURL}></img></div>
-                                < button onClick={() => props.history.push(`/landmark/detail/${landmarkObj.id}`)} >Details</button>
-                                {/* console.log("button click", onClick) */}
+                                < button className="btn--details"
+                                    onClick={() => props.history.push(`/landmark/detail/${landmarkObj.id}`)}>Details</button>
                             </div>)
                     })}
             </div>
-            <div className="landmarks">
-
-            </div>
-        </section>
+        </section >
     )
 }
 

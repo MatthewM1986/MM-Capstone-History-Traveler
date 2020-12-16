@@ -20,10 +20,27 @@ export const TripProvider = (props) => {
             .then(setTrips)
     }
 
+    const addLandmark = (landmarkId, tripId) => {
+        return fetch("http://localhost:8088/landmarkTrips", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(landmarkId, tripId)
+        }).then(getTrips)
+    }
+
+    const releaseLandmark = landmarkTripId => {
+        return fetch(`http://localhost:8088/landmarkTrips/${landmarkTripId}`, {
+            method: "DELETE"
+        })
+            .then(getTrips)
+    }
+
     return (
         <TripContext.Provider value={
             {
-                tripsArray, getTrips
+                tripsArray, getTrips, addLandmark, releaseLandmark
             }
         }>
             {props.children}

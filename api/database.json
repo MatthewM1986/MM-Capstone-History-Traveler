@@ -1,253 +1,253 @@
 {
-  "travelers": [
-    {
-      "email": "mrjm2005@yahoo.com",
-      "password": "abcd123",
-      "name": "Matthew  Machurek",
-      "id": 1
-    },
-    {
-      "email": "aubreydylana@yahoo.com",
-      "password": "123abcd",
-      "name": "Dylana  Miller",
-      "id": 2
-    }
-  ],
-  "landmarks": [
-    {
-      "id": 1,
-      "name": "Pirate House",
-      "age": 1734,
-      "address": "20 East Broad Street",
-      "hours": "SUN-THURS: 11:00-9:30 & FRI-SAT: 11:00-10:00",
-      "pricing": "N/A",
-      "description": "This tavern was used by many famous pirates during the 1700's, it is now a restaurant",
-      "websiteURL": "https://thepirateshouse.com/",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Pirate%27s_House%2C_Savannah%2C_Georiga%2C_US.JPG/240px-Pirate%27s_House%2C_Savannah%2C_Georiga%2C_US.JPG",
-      "typeId": 2,
-      "cityId": 1
-    },
-    {
-      "id": 2,
-      "name": "Georgia State Railroad Museum",
-      "age": 1853,
-      "address": "655 Louisville Road",
-      "hours": "THURS-SAT: 9:30-2:30",
-      "pricing": "$11.00",
-      "description": "Features the most complete antebellum railroad of its kind in the world",
-      "websiteURL": "http://www.chsgeorgia.org/gsrm",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/CG223_Georgia_RR_Museum.jpg/800px-CG223_Georgia_RR_Museum.jpg",
-      "typeId": 8,
-      "cityId": 1
-    },
-    {
-      "id": 3,
-      "name": "Mercer House",
-      "age": 1868,
-      "address": "429 Bull Street",
-      "hours": "MON-SAT: 10:30-4:00 & SUN: 11:30-5:00",
-      "pricing": "$12.50",
-      "description": "The house was the scene of the 1981 shooting death of Danny Hansford by the home's owner, Jim Williams",
-      "websiteURL": "https://mercerhouse.com/",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Mercer_House_2017.jpg/800px-Mercer_House_2017.jpg",
-      "typeId": 1,
-      "cityId": 1
-    },
-    {
-      "id": 4,
-      "name": "Owens–Thomas House",
-      "age": 1819,
-      "address": "124 Abercorn Street",
-      "hours": "THURS-MON: 10:00-5:00",
-      "pricing": "$20.00",
-      "description": "North America's preeminent example of period English Regency architecture",
-      "websiteURL": "https://www.telfair.org/visit/owens-thomas/",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/GA_Savannah_Owens-Thomas_House01.jpg/800px-GA_Savannah_Owens-Thomas_House01.jpg",
-      "typeId": 1,
-      "cityId": 1
-    },
-    {
-      "id": 5,
-      "name": "The Olde Pink House",
-      "age": 1789,
-      "address": "23 Abercorn Street",
-      "hours": "TUES-SAT: 11:00-11:00",
-      "pricing": "N/A",
-      "description": "One of the oldest buildings in Savannah, it is now a restaurant",
-      "websiteURL": "https://www.theoldepinkhouserestaurant.com/",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Olde_Pink_House.jpeg/800px-Olde_Pink_House.jpeg",
-      "typeId": 2,
-      "cityId": 1
-    },
-    {
-      "id": 6,
-      "name": "Green–Meldrim House",
-      "age": 1850,
-      "address": "14 West Macon Street",
-      "hours": "TUES-FRI: 10:00-4:00 & SAT: 10:00-1:00",
-      "pricing": "$7.00",
-      "description": "Use by Union General Sherman during the Civil War as his headquarters",
-      "websiteURL": "https://thepirateshouse.com/",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Green-Meldrim_House%2C_Savannah%2C_GA%2C_US.JPG/800px-Green-Meldrim_House%2C_Savannah%2C_GA%2C_US.JPG",
-      "typeId": 1,
-      "cityId": 1
-    },
-    {
-      "id": 7,
-      "name": "Wormsloe Plantation Historic Site",
-      "age": 1733,
-      "address": "7601 Skidaway Road",
-      "hours": "MON-SUN: 9:00-5:00",
-      "pricing": "$10.00",
-      "description": "Wormsloe's ruins is the oldest standing structure in Savannah",
-      "websiteURL": "https://gastateparks.org/Wormsloe/",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Wormsloe_Historic_Site%2C_July_2016.jpg/800px-Wormsloe_Historic_Site%2C_July_2016.jpg",
-      "typeId": 2,
-      "cityId": 1
-    },
-    {
-      "id": 8,
-      "name": "Fort McCallister",
-      "age": 1862,
-      "address": "3894 Fort McAllister Road",
-      "hours": "MON-SUN: 8:00-5:00",
-      "pricing": "$9.00",
-      "description": "The Union captured Savannah when this fort was captured in 1864",
-      "websiteURL": "https://gastateparks.org/FortMcAllister",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Fort_McAllister_Now_03.JPG/800px-Fort_McAllister_Now_03.JPG",
-      "typeId": 3,
-      "cityId": 1
-    },
-    {
-      "id": 9,
-      "name": "Prohibition Museum",
-      "age": 1925,
-      "address": "209 W. St. Julian Street",
-      "hours": "MON-SUN: 10:00-4:00",
-      "pricing": "$16.00",
-      "description": "Learn the history of prohibition during the 1920's",
-      "websiteURL": "https://www.americanprohibitionmuseum.com/",
-      "imageURL": "https://tse4.mm.bing.net/th?id=OIP.-x_Ifg5Z4jtMv-XinMJtyQHaE8&pid=Api&P=0&w=266&h=178",
-      "typeId": 8,
-      "cityId": 1
-    },
-    {
-      "id": 10,
-      "name": "Boneventure Cemetary",
-      "age": 1868,
-      "address": "330 Bonaventure Road",
-      "hours": "MON-SUN: 2:00-3:00",
-      "pricing": "FREE",
-      "description": "Largest cemetary in Savannah",
-      "websiteURL": "https://www.bonaventurehistorical.org/tours/",
-      "imageURL": "https://i.pinimg.com/originals/93/33/4c/93334cc8e5c545f857b9142217e51c75.jpg",
-      "typeId": 7,
-      "cityId": 1
-    },
-    {
-      "id": 11,
-      "name": "Chattanooga Hotel",
-      "age": 1790,
-      "address": "Smokey Mountains",
-      "hours": "8-6",
-      "pricing": 10,
-      "description": "Can see 7 states from Lookout Mountain",
-      "websiteURL": "chattanoogatn.com",
-      "imageURL": "No Image",
-      "typeId": 5,
-      "cityId": 2
-    },
-    {
-      "id": 21,
-      "name": "Nashville Hotel",
-      "age": 1796,
-      "address": "Middle Tennessee",
-      "hours": "8-6",
-      "pricing": 15,
-      "description": "Capital of Tennessee",
-      "websiteURL": "nashvilletn.com",
-      "imageURL": "No Image",
-      "typeId": 5,
-      "cityId": 3
-    }
-  ],
-  "cities": [
-    {
-      "id": 1,
-      "name": "Savannah",
-      "stateId": 1
-    },
-    {
-      "id": 2,
-      "name": "Chattanooga",
-      "stateId": 2
-    },
-    {
-      "id": 3,
-      "name": "Nashville",
-      "stateId": 2
-    }
-  ],
-  "states": [
-    {
-      "id": 1,
-      "name": "Georgia"
-    },
-    {
-      "id": 2,
-      "name": "Tennessee"
-    }
-  ],
-  "types": [
-    {
-      "id": 1,
-      "type": "House"
-    },
-    {
-      "id": 2,
-      "type": "Business"
-    },
-    {
-      "id": 3,
-      "type": "Fort"
-    },
-    {
-      "id": 4,
-      "type": "Battlefield"
-    },
-    {
-      "id": 5,
-      "type": "Marker"
-    },
-    {
-      "id": 6,
-      "type": "Monument"
-    },
-    {
-      "id": 7,
-      "type": "Graveyard"
-    },
-    {
-      "id": 8,
-      "type": "Museum"
-    }
-  ],
-  "trips": [
-    {
-      "id": 1,
-      "name": "Savannah Trip"
-    }
-  ],
-  "landmarkTrips": [
-    {
-      "landmarkId": 1,
-      "tripId": null,
-      "id": 1
-    },
-    {
-      "landmarkId": 3,
-      "tripId": null,
-      "id": 2
-    }
-  ]
+    "travelers": [
+        {
+            "email": "mrjm2005@yahoo.com",
+            "password": "abcd123",
+            "name": "Matthew  Machurek",
+            "id": 1
+        },
+        {
+            "email": "aubreydylana@yahoo.com",
+            "password": "123abcd",
+            "name": "Dylana  Miller",
+            "id": 2
+        }
+    ],
+    "landmarks": [
+        {
+            "id": 1,
+            "name": "Pirate House",
+            "age": 1734,
+            "address": "20 East Broad Street",
+            "hours": "SUN-THURS: 11:00-9:30 & FRI-SAT: 11:00-10:00",
+            "pricing": "N/A",
+            "description": "This tavern was used by many famous pirates during the 1700's, it is now a restaurant",
+            "websiteURL": "https://thepirateshouse.com/",
+            "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Pirate%27s_House%2C_Savannah%2C_Georiga%2C_US.JPG/240px-Pirate%27s_House%2C_Savannah%2C_Georiga%2C_US.JPG",
+            "typeId": 2,
+            "cityId": 1
+        },
+        {
+            "id": 2,
+            "name": "Georgia State Railroad Museum",
+            "age": 1853,
+            "address": "655 Louisville Road",
+            "hours": "THURS-SAT: 9:30-2:30",
+            "pricing": "$11.00",
+            "description": "Features the most complete antebellum railroad of its kind in the world",
+            "websiteURL": "http://www.chsgeorgia.org/gsrm",
+            "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/CG223_Georgia_RR_Museum.jpg/800px-CG223_Georgia_RR_Museum.jpg",
+            "typeId": 8,
+            "cityId": 1
+        },
+        {
+            "id": 3,
+            "name": "Mercer House",
+            "age": 1868,
+            "address": "429 Bull Street",
+            "hours": "MON-SAT: 10:30-4:00 & SUN: 11:30-5:00",
+            "pricing": "$12.50",
+            "description": "The house was the scene of the 1981 shooting death of Danny Hansford by the home's owner, Jim Williams",
+            "websiteURL": "https://mercerhouse.com/",
+            "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Mercer_House_2017.jpg/800px-Mercer_House_2017.jpg",
+            "typeId": 1,
+            "cityId": 1
+        },
+        {
+            "id": 4,
+            "name": "Owens–Thomas House",
+            "age": 1819,
+            "address": "124 Abercorn Street",
+            "hours": "THURS-MON: 10:00-5:00",
+            "pricing": "$20.00",
+            "description": "North America's preeminent example of period English Regency architecture",
+            "websiteURL": "https://www.telfair.org/visit/owens-thomas/",
+            "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/GA_Savannah_Owens-Thomas_House01.jpg/800px-GA_Savannah_Owens-Thomas_House01.jpg",
+            "typeId": 1,
+            "cityId": 1
+        },
+        {
+            "id": 5,
+            "name": "The Olde Pink House",
+            "age": 1789,
+            "address": "23 Abercorn Street",
+            "hours": "TUES-SAT: 11:00-11:00",
+            "pricing": "N/A",
+            "description": "One of the oldest buildings in Savannah, it is now a restaurant",
+            "websiteURL": "https://www.theoldepinkhouserestaurant.com/",
+            "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Olde_Pink_House.jpeg/800px-Olde_Pink_House.jpeg",
+            "typeId": 2,
+            "cityId": 1
+        },
+        {
+            "id": 6,
+            "name": "Green–Meldrim House",
+            "age": 1850,
+            "address": "14 West Macon Street",
+            "hours": "TUES-FRI: 10:00-4:00 & SAT: 10:00-1:00",
+            "pricing": "$7.00",
+            "description": "Use by Union General Sherman during the Civil War as his headquarters",
+            "websiteURL": "https://thepirateshouse.com/",
+            "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Green-Meldrim_House%2C_Savannah%2C_GA%2C_US.JPG/800px-Green-Meldrim_House%2C_Savannah%2C_GA%2C_US.JPG",
+            "typeId": 1,
+            "cityId": 1
+        },
+        {
+            "id": 7,
+            "name": "Wormsloe Plantation Historic Site",
+            "age": 1733,
+            "address": "7601 Skidaway Road",
+            "hours": "MON-SUN: 9:00-5:00",
+            "pricing": "$10.00",
+            "description": "Wormsloe's ruins is the oldest standing structure in Savannah",
+            "websiteURL": "https://gastateparks.org/Wormsloe/",
+            "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Wormsloe_Historic_Site%2C_July_2016.jpg/800px-Wormsloe_Historic_Site%2C_July_2016.jpg",
+            "typeId": 2,
+            "cityId": 1
+        },
+        {
+            "id": 8,
+            "name": "Fort McCallister",
+            "age": 1862,
+            "address": "3894 Fort McAllister Road",
+            "hours": "MON-SUN: 8:00-5:00",
+            "pricing": "$9.00",
+            "description": "The Union captured Savannah when this fort was captured in 1864",
+            "websiteURL": "https://gastateparks.org/FortMcAllister",
+            "imageURL": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Fort_McAllister_Now_03.JPG/800px-Fort_McAllister_Now_03.JPG",
+            "typeId": 3,
+            "cityId": 1
+        },
+        {
+            "id": 9,
+            "name": "Prohibition Museum",
+            "age": 1925,
+            "address": "209 W. St. Julian Street",
+            "hours": "MON-SUN: 10:00-4:00",
+            "pricing": "$16.00",
+            "description": "Learn the history of prohibition during the 1920's",
+            "websiteURL": "https://www.americanprohibitionmuseum.com/",
+            "imageURL": "https://tse4.mm.bing.net/th?id=OIP.-x_Ifg5Z4jtMv-XinMJtyQHaE8&pid=Api&P=0&w=266&h=178",
+            "typeId": 8,
+            "cityId": 1
+        },
+        {
+            "id": 10,
+            "name": "Boneventure Cemetary",
+            "age": 1868,
+            "address": "330 Bonaventure Road",
+            "hours": "MON-SUN: 2:00-3:00",
+            "pricing": "FREE",
+            "description": "Largest cemetary in Savannah",
+            "websiteURL": "https://www.bonaventurehistorical.org/tours/",
+            "imageURL": "https://i.pinimg.com/originals/93/33/4c/93334cc8e5c545f857b9142217e51c75.jpg",
+            "typeId": 7,
+            "cityId": 1
+        },
+        {
+            "id": 11,
+            "name": "Chattanooga Hotel",
+            "age": 1790,
+            "address": "Smokey Mountains",
+            "hours": "8-6",
+            "pricing": 10,
+            "description": "Can see 7 states from Lookout Mountain",
+            "websiteURL": "chattanoogatn.com",
+            "imageURL": "No Image",
+            "typeId": 5,
+            "cityId": 2
+        },
+        {
+            "id": 21,
+            "name": "Nashville Hotel",
+            "age": 1796,
+            "address": "Middle Tennessee",
+            "hours": "8-6",
+            "pricing": 15,
+            "description": "Capital of Tennessee",
+            "websiteURL": "nashvilletn.com",
+            "imageURL": "No Image",
+            "typeId": 5,
+            "cityId": 3
+        }
+    ],
+    "cities": [
+        {
+            "id": 1,
+            "name": "Savannah",
+            "stateId": 1
+        },
+        {
+            "id": 2,
+            "name": "Chattanooga",
+            "stateId": 2
+        },
+        {
+            "id": 3,
+            "name": "Nashville",
+            "stateId": 2
+        }
+    ],
+    "states": [
+        {
+            "id": 1,
+            "name": "Georgia"
+        },
+        {
+            "id": 2,
+            "name": "Tennessee"
+        }
+    ],
+    "types": [
+        {
+            "id": 1,
+            "type": "House"
+        },
+        {
+            "id": 2,
+            "type": "Business"
+        },
+        {
+            "id": 3,
+            "type": "Fort"
+        },
+        {
+            "id": 4,
+            "type": "Battlefield"
+        },
+        {
+            "id": 5,
+            "type": "Marker"
+        },
+        {
+            "id": 6,
+            "type": "Monument"
+        },
+        {
+            "id": 7,
+            "type": "Graveyard"
+        },
+        {
+            "id": 8,
+            "type": "Museum"
+        }
+    ],
+    "trips": [
+        {
+            "id": 1,
+            "name": "Savannah Trip"
+        }
+    ],
+    "landmarkTrips": [
+        {
+            "landmarkId": 1,
+            "tripId": 1,
+            "id": 1
+        },
+        {
+            "landmarkId": 3,
+            "tripId": 1,
+            "id": 2
+        }
+    ]
 }
