@@ -24,7 +24,3 @@ export const LandmarkHTML = ({ typeObj, landmarkObj }) => (
 )
 
 
-    // <a onClick={() => window.open(...landmarkObj.websiteURL)} ></a>
-
-// window.location.href
-

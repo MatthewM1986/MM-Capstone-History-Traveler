@@ -33,15 +33,17 @@ export const ApplicationView = () => {
             </TypeProvider>
 
 
-            {/* <TripProvider>
+            <TripProvider>
                 <LandmarkProvider>
                     <CityProvider>
                         <Route exact path="/">
-                            <TripList />
+                            <Route exact path="/landmarks/:cityId(\d+)" render={
+                                props => <TripList {...props} />
+                            } />
                         </Route>
                     </CityProvider>
                 </LandmarkProvider>
-            </TripProvider> */}
+            </TripProvider>
         </>
     )
 }

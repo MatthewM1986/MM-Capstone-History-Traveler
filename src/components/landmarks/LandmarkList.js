@@ -36,29 +36,6 @@ export const LandmarkList = (props) => {
                             </div>)
                     })}
             </div>
-            <div className="landmarksTrip">
-                <div className="trip--name">
-                    <input type="text" id="tripName" className="form-control" placeholder="Name Your Trip" />
-                </div>
-                {
-                    landmarksArray.filter(lm => lm.landmarkTripId === +props.match.params.landmarkTripId).map(landmarkObj => {
-                        return (
-                            <div key={landmarkObj.id} className="landmarkCard">
-                                <h3 className="landmark__name">{landmarkObj.name}</h3>
-                                <button className="btn--release"
-                                // onClick={() => {
-                                //     releaseLandmark(landmarkTripId)
-                                //         .then(() => {
-                                //             props.history.push("/landmarks/:cityId(\d+)")
-                                //         })
-                                // }}
-                                >Delete</button>
-                            </div>)
-                    })}
-                <button className="btn--submit"
-
-                >Submit</button>
-            </div>
         </section >
     )
 }
