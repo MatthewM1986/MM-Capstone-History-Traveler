@@ -30,11 +30,22 @@ export const NavBar = (props) => {
         } else if (city.current.value !== 0) {
             props.history.push(`/landmarks/${city.current.value}`)
         }
-        console.log("city", city.current.value)
+        // console.log("city", city.current.value)
+    }
+
+    const handleTripSelect = () => {
+        //*if current city value = 0 then push to home (make sure == and not ===)
+        if (trip.current.value === "0") {
+            props.history.push("/")
+
+        } else if (trip.current.value !== 0) {
+            props.history.push(`/landmarks/${trip.current.value}`)
+        }
+        // console.log("city", city.current.value)
     }
 
     return (
-        <div>
+        <div className="navbar">
             <select defaultValue=""
                 onChange={handleCitySelect}
                 name="city" ref={city} id="destinationCity" className="form-control">
@@ -48,9 +59,11 @@ export const NavBar = (props) => {
                 }
             </select >
 
+            <br></br>
 
-
-            < select defaultValue="" name="trip" ref={trip} id="createdTrip" className="form-control" >
+            < select defaultValue=""
+                onChange={handleTripSelect}
+                name="trip" ref={trip} id="createdTrip" className="form-control" >
                 <option value="0">Select Your Trip</option>
                 {
                     tripsArray.map(trip => (
@@ -106,44 +119,3 @@ export const NavBar = (props) => {
 
 
 
-
-// export const NavBar = () => {
-//     const destinations = require("../api/database.json")
-//     return (
-//         // <select>
-//         //     <option value="0">Choose City</option>
-//         //     <option value="savannah">Savannah</option>
-//         //     <option value="chattanooga">Chattanooga</option>
-//         //     <option value="nashville">Nashville</option>
-//         // </select >
-//         <select>
-//             {destinations.cities.map(city => (
-//                 <option key={city.id} value={city.id}>
-//                     {city.name}
-//                 </option>
-//             ))}
-//         </select>
-//     );
-// }
-
-
-
-// export const NavBar = () => {
-//     const [listOpen, setListOpen] = react.useState(false);
-//     const myCallback = (listOpen) => {
-//         setListOpen(listOpen)
-//     }
-//     return (
-//         <ul>
-//             <li className="navbar" onClick={() => setListOpen(!listOpen)}>Choose City</li>
-//             <div>{listOpen ? <Dropdown /> : null}</div>
-//             <li onClick={() => setListOpen(false)}></li>
-//             <Link to="/cities/name">Savannah</Link>
-//             <li onClick={() => setListOpen(false)}></li>
-//             <Link to="/cities/name">Chattanooga</Link>
-//             <li onClick={() => setListOpen(false)}></li>
-//             <Link to="/cities/name">Nashville</Link>
-//         </ul>
-//         <div className="dropdown">{listOpen ? <Dropdown callbackFromParent={myCallback} /> : null}</div>
-//     )
-// }

@@ -1,13 +1,15 @@
   
 .navbar {
   display: flex;
+  flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: left;
+  justify-content: space-around;
 }
 
-.navbar__item {
-  flex-basis: 20%;
+.form-control {
   list-style-type: none;
+    max-width: 500px;
+  height: 10p;
 }
 
 /* .navbar {
