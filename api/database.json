@@ -248,6 +248,11 @@
       "landmarkId": 3,
       "tripId": null,
       "id": 2
+    },
+    {
+      "landmarkId": 8,
+      "tripId": null,
+      "id": 3
     }
   ]
 }

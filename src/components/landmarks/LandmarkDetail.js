@@ -40,7 +40,7 @@ export const LandmarkDetails = (props) => {
         <div className="landmark">
             < LandmarkHTML key={landmark.id} typeObj={typeOfLandmark} landmarkObj={landmark} />
             <br></br>
-            < button onClick={(evt) => {
+            < button className="btn--add" onClick={(evt) => {
                 evt.preventDefault()
                 addToTrip()
             }}>Add

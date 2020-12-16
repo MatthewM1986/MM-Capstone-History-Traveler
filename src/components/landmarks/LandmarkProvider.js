@@ -31,10 +31,17 @@ export const LandmarkProvider = (props) => {
         }).then(getLandmarks)
     }
 
+    const releaseLandmark = landmarkTripId => {
+        return fetch(`http://localhost:8088/landmarkTrips/${landmarkTripId}`, {
+            method: "DELETE"
+        })
+            .then(getLandmarks)
+    }
+
     return (
         <LandmarkContext.Provider value={
             {
-                landmarksArray, getLandmarks, addLandmark
+                landmarksArray, getLandmarks, addLandmark, releaseLandmark
             }
         }>
             {props.children}
