@@ -4,13 +4,13 @@ import { LandmarkHTML } from "./LandmarkHTML"
 import "./Landmark.css"
 import { TypeContext } from "../types/TypeProvider"
 import { TripContext } from "../trips/TripProvider"
+import { CityContext } from "../cities/CityProvider"
 
 export const LandmarkDetails = (props) => {
     const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
     const { typesArray, getTypes } = useContext(TypeContext)
     const { addLandmarkToTrip } = useContext(TripContext)
-
-
+    const { setCurrentCityId, currentCityId } = useContext(CityContext)
 
     const [landmark, setLandmark] = useState({})
     const [typeOfLandmark, setTypeOfLandmark] = useState({})
@@ -37,7 +37,7 @@ export const LandmarkDetails = (props) => {
         //get landmarkid 
         const landmarkId = +props.match.params.landmarkId
         //get tripid
-        const tripId = localStorage.getItem("current_trip_id")
+        const tripId = +localStorage.getItem("current_trip_id")
         //put values into an object and call the function that will post to database
         {
             addLandmarkToTrip({
@@ -45,11 +45,11 @@ export const LandmarkDetails = (props) => {
                 tripId: tripId
             })
                 //Need to figure out how to define cityId
-                .then(() => props.history.push(`/landmarks/${cityId}`))
+                .then(() => props.history.push(`/landmarks/${currentCityId}`))
         }
     }
     // console.log(typeof addLandmarkToTrip)
-    console.log("props", props)
+    // console.log("props", props)
 
     return (
         <div className="landmark">
@@ -61,20 +61,3 @@ export const LandmarkDetails = (props) => {
 
     )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-{/* <button onClick={evt => {
-                evt.preventDefault()
-                addNewLandmarkTripObj()
-            }}>Add to Trip
-            </button> */}

@@ -12,6 +12,7 @@ export const TripContext = React.createContext()
 export const TripProvider = (props) => {
 
     const [tripsArray, setTrips] = useState([])
+    const [landmarkTripsArray, setLandmarkTrips] = useState([])
     // useState returns [initial value of state variable, a function to set the value of the state variable]
 
     const getTrips = () => {
@@ -30,11 +31,11 @@ export const TripProvider = (props) => {
         }).then(getTrips)
     }
 
-    // const getLandmarkTrips = () => {
-    //     return fetch("http://localhost:8088/landmarkTrips")
-    //         .then(res => res.json())
-    //         .then(setLandmarkTrips)
-    // }
+    const getLandmarksByTripId = (tripId) => {
+        return fetch(`http://localhost:8088/landmarkTrips/?tripId=${tripId}`)
+            .then(res => res.json())
+            .then(setLandmarkTrips)
+    }
 
     const addLandmarkToTrip = (newLandmarkTripObj) => {
         return fetch("http://localhost:8088/landmarkTrips", {
@@ -46,17 +47,17 @@ export const TripProvider = (props) => {
         }).then(getTrips)
     }
 
-    // const releaseLandmark = landmarkTripId => {
-    //     return fetch(`http://localhost:8088/landmarkTrips/${landmarkTripId}`, {
-    //         method: "DELETE"
-    //     })
-    //         .then(getTrips)
-    // }
+    const releaseLandmark = landmarkTripId => {
+        return fetch(`http://localhost:8088/landmarkTrips/${landmarkTripId}`, {
+            method: "DELETE"
+        })
+            .then(getTrips)
+    }
 
     return (
         <TripContext.Provider value={
             {
-                tripsArray, getTrips, addTrip, addLandmarkToTrip
+                tripsArray, getTrips, addTrip, addLandmarkToTrip, landmarkTripsArray, getLandmarksByTripId, releaseLandmark
             }
         }>
             {props.children}

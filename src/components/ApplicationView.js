@@ -28,7 +28,7 @@ export const ApplicationView = () => {
                             } />
 
                             <Route exact path="/landmarks/detail/:landmarkId(\d+)" render={
-                                props => <LandmarkDetails {...props} />
+                                props => <LandmarkDetails cityId={props.match.params.cityId} {...props} />
                             } />
                         </CityProvider>
                     </LandmarkProvider>
@@ -46,6 +46,10 @@ export const ApplicationView = () => {
                         <Route exact path="/trips/:tripId(\d+)" render={
                             props => <TripList {...props} />
                         } />
+
+                        {/* <Route exact Path="/trips/${trip.current.value}" render=(
+                            props => <TripDetail {...props} />
+                        ) */}
                     </CityProvider>
                 </LandmarkProvider>
             </TripProvider>

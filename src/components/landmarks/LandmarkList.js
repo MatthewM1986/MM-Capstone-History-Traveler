@@ -2,18 +2,25 @@ import React, { useContext, useEffect } from "react"
 import { LandmarkContext } from "./LandmarkProvider"
 import { LandmarkHTML } from "./LandmarkHTML"
 import "./Landmark.css"
-
+import { CityContext } from "../cities/CityProvider"
 
 
 export const LandmarkList = (props) => {
     // This state changes when `getLandmarks()` is invoked below
     const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
+    const { setCurrentCityId, currentCityId } = useContext(CityContext)
 
     // const tripName = useRef(null)
 
     useEffect(() => {
         getLandmarks()
     }, [])
+
+    useEffect(() => {
+        setCurrentCityId(+props.match.params.cityId)
+        console.log("current city id", +props.match.params.cityId)
+    }, [landmarksArray])
+
 
     return (
         <section className="landmarks_container">

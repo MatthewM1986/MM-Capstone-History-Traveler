@@ -45,11 +45,13 @@ export const NavBar = (props) => {
             // need tripdetail component that gets landmarks for this trip
         }
     }
-
+    console.log("dropdownprop", props)
     return (
         <div className="navbar">
-            <select defaultValue=""
-                onChange={handleCitySelect}
+            <select defaultValue="0"
+                onChange={() => {
+                    handleCitySelect()
+                }}
                 name="city" ref={city} id="destinationCity" className="form-control">
                 <option value="0">Select a City</option>
                 {

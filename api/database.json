@@ -247,28 +247,23 @@
   "landmarkTrips": [
     {
       "landmarkId": 1,
-      "tripId": "2",
+      "tripId": 2,
       "id": 1
     },
     {
-      "landmarkId": 1,
-      "tripId": "2",
+      "landmarkId": 7,
+      "tripId": 2,
       "id": 2
     },
     {
-      "landmarkId": 9,
-      "tripId": "2",
+      "landmarkId": 8,
+      "tripId": 2,
       "id": 3
     },
     {
-      "landmarkId": 1,
-      "tripId": "2",
+      "landmarkId": 9,
+      "tripId": 2,
       "id": 4
-    },
-    {
-      "landmarkId": 1,
-      "tripId": "2",
-      "id": 5
     }
   ]
 }
