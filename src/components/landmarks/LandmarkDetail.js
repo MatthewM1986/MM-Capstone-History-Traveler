@@ -15,11 +15,9 @@ export const LandmarkDetails = (props) => {
     const [typeOfLandmark, setTypeOfLandmark] = useState({})
     const [city, setCity] = useState({})
 
-    // const city = useRef(null)
 
     useEffect(() => {
-        getCities()
-            .then(getTypes)
+        getTypes()
             .then(getLandmarks)
     }, [])
 
@@ -30,21 +28,22 @@ export const LandmarkDetails = (props) => {
 
     useEffect(() => {
         const city = citiesArray.find(c => c.id === +props.match.params.cityId) || {}
-        setCity(city)
+        setLandmark(city)
     }, [citiesArray])
 
-    const addToTrip = () => {
-        const landmarkId = +props.match.params.landmarkId
-        const tripId = +props.match.params.tripId
-        const cityId = +props.match.params.cityId
-        // debugger
-        // console.log(citiesArray)
+    // const addToTrip = () => {
+    //     const landmarkId = +props.match.params.landmarkId
+    //     const tripId = +props.match.params.tripId
+    //     const cityId = +props.match.params.cityId
 
-        addLandmark({
-            landmarkId, tripId
-        }).then(() => props.history.push(`/landmarks/${city.id}`))
-        // }).then(() => props.history.push(`/landmarks/${city.current.value}`))
-    }
+    // debugger
+    // console.log(citiesArray)
+
+    //     addLandmark({
+    //         landmarkId, tripId
+    //     }).then(() => props.history.push(`/landmarks/${city.id}`))
+    //     // }).then(() => props.history.push(`/landmarks/${city.current.value}`))
+    // }
 
     useEffect(() => {
         const typeOfLandmark = typesArray.find(t => t.id === landmark.typeId) || {}
@@ -56,11 +55,14 @@ export const LandmarkDetails = (props) => {
         <div className="landmark">
             < LandmarkHTML key={landmark.id} typeObj={typeOfLandmark} landmarkObj={landmark} />
             <br></br>
-            < button className="btn--add" onClick={(evt) => {
+            < button className="btn--add"
+                onClick={() => props.history.push(`/landmarks/${city.id}`)}>Add</button>
+            {/* < button className="btn--add" onClick={(evt) => {
                 evt.preventDefault()
                 addToTrip()
             }}>Add
-            </button>
-        </div>
+            </button> */}
+        </div >
+
     )
 }

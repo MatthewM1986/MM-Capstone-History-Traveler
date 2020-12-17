@@ -32,7 +32,7 @@ export const LandmarkList = (props) => {
                                 <h3 className="landmark__name">{landmarkObj.name}</h3>
                                 <div className="landmark__image"><img src={landmarkObj.imageURL}></img></div>
                                 < button className="btn--details"
-                                    onClick={() => props.history.push(`/landmark/detail/${landmarkObj.id}`)}>Details</button>
+                                    onClick={() => props.history.push(`/landmarks/detail/${landmarkObj.id}`)}>Details</button>
                             </div>)
                     })}
             </div>
