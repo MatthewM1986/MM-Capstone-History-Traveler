@@ -19,31 +19,37 @@ export const ApplicationView = () => {
                 <Home></Home>
             </Route>
 
-            <TypeProvider>
-                <LandmarkProvider>
-                    <CityProvider>
-                        <Route exact path="/landmarks/:cityId(\d+)" render={
-                            props => <LandmarkList {...props} />
-                        } />
+            <TripProvider>
+                <TypeProvider>
+                    <LandmarkProvider>
+                        <CityProvider>
+                            <Route exact path="/landmarks/:cityId(\d+)" render={
+                                props => <LandmarkList {...props} />
+                            } />
 
-                        <Route exact path="/landmarks/detail/:landmarkId(\d+)" render={
-                            props => <LandmarkDetails {...props} />
-                        } />
-                    </CityProvider>
-                </LandmarkProvider>
-            </TypeProvider>
+                            <Route exact path="/landmarks/detail/:landmarkId(\d+)" render={
+                                props => <LandmarkDetails cityId={props.match.params.cityId} {...props} />
+                            } />
+                        </CityProvider>
+                    </LandmarkProvider>
+                </TypeProvider>
+            </TripProvider>
 
 
             <TripProvider>
                 <LandmarkProvider>
                     <CityProvider>
-                        <Route exact path="/landmarks/:tripId(\d+)" render={
+                        <Route exact path="/landmarks/:cityId(\d+)" render={
                             props => <TripCreate {...props} />
                         } />
 
                         <Route exact path="/trips/:tripId(\d+)" render={
                             props => <TripList {...props} />
                         } />
+
+                        {/* <Route exact Path="/trips/${trip.current.value}" render=(
+                            props => <TripDetail {...props} />
+                        ) */}
                     </CityProvider>
                 </LandmarkProvider>
             </TripProvider>

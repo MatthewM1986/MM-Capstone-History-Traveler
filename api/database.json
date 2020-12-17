@@ -234,10 +234,36 @@
   ],
   "trips": [
     {
-      "name": "fifth trip",
+      "name": "2021 trip",
       "travelerId": 1,
       "id": 1
+    },
+    {
+      "name": "2022 trip",
+      "travelerId": 1,
+      "id": 2
     }
   ],
-  "landmarkTrips": []
+  "landmarkTrips": [
+    {
+      "landmarkId": 1,
+      "tripId": 2,
+      "id": 1
+    },
+    {
+      "landmarkId": 7,
+      "tripId": 2,
+      "id": 2
+    },
+    {
+      "landmarkId": 8,
+      "tripId": 2,
+      "id": 3
+    },
+    {
+      "landmarkId": 9,
+      "tripId": 2,
+      "id": 4
+    }
+  ]
 }

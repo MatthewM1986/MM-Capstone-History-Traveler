@@ -12,6 +12,8 @@ export const CityContext = React.createContext()
 export const CityProvider = (props) => {
 
     const [citiesArray, setCities] = useState([])
+
+    const [currentCityId, setCurrentCityId] = useState(null)
     // useState returns [initial value of state variable, a function to set the value of the state variable]
 
     const getCities = () => {
@@ -24,7 +26,7 @@ export const CityProvider = (props) => {
     return (
         <CityContext.Provider value={
             {
-                citiesArray, getCities
+                citiesArray, getCities, currentCityId, setCurrentCityId
             }
         }>
             {props.children}
