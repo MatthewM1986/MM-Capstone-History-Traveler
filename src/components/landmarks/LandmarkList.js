@@ -8,11 +8,6 @@ import "./Landmark.css"
 export const LandmarkList = (props) => {
     // This state changes when `getLandmarks()` is invoked below
     const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
-    /*
-        What's the effect this is reponding to? Component was
-        "mounted" to the DOM. React renders blank HTML first,
-        then gets the data, then re-renders.
-    */
 
     // const tripName = useRef(null)
 

@@ -12,7 +12,6 @@ export const TripContext = React.createContext()
 export const TripProvider = (props) => {
 
     const [tripsArray, setTrips] = useState([])
-    const [landmarkTripsArray, setLandmarkTrips] = useState([])
     // useState returns [initial value of state variable, a function to set the value of the state variable]
 
     const getTrips = () => {
@@ -31,21 +30,21 @@ export const TripProvider = (props) => {
         }).then(getTrips)
     }
 
-    const getLandmarkTrips = () => {
-        return fetch("http://localhost:8088/landmarkTrips")
-            .then(res => res.json())
-            .then(setLandmarkTrips)
-    }
-
-    // const addLandmark = (landmarkId, tripId) => {
-    //     return fetch("http://localhost:8088/landmarkTrips", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(landmarkId, tripId)
-    //     }).then(getTrips)
+    // const getLandmarkTrips = () => {
+    //     return fetch("http://localhost:8088/landmarkTrips")
+    //         .then(res => res.json())
+    //         .then(setLandmarkTrips)
     // }
+
+    const addLandmarkToTrip = (newLandmarkTripObj) => {
+        return fetch("http://localhost:8088/landmarkTrips", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newLandmarkTripObj)
+        }).then(getTrips)
+    }
 
     // const releaseLandmark = landmarkTripId => {
     //     return fetch(`http://localhost:8088/landmarkTrips/${landmarkTripId}`, {
@@ -57,8 +56,7 @@ export const TripProvider = (props) => {
     return (
         <TripContext.Provider value={
             {
-                tripsArray, getTrips, addTrip, landmarkTripsArray, getLandmarkTrips
-                // addLandmark, releaseLandmark
+                tripsArray, getTrips, addTrip, addLandmarkToTrip
             }
         }>
             {props.children}

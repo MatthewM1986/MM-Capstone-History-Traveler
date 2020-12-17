@@ -36,12 +36,14 @@ export const NavBar = (props) => {
     const handleTripSelect = () => {
         //*if current city value = 0 then push to home (make sure == and not ===)
         if (trip.current.value === "0") {
-            props.history.push("/")
+            // props.history.push("/")
 
         } else if (trip.current.value !== 0) {
-            props.history.push(`/trips/${trip.current.value}`)
+            localStorage.setItem("current_trip_id", trip.current.value)
+            // props.history.push(`/trips/${trip.current.value}`)
+            // add route in application view to match above path and render tripdetail component
+            // need tripdetail component that gets landmarks for this trip
         }
-        // console.log("city", city.current.value)
     }
 
     return (

@@ -1,37 +1,28 @@
-import React, { useContext, useRef, useEffect } from "react"
+import React, { useContext, useRef, useEffect, useState } from "react"
 import { TripContext } from "./TripProvider"
 import { LandmarkContext } from "../landmarks/LandmarkProvider"
 import "./Trip.css"
-import { TripHTML } from "./TripHTML"
-import { TravelerContext } from "../travelers/TravelerProvider"
 
 export const TripCreate = (props) => {
 
-    const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
-    const { tripsArray, getTrips, addTrip, setTrips } = useContext(TripContext)
-    // const { travelersArray, getTravelers } = useContext(TravelerContext)
+    // const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
+    const { tripsArray, getTrips, addTrip } = useContext(TripContext)
+
+    const [newTrip, setTrips] = useState({})
 
     const trip = useRef(null)
-    const traveler = useRef(null)
 
     useEffect(() => {
         getTrips()
-            .then(setTrips)
     }, [])
 
     useEffect(() => {
-        const trip = tripsArray.find(t => t.id === +props.match.params.tripId) || {}
-        setTrips(trip)
+        const newTrip = tripsArray.find(nt => nt.id === +props.match.params.tripId) || {}
+        setTrips(newTrip)
     }, [tripsArray])
-
-    // useEffect(() => {
-    //     getTravelers()
-    //         .then(getTrips)
-    // }, [])
 
     const addNewTrip = () => {
 
-        // const travelerId = +traveler.current.value
         {
             addTrip({
                 name: trip.current.value,
@@ -44,17 +35,11 @@ export const TripCreate = (props) => {
     return (
         <section className="landmarks_container">
             <div className="landmarks"></div>
-            {/* {
-                tripsArray.map(t => <TripHTML key={t.id} tripObj={t} />
-                )} */}
-            {/* return ( */}
             <section className="landmarks_container">
                 < div className="landmarksTrip" >
                     <div className="trip--name">
                         <input type="text" ref={trip} id="tripName" className="form-control" placeholder="Name Your Future Trip" />
-                        {/* < button className="btn--create"
-                            onClick={() => props.history.push(`/${trip.current.value}`)}>Create</button> */}
-                        <button type="create"
+                        <button className="create"
                             onClick={evt => {
                                 evt.preventDefault() // Prevent browser from submitting the form
                                 addNewTrip()
@@ -62,9 +47,12 @@ export const TripCreate = (props) => {
                             className="btn btn-create">
                             Create Trip</button>
                         <div>
-                            {/* <button className="btn--submit"
+                            <h3>Add Landmarks to Visit</h3>
+                        </div>
+                        <div>
+                            <button className="btn--submit"
 
-                        >Submit</button> */}
+                            >Submit</button>
                         </div>
                     </div >
                 </div>
@@ -73,8 +61,6 @@ export const TripCreate = (props) => {
         </section >
     )
 }
-
-// console.log(TripList)
 
 
 
