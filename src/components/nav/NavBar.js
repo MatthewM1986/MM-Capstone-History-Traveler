@@ -39,7 +39,7 @@ export const NavBar = (props) => {
             props.history.push("/")
 
         } else if (trip.current.value !== 0) {
-            props.history.push(`/landmarks/${trip.current.value}`)
+            props.history.push(`/trips/${trip.current.value}`)
         }
         // console.log("city", city.current.value)
     }

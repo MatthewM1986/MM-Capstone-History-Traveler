@@ -12,6 +12,7 @@ export const TripContext = React.createContext()
 export const TripProvider = (props) => {
 
     const [tripsArray, setTrips] = useState([])
+    const [landmarkTripsArray, setLandmarkTrips] = useState([])
     // useState returns [initial value of state variable, a function to set the value of the state variable]
 
     const getTrips = () => {
@@ -20,27 +21,44 @@ export const TripProvider = (props) => {
             .then(setTrips)
     }
 
-    const addLandmark = (landmarkId, tripId) => {
-        return fetch("http://localhost:8088/landmarkTrips", {
+    const addTrip = (trip) => {
+        return fetch("http://localhost:8088/trips", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(landmarkId, tripId)
+            body: JSON.stringify(trip)
         }).then(getTrips)
     }
 
-    const releaseLandmark = landmarkTripId => {
-        return fetch(`http://localhost:8088/landmarkTrips/${landmarkTripId}`, {
-            method: "DELETE"
-        })
-            .then(getTrips)
+    const getLandmarkTrips = () => {
+        return fetch("http://localhost:8088/landmarkTrips")
+            .then(res => res.json())
+            .then(setLandmarkTrips)
     }
+
+    // const addLandmark = (landmarkId, tripId) => {
+    //     return fetch("http://localhost:8088/landmarkTrips", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify(landmarkId, tripId)
+    //     }).then(getTrips)
+    // }
+
+    // const releaseLandmark = landmarkTripId => {
+    //     return fetch(`http://localhost:8088/landmarkTrips/${landmarkTripId}`, {
+    //         method: "DELETE"
+    //     })
+    //         .then(getTrips)
+    // }
 
     return (
         <TripContext.Provider value={
             {
-                tripsArray, getTrips, addLandmark, releaseLandmark
+                tripsArray, getTrips, addTrip, landmarkTripsArray, getLandmarkTrips
+                // addLandmark, releaseLandmark
             }
         }>
             {props.children}
