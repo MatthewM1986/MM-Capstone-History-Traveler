@@ -48,66 +48,83 @@ export const TripCreate = (props) => {
         }
     }
 
+    // const deleteNewLandmarkTripObj = () => {
+    //     //get landmarkid 
+    //     const landmarkId = +props.match.params.landmarkId
+    //     //get tripid
+    //     const tripId = +localStorage.getItem("current_trip_id")
+    //     //put values into an object and call the function that will post to database
+    //     {
+    //         releaseLandmark({
+    //             landmarkId: landmarkId,
+    //             tripId: tripId
+    //         })
+    //             //Need to figure out how to define cityId
+    //             .then(() => props.history.push(`/landmarks/${currentCityId}`))
+    //     }
+    // }
+
     return (
         <section className="landmarks_container">
-            <div className="landmarks"></div>
-            <section className="landmarks_container">
-                < div className="landmarksTrip" >
-                    <div className="trip--name">
-                        <input type="text" ref={trip} id="tripName" className="form-control" placeholder="Name Your Future Trip" />
-                        <button className="create"
-                            onClick={evt => {
-                                evt.preventDefault()
-                                addNewTrip()
-                            }}
-                            className="btn btn-create">
-                            Create Trip</button>
-                        <div>
-                            <h3>Add Landmarks to Visit</h3>
-                        </div>
-                        <div>
-                            {tripsArray.map(ta => {
-                                // debugger
-                                const tripList = landmarkTripsArray.filter(lta => lta.tripId === ta.id)
-                                return (
-                                    <section>
-                                        <div>
-                                            {ta.name}
-                                        </div>
+            < div className="landmarks" >
+                <div className="trip--name">
+                    <input type="text" ref={trip} id="tripName" className="form-control" placeholder="Name Your Future Trip" />
+                    <button className="create"
+                        onClick={evt => {
+                            evt.preventDefault()
+                            addNewTrip()
+                        }}
+                        className="btn btn-create">
+                        Create Trip</button>
+                    <div>
+                        <h3>Add Landmarks to Visit</h3>
+                    </div>
+                    <div>
+                        {tripsArray.map(ta => {
+                            // debugger
+                            const tripList = landmarkTripsArray.filter(lta => lta.tripId === ta.id)
+                            return (
+                                <section>
+                                    <h2>
+                                        {ta.name}
+                                    </h2>
+                                    <div className="landmarksTrip">
                                         {
                                             tripList.map(tl => {
-                                                console.log("trip list", tripList)
+                                                // console.log("trip list", tripList)
                                                 const landmarksSelected = landmarksArray.find(lm => tl.landmarkId === lm.id)
-                                                console.log("landmark array", landmarksArray)
-                                                console.log("landmark selected", landmarksSelected)
+                                                // console.log("landmark array", landmarksArray)
+                                                // console.log("landmark selected", landmarksSelected)
                                                 return (
                                                     <div key={landmarksSelected.id} className="landmarkCard">
                                                         <h3 className="landmark__name">{landmarksSelected.name}</h3>
                                                         <div className="landmark__image"><img src={landmarksSelected.imageURL}></img></div>
                                                         <button className="btn--release"
                                                             onClick={() => {
-                                                                releaseLandmark(landmarksSelected.id)
+                                                                releaseLandmark(tripId)
                                                                     .then(() => {
                                                                         props.history.push(`/landmarks/${currentCityId}`)
                                                                     })
                                                             }}
                                                         >Delete</button>
+                                                        {/* <button onClick={deleteNewLandmarkTripObj} >
+                                                            Delete
+                                                        </button> */}
                                                     </div>)
                                             })}
-                                    </section>
-                                )
-                            })
-                            }
-                        </div>
-                        {/* <div>
+                                    </div>
+                                </section>
+                            )
+                        })
+                        }
+                    </div>
+                    {/* <div>
                             <button className="btn--submit"
 
                             >Submit</button>
                         </div> */}
-                    </div >
-                </div>
-            </section>
-    )
-        </section >
+                </div >
+            </div>
+        </section>
     )
 }

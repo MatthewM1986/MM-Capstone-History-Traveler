@@ -47,8 +47,8 @@ export const TripProvider = (props) => {
         }).then(getTrips)
     }
 
-    const releaseLandmark = landmarkTripId => {
-        return fetch(`http://localhost:8088/landmarkTrips/${landmarkTripId}`, {
+    const releaseLandmark = newLandmarkTripObj => {
+        return fetch(`http://localhost:8088/landmarkTrips/${newLandmarkTripObj}`, {
             method: "DELETE"
         })
             .then(getLandmarksByTripId)

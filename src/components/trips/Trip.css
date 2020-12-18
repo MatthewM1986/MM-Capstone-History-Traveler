@@ -5,6 +5,12 @@
     justify-content: space-between;
 }
 
+.landmarks_container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .landmarks {
     display: flex;
     flex-wrap: wrap;
@@ -18,6 +24,8 @@
     justify-content: space-between;
     border: 3px solid goldenrod;
   }
+
+  
   
   .landmark {
       flex-basis: 28%;
