@@ -84,7 +84,7 @@ export const TripCreate = (props) => {
                             // debugger
                             const tripList = landmarkTripsArray.filter(lta => lta.tripId === ta.id)
                             return (
-                                <section >
+                                <section>
                                     <h2>
                                         {ta.name}
                                     </h2>
