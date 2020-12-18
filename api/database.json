@@ -241,11 +241,6 @@
   ],
   "landmarkTrips": [
     {
-      "landmarkId": 1,
-      "tripId": 1,
-      "id": 1
-    },
-    {
       "landmarkId": 8,
       "tripId": 1,
       "id": 2

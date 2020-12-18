@@ -92,17 +92,17 @@ export const TripCreate = (props) => {
                                         </div>
                                         {
                                             tripList.map(tl => {
-                                                console.log("trip list", tripList)
+                                                // console.log("trip list", tripList)
                                                 const landmarksSelected = landmarksArray.find(lm => tl.landmarkId === lm.id)
-                                                console.log("landmark array", landmarksArray)
-                                                console.log("landmark selected", landmarksSelected)
+                                                // console.log("landmark array", landmarksArray)
+                                                // console.log("landmark selected", landmarksSelected)
                                                 return (
                                                     <div key={landmarksSelected.id} className="landmarkCard">
                                                         <h3 className="landmark__name">{landmarksSelected.name}</h3>
                                                         <div className="landmark__image"><img src={landmarksSelected.imageURL}></img></div>
                                                         <button className="btn--release"
                                                             onClick={() => {
-                                                                releaseLandmark(landmarksSelected.id)
+                                                                releaseLandmark(tripId)
                                                                     .then(() => {
                                                                         props.history.push(`/landmarks/${currentCityId}`)
                                                                     })
