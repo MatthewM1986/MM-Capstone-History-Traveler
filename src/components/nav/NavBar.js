@@ -10,6 +10,7 @@ import { Route } from "react-router-dom"
 export const NavBar = (props) => {
     const { citiesArray, getCities } = useContext(CityContext)
     const { tripsArray, getTrips } = useContext(TripContext)
+    const { currentCityId } = useContext(CityContext)
 
     const city = useRef(null)
     const trip = useRef(null)
@@ -40,13 +41,14 @@ export const NavBar = (props) => {
 
         } else if (trip.current.value !== 0) {
             parseInt(localStorage.setItem("current_trip_id", trip.current.value))
-            props.history.push(`/trips/${trip.current.value}`)
+            // props.history.push(`/landmarks/${currentCityId}`)
+            // props.history.push(`/trips/${trip.current.value}`)
 
             // add route in application view to match above path and render tripdetail component
             // need tripdetail component that gets landmarks for this trip
         }
     }
-    console.log("dropdownprop", props)
+    // console.log("dropdownprop", props)
     return (
         <div className="navbar">
             <select defaultValue="0"

@@ -8,7 +8,7 @@ import { CityContext } from "../cities/CityProvider"
 export const LandmarkList = (props) => {
     // This state changes when `getLandmarks()` is invoked below
     const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
-    const { setCurrentCityId, currentCityId } = useContext(CityContext)
+    const { setCurrentCityId } = useContext(CityContext)
 
     // const tripName = useRef(null)
 
@@ -18,7 +18,7 @@ export const LandmarkList = (props) => {
 
     useEffect(() => {
         setCurrentCityId(+props.match.params.cityId)
-        console.log("current city id", +props.match.params.cityId)
+        // console.log("current city id", +props.match.params.cityId)
     }, [landmarksArray])
 
 

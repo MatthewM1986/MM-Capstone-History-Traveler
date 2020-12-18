@@ -66,7 +66,7 @@ export const TripCreate = (props) => {
                             <h3>Add Landmarks to Visit</h3>
                         </div>
                         <div>
-                            {tripsArray.map(ta => {
+                            {/* {tripsArray.map(ta => {
                                 // debugger
                                 const tripList = landmarkTripsArray.filter(lta => lta.tripId === ta.id)
                                 return (
@@ -74,39 +74,41 @@ export const TripCreate = (props) => {
                                         <div>
                                             {ta.name}
                                         </div>
-                                        {
+                                        { */}
+
                                             tripList.map(tl => {
-                                                console.log("trip list", tripList)
+                                                // console.log("trip list", tripList)
                                                 const landmarksSelected = landmarksArray.find(lm => tl.landmarkId === lm.id)
-                                                console.log("landmark array", landmarksArray)
-                                                console.log("landmark selected", landmarksSelected)
+                                                // console.log("landmark array", landmarksArray)
+                                                // console.log("landmark selected", landmarksSelected)
                                                 return (
                                                     <div key={landmarksSelected.id} className="landmarkCard">
-                                                        <h3 className="landmark__name">{landmarksSelected.name}</h3>
-                                                        <div className="landmark__image"><img src={landmarksSelected.imageURL}></img></div>
-                                                        <button className="btn--release"
-                                                            onClick={() => {
-                                                                releaseLandmark(landmarksSelected.id)
-                                                                    .then(() => {
-                                                                        props.history.push(`/landmarks/${currentCityId}`)
-                                                                    })
-                                                            }}
-                                                        >Delete</button>
-                                                    </div>)
+                                <h3 className="landmark__name">{landmarksSelected.name}</h3>
+                                <div className="landmark__image"><img src={landmarksSelected.imageURL}></img></div>
+                                <button className="btn--release"
+                                    onClick={() => {
+                                        releaseLandmark(landmarksSelected.id)
+                                            .then(() => {
+                                                props.history.push(`/landmarks/${currentCityId}`)
+                                                // .then(() => props.history.push(`/landmarks/${currentCityId}`))
+                                            })
+                                    }}
+                                >Delete</button>
+                            </div>)
                                             })}
                                     </section>
                                 )
                             })
                             }
                         </div>
-                        {/* <div>
+                    {/* <div>
                             <button className="btn--submit"
 
                             >Submit</button>
                         </div> */}
-                    </div >
+                </div >
                 </div>
-            </section>
+        </section>
     )
         </section >
     )
