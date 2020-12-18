@@ -242,6 +242,11 @@
       "name": "2022 trip",
       "travelerId": 1,
       "id": 2
+    },
+    {
+      "name": "Awesome trip",
+      "travelerId": 1,
+      "id": 3
     }
   ],
   "landmarkTrips": [
@@ -264,6 +269,16 @@
       "landmarkId": 9,
       "tripId": 2,
       "id": 4
+    },
+    {
+      "landmarkId": 10,
+      "tripId": 2,
+      "id": 5
+    },
+    {
+      "landmarkId": 9,
+      "tripId": 1,
+      "id": 6
     }
   ]
 }
