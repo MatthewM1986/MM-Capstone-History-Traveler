@@ -51,7 +51,7 @@ export const TripProvider = (props) => {
         return fetch(`http://localhost:8088/landmarkTrips/${landmarkTripId}`, {
             method: "DELETE"
         })
-            .then(getTrips)
+            .then(getLandmarksByTripId)
     }
 
     return (
