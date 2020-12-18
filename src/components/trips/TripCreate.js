@@ -66,30 +66,29 @@ export const TripCreate = (props) => {
 
     return (
         <section className="landmarks_container">
-            <div className="landmarks"></div>
-            <section className="landmarks_container">
-                < div className="landmarksTrip" >
-                    <div className="trip--name">
-                        <input type="text" ref={trip} id="tripName" className="form-control" placeholder="Name Your Future Trip" />
-                        <button className="create"
-                            onClick={evt => {
-                                evt.preventDefault()
-                                addNewTrip()
-                            }}
-                            className="btn btn-create">
-                            Create Trip</button>
-                        <div>
-                            <h3>Add Landmarks to Visit</h3>
-                        </div>
-                        <div>
-                            {tripsArray.map(ta => {
-                                // debugger
-                                const tripList = landmarkTripsArray.filter(lta => lta.tripId === ta.id)
-                                return (
-                                    <section>
-                                        <div>
-                                            {ta.name}
-                                        </div>
+            < div className="landmarks" >
+                <div className="trip--name">
+                    <input type="text" ref={trip} id="tripName" className="form-control" placeholder="Name Your Future Trip" />
+                    <button className="create"
+                        onClick={evt => {
+                            evt.preventDefault()
+                            addNewTrip()
+                        }}
+                        className="btn btn-create">
+                        Create Trip</button>
+                    <div>
+                        <h3>Add Landmarks to Visit</h3>
+                    </div>
+                    <div>
+                        {tripsArray.map(ta => {
+                            // debugger
+                            const tripList = landmarkTripsArray.filter(lta => lta.tripId === ta.id)
+                            return (
+                                <section >
+                                    <h2>
+                                        {ta.name}
+                                    </h2>
+                                    <div className="landmarksTrip">
                                         {
                                             tripList.map(tl => {
                                                 // console.log("trip list", tripList)
@@ -113,20 +112,19 @@ export const TripCreate = (props) => {
                                                         </button> */}
                                                     </div>)
                                             })}
-                                    </section>
-                                )
-                            })
-                            }
-                        </div>
-                        {/* <div>
+                                    </div>
+                                </section>
+                            )
+                        })
+                        }
+                    </div>
+                    {/* <div>
                             <button className="btn--submit"
 
                             >Submit</button>
                         </div> */}
-                    </div >
-                </div>
-            </section>
-    )
-        </section >
+                </div >
+            </div>
+        </section>
     )
 }
