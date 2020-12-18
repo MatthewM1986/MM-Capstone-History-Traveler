@@ -48,6 +48,22 @@ export const TripCreate = (props) => {
         }
     }
 
+    // const deleteNewLandmarkTripObj = () => {
+    //     //get landmarkid 
+    //     const landmarkId = +props.match.params.landmarkId
+    //     //get tripid
+    //     const tripId = +localStorage.getItem("current_trip_id")
+    //     //put values into an object and call the function that will post to database
+    //     {
+    //         releaseLandmark({
+    //             landmarkId: landmarkId,
+    //             tripId: tripId
+    //         })
+    //             //Need to figure out how to define cityId
+    //             .then(() => props.history.push(`/landmarks/${currentCityId}`))
+    //     }
+    // }
+
     return (
         <section className="landmarks_container">
             <div className="landmarks"></div>
@@ -92,6 +108,9 @@ export const TripCreate = (props) => {
                                                                     })
                                                             }}
                                                         >Delete</button>
+                                                        {/* <button onClick={deleteNewLandmarkTripObj} >
+                                                            Delete
+                                                        </button> */}
                                                     </div>)
                                             })}
                                     </section>
