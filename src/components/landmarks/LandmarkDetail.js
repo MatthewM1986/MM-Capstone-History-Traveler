@@ -10,7 +10,7 @@ export const LandmarkDetails = (props) => {
     const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
     const { typesArray, getTypes } = useContext(TypeContext)
     const { addLandmarkToTrip } = useContext(TripContext)
-    const { setCurrentCityId, currentCityId } = useContext(CityContext)
+    const { currentCityId } = useContext(CityContext)
 
     const [landmark, setLandmark] = useState({})
     const [typeOfLandmark, setTypeOfLandmark] = useState({})
