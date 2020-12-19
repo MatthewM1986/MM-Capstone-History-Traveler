@@ -20,13 +20,14 @@ export const LandmarkProvider = (props) => {
             .then(setLandmarks)
     }
 
+    console.log("landmark context", LandmarkContext)
     return (
         <LandmarkContext.Provider value={
             {
                 landmarksArray, getLandmarks
             }
         }>
-            {props.children}
-        </LandmarkContext.Provider>
+            { props.children}
+        </LandmarkContext.Provider >
     )
 }
