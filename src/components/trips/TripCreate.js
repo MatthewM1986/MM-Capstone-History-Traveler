@@ -5,7 +5,7 @@ import "./Trip.css"
 import { CityContext } from "../cities/CityProvider"
 
 export const TripCreate = (props) => {
-    console.log("trip create props", props)
+    // console.log("trip create props", props)
 
     // const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
     const { tripsArray, getTrips, addTrip, getLandmarksByTripId, landmarkTripsArray, releaseLandmark } = useContext(TripContext)
@@ -24,7 +24,7 @@ export const TripCreate = (props) => {
 
     useEffect(() => {
         getTrips()
-            .then(console.log("I got the trips"))
+        // .then(console.log("I got the trips"))
         // .then(getLandmarks())
     }, [])
 
@@ -52,7 +52,7 @@ export const TripCreate = (props) => {
                 userId: +localStorage.getItem("app_user_id")
             })
                 .then(() => props.history.push(`/landmarks/${props.match.params.cityId}`))
-                .then(console.log("I created a trip"))
+                // .then(console.log("I created a trip"))
                 .then(getLandmarks)
         }
     }
@@ -90,7 +90,7 @@ export const TripCreate = (props) => {
                     </div>
                     <div>
                         {tripsArray.map(ta => {
-                            console.log("trips array", ta)
+                            // console.log("trips array", ta)
                             const tripList = landmarkTripsArray.filter(lta => lta.tripId === ta.id)
                             return (
                                 <section>
@@ -102,7 +102,7 @@ export const TripCreate = (props) => {
                                             tripList.map(tl => {
                                                 // console.log("trip list", tripList)
                                                 const landmarksSelected = landmarksArray.find(lm => tl.landmarkId === lm.id)
-                                                console.log("landmark array", landmarksArray)
+                                                // console.log("landmark array", landmarksArray)
                                                 // console.log("landmark selected", landmarksSelected)
                                                 return (
                                                     <div key={"landmark--" + landmarksSelected.id} className="landmarkCard">

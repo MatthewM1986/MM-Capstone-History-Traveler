@@ -19,9 +19,9 @@ export const LandmarkProvider = (props) => {
             .then(res => res.json())
             .then(res => setLandmarks(res))
     }
-    console.log("this is the landmarks", landmarksArray)
+    // console.log("this is the landmarks", landmarksArray)
 
-    console.log("landmark context", LandmarkContext)
+    // console.log("landmark context", LandmarkContext)
     return (
         <LandmarkContext.Provider value={
             {
