@@ -17,16 +17,18 @@ export const LandmarkProvider = (props) => {
     const getLandmarks = () => {
         return fetch("http://localhost:8088/landmarks")
             .then(res => res.json())
-            .then(setLandmarks)
+            .then(res => setLandmarks(res))
     }
+    console.log("this is the landmarks", landmarksArray)
 
+    console.log("landmark context", LandmarkContext)
     return (
         <LandmarkContext.Provider value={
             {
                 landmarksArray, getLandmarks
             }
         }>
-            {props.children}
-        </LandmarkContext.Provider>
+            { props.children}
+        </LandmarkContext.Provider >
     )
 }

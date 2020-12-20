@@ -37,21 +37,23 @@ export const ApplicationView = () => {
 
 
             <TripProvider>
-                <LandmarkProvider>
-                    <CityProvider>
-                        <Route exact path="/landmarks/:cityId(\d+)" render={
-                            props => <TripCreate {...props} />
-                        } />
+                <TypeProvider>
+                    <LandmarkProvider>
+                        <CityProvider>
+                            <Route exact path="/landmarks/:cityId(\d+)" render={
+                                props => <TripCreate {...props} />
+                            } />
 
-                        <Route exact path="/trips/:tripId(\d+)" render={
-                            props => <TripList {...props} />
-                        } />
+                            <Route exact path="/trips/:tripId(\d+)" render={
+                                props => <TripList {...props} />
+                            } />
 
-                        {/* <Route exact Path="/trips/${trip.current.value}" render=(
+                            {/* <Route exact Path="/trips/${trip.current.value}" render=(
                             props => <TripDetail {...props} />
                         ) */}
-                    </CityProvider>
-                </LandmarkProvider>
+                        </CityProvider>
+                    </LandmarkProvider>
+                </TypeProvider>
             </TripProvider>
         </>
     )

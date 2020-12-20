@@ -5,6 +5,7 @@ import "./Trip.css"
 import { CityContext } from "../cities/CityProvider"
 
 export const TripCreate = (props) => {
+    console.log("trip create props", props)
 
     // const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
     const { tripsArray, getTrips, addTrip, getLandmarksByTripId, landmarkTripsArray, releaseLandmark } = useContext(TripContext)
@@ -18,13 +19,19 @@ export const TripCreate = (props) => {
     const tripId = localStorage.getItem("current_trip_id")
 
     useEffect(() => {
-        getTrips()
-            .then(getLandmarks())
+        getLandmarks()
     }, [])
 
     useEffect(() => {
-        getLandmarksByTripId(tripId)
+        getTrips()
+            .then(console.log("I got the trips"))
+        // .then(getLandmarks())
     }, [])
+
+
+    useEffect(() => {
+        getLandmarksByTripId(tripId)
+    }, [tripsArray])
     // console.log("error", props.match.params.tripId)
 
     // useEffect(() => {
@@ -44,7 +51,9 @@ export const TripCreate = (props) => {
                 name: trip.current.value,
                 userId: +localStorage.getItem("app_user_id")
             })
-                .then(() => props.history.push(`/trips/${trip.current.value.id}`))
+                .then(() => props.history.push(`/landmarks/${props.match.params.cityId}`))
+                .then(console.log("I created a trip"))
+                .then(getLandmarks)
         }
     }
 
@@ -81,7 +90,7 @@ export const TripCreate = (props) => {
                     </div>
                     <div>
                         {tripsArray.map(ta => {
-                            // debugger
+                            console.log("trips array", ta)
                             const tripList = landmarkTripsArray.filter(lta => lta.tripId === ta.id)
                             return (
                                 <section>
@@ -93,18 +102,20 @@ export const TripCreate = (props) => {
                                             tripList.map(tl => {
                                                 // console.log("trip list", tripList)
                                                 const landmarksSelected = landmarksArray.find(lm => tl.landmarkId === lm.id)
-                                                // console.log("landmark array", landmarksArray)
+                                                console.log("landmark array", landmarksArray)
                                                 // console.log("landmark selected", landmarksSelected)
                                                 return (
-                                                    <div key={landmarksSelected.id} className="landmarkCard">
+                                                    <div key={"landmark--" + landmarksSelected.id} className="landmarkCard">
                                                         <h3 className="landmark__name">{landmarksSelected.name}</h3>
                                                         <div className="landmark__image"><img src={landmarksSelected.imageURL}></img></div>
                                                         <button className="btn--release"
                                                             onClick={() => {
-                                                                releaseLandmark(tripId)
-                                                                    .then(() => {
-                                                                        props.history.push(`/landmarks/${currentCityId}`)
-                                                                    })
+                                                                releaseLandmark(tl.id)
+                                                                    .then(getLandmarksByTripId(tripId))
+
+                                                                // .then(() => {
+                                                                //     props.history.push(`/landmarks/${currentCityId}`)
+                                                                // })
                                                             }}
                                                         >Delete</button>
                                                         {/* <button onClick={deleteNewLandmarkTripObj} >

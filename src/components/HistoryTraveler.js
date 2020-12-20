@@ -7,6 +7,7 @@ import { NavBar } from "./nav/NavBar"
 import "./HistoryTraveler.css"
 import { CityProvider } from "./cities/CityProvider"
 import { TripProvider } from "./trips/TripProvider"
+import { LandmarkProvider } from "./landmarks/LandmarkProvider"
 
 export const HistoryTraveler = () => (
     <>
@@ -17,7 +18,9 @@ export const HistoryTraveler = () => (
                     <>
                         <CityProvider>
                             <TripProvider>
-                                <Route render={props => <NavBar {...props} />} />
+                                <LandmarkProvider>
+                                    <Route render={props => <NavBar {...props} />} />
+                                </LandmarkProvider>
                             </TripProvider>
                         </CityProvider>
 
