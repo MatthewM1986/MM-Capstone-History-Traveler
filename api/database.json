@@ -429,29 +429,19 @@
       "name": "Test Trip 2",
       "userId": 1,
       "id": 3
-    }
-  ],
-  "landmarkTrips": [
-    {
-      "landmarkId": 3,
-      "tripId": 1,
-      "id": 2
     },
     {
-      "landmarkId": 4,
-      "tripId": 1,
-      "id": 3
-    },
-    {
-      "landmarkId": 5,
-      "tripId": 1,
+      "name": "Test Trip 3",
+      "userId": 1,
       "id": 4
     },
     {
-      "landmarkId": 1,
-      "tripId": 1,
+      "name": "Test Trip 4",
+      "userId": 1,
       "id": 5
-    },
+    }
+  ],
+  "landmarkTrips": [
     {
       "landmarkId": 11,
       "tripId": 1,

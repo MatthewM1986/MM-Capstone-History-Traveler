@@ -6,17 +6,20 @@ import { CityContext } from "../cities/CityProvider"
 import { TripContext } from "../trips/TripProvider"
 import { Home } from "../home/Home"
 import { Route } from "react-router-dom"
+import { LandmarkContext } from "../landmarks/LandmarkProvider"
 
 export const NavBar = (props) => {
     const { citiesArray, getCities } = useContext(CityContext)
     const { tripsArray, getTrips } = useContext(TripContext)
     const { currentCityId } = useContext(CityContext)
+    const { getLandmarks } = useContext(LandmarkContext)
 
     const city = useRef(null)
     const trip = useRef(null)
 
     useEffect(() => {
-        getCities()
+        getLandmarks()
+            .then(getCities())
     }, [])
 
     useEffect(() => {

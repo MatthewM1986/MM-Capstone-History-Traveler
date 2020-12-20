@@ -13,7 +13,7 @@ export const CityProvider = (props) => {
 
     const [citiesArray, setCities] = useState([])
 
-    const [currentCityId, setCurrentCityId] = useState(null)
+    const [currentCityId, setCurrentCityId] = useState()
     // useState returns [initial value of state variable, a function to set the value of the state variable]
 
     const getCities = () => {
@@ -22,11 +22,17 @@ export const CityProvider = (props) => {
             .then(setCities)
     }
 
+    const getCurrentCityId = (id) => {
+        return fetch(`http://localhost:8088/cities/${id}`)
+            .then(res => res.json())
+            .then(setCurrentCityId)
+    }
+
 
     return (
         <CityContext.Provider value={
             {
-                citiesArray, getCities, currentCityId, setCurrentCityId
+                citiesArray, getCities, currentCityId, getCurrentCityId, setCurrentCityId
             }
         }>
             {props.children}
