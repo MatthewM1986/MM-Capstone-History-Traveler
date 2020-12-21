@@ -16,7 +16,6 @@ export const LandmarkList = (props) => {
 
     useEffect(() => {
         setCurrentCityId(+props.match.params.cityId)
-        // console.log("current city id", +props.match.params.cityId)
     }, [landmarksArray])
 
 
@@ -26,7 +25,6 @@ export const LandmarkList = (props) => {
                 {/* <h1>${cities.name}</h1> */}
                 {
                     landmarksArray.filter(lm => lm.cityId === +props.match.params.cityId).map(landmarkObj => {
-                        // console.log("before map", landmarksArray.filter(lm => lm.cityId === +props.match.params.cityId)
                         return (
                             <div key={landmarkObj.id} className="landmarkCard">
                                 <h3 className="landmark__name">{landmarkObj.name}</h3>

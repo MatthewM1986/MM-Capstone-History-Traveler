@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from "react"
 import { TripContext } from "./TripProvider"
 import { LandmarkContext } from "../landmarks/LandmarkProvider"
+import { LandmarkHTML } from "../landmarks/LandmarkHTML"
 import "./Trip.css"
+import { TypeContext } from "../types/TypeProvider"
 
 
 export const TripDetails = (props) => {
@@ -9,79 +11,55 @@ export const TripDetails = (props) => {
 
     const { tripsArray, getTrips, getLandmarksByTripId, landmarkTripsArray } = useContext(TripContext)
     const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
+    const { typesArray, getTypes } = useContext(TypeContext)
 
-    const [newTrip, setTrips] = useState({})
+    const [typeOfLandmark, setTypeOfLandmark] = useState({})
+    const [landmark, setLandmark] = useState({})
+    const [trip, setTrips] = useState({})
+    const [landmarkTripsChosen, setLandmarkTripsChosen] = useState([])
 
     useEffect(() => {
         getTrips()
     }, [])
 
     useEffect(() => {
-        getLandmarks()
-    }, [])
+        const foundTrip = tripsArray.find(t => t.id === +props.match.params.tripId) || {}
+        setTrips(foundTrip)
+        getLandmarksByTripId(foundTrip.id)
+        // this watches the proprty of a URL
+    }, [tripsArray, props.match.params.tripId])
 
     useEffect(() => {
-        const trip = tripsArray.find(t => t.id === +props.match.params.tripId) || {}
-        setTrips(trip)
-    }, [tripsArray])
+        const chosenLandmarkTrips = landmarkTripsArray.filter(lta => lta.tripId === trip.id) || []
+        setLandmarkTripsChosen(chosenLandmarkTrips)
+    }, [landmarkTripsArray])
 
+    useEffect(() => {
+        getTypes()
+            .then(getLandmarks)
+    }, [])
 
 
     return (
         <section className="landmarks_container">
             < div className="landmarks" ></div>
             < div >
-                {
-                    tripsArray.map(ta => {
-                        // console.log("trips array", ta)
-                        const tripList = landmarkTripsArray.filter(lta => lta.tripId === ta.id)
-                        return (
-                            <section>
-                                <h2>
-                                    {ta.name}
-                                </h2>
-                                <div className="landmarksTrip">
-                                    {
-                                        tripList.map(tl => {
-                                            // console.log("trip list", tripList)
-                                            const landmarksSelected = landmarksArray.find(lm => tl.landmarkId === lm.id)
-                                            // console.log("landmark array", landmarksArray)
-                                            // console.log("landmark selected", landmarksSelected)
-                                            return (
-                                                <div key={"landmarks--" + landmarksSelected.id} className="landmarkCard">
-                                                    <h3 className="landmark__name">{landmarksSelected.name}</h3>
-                                                    <div className="landmark__image"><img src={landmarksSelected.imageURL}></img></div>
-                                                </div>)
-                                        })}
-                                </div>
-                            </section>
-                        )
-                    })
-                }
+                <section>
+                    <h2>
+                        {trip.name}
+                    </h2>
+                    <div className="landmarksTrip">
+                        {
+                            landmarkTripsChosen.map(tl => {
+                                const foundLandmarkObj = landmarksArray.find(lm => tl.landmarkId === lm.id)
+                                return (
+                                    <div className="landmarkTripCard">
+                                        < LandmarkHTML key={foundLandmarkObj.id} typeObj={typeOfLandmark} landmarkObj={foundLandmarkObj} />
+                                    </div>)
+                            })}
+                    </div>
+                </section>
             </ div>
         </section >
     )
 }
-
-
-
-
-
-
-//     return (
-//         <section className="landmarks_container">
-//             <div className="landmarks">
-//                 {/* <h1>${trip.name}</h1> */}
-//                 {
-//                     landmarksArray.filter(lm => lm.cityId === +props.match.params.tripId).map(tripObj => {
-//                         // console.log("before map", landmarksArray.filter(lm => lm.cityId === +props.match.params.cityId)
-//                         return (
-//                             <div key={tripObj.id} className="landmarkCard">
-//                                 <h3 className="landmark__name">{tripObj.name}</h3>
-//                                 <div className="landmark__image"><img src={tripObj.imageURL}></img></div>
-//                             </div>)
-//                     })}
-//             </div>
-//         </section >
-//     )
-// }

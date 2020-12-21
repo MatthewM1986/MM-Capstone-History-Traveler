@@ -18,7 +18,7 @@ export const LandmarkHTML = ({ typeObj, landmarkObj }) => (
         <h5>Address</h5>
         <div className="landmark__address">{landmarkObj.address}</div>
         <h5>Website</h5>
-        <h4 className="landmark__website"><a target="_blank" href={landmarkObj.websiteURL}>{landmarkObj.websiteURL}</a></h4>
+        <h4 className="landmark__website" ><a target="_blank" href={landmarkObj.websiteURL}>{landmarkObj.websiteURL}</a></h4>
     </section >
 )
 
