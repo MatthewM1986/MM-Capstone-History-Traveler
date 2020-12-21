@@ -31,7 +31,6 @@ export const NavBar = (props) => {
         } else if (city.current.value !== 0) {
             props.history.push(`/landmarks/${city.current.value}`)
         }
-        // console.log("city", city.current.value)
     }
 
     const handleTripSelect = () => {
@@ -42,9 +41,9 @@ export const NavBar = (props) => {
         } else if (trip.current.value !== 0) {
             parseInt(localStorage.setItem("current_trip_id", trip.current.value))
             props.history.push(`/trips/${trip.current.value}`)
+            console.log("trip current value", trip.current.value)
         }
     }
-    // console.log("dropdownprop", props)
     return (
         <div className="navbar">
             <select defaultValue="0"
@@ -81,46 +80,3 @@ export const NavBar = (props) => {
         </div >
     )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export const NavBar = (props) => {
-//     return (
-//         <ul className="navbar">
-//             <li className="navbar__item active">
-//                 <Link className="navbar__link" to="/">NSS Kennels</Link>
-//             </li>
-//             <li className="navbar__item">
-//                 <Link className="navbar__link" to="/animals">Animals</Link>
-//             </li>
-//         </ul>
-//     )
-// }
-
-
-
-
-
-

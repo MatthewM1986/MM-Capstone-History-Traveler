@@ -32,7 +32,7 @@ export const TripProvider = (props) => {
     }
 
     const getLandmarksByTripId = (tripId) => {
-        return fetch(`http://localhost:8088/landmarkTrips/?tripId=${tripId}`)
+        return fetch(`http://localhost:8088/landmarkTrips?_expand=trip&tripId=${tripId}`)
             .then(res => res.json())
             .then(setLandmarkTrips)
     }

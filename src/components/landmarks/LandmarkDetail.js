@@ -48,8 +48,6 @@ export const LandmarkDetails = (props) => {
                 .then(() => props.history.push(`/landmarks/${currentCityId}`))
         }
     }
-    // console.log(typeof addLandmarkToTrip)
-    // console.log("props", props)
 
     return (
         <div className="landmark">
