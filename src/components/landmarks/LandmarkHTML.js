@@ -1,6 +1,5 @@
 import React from "react"
 import "./Landmark.css"
-import { Link } from "react-router-dom"
 
 export const LandmarkHTML = ({ typeObj, landmarkObj }) => (
     <section>

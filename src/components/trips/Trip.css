@@ -25,7 +25,12 @@
     border: 3px solid goldenrod;
   }
 
-  
+  .singleTrip {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border: 3px solid goldenrod;
+  }
   
   .landmark {
       flex-basis: 28%;

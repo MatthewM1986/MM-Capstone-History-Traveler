@@ -1,11 +1,8 @@
 
 import React, { useContext, useRef, useEffect } from "react"
 import "./NavBar.css"
-import { Link } from "react-router-dom"
 import { CityContext } from "../cities/CityProvider"
 import { TripContext } from "../trips/TripProvider"
-import { Home } from "../home/Home"
-import { Route } from "react-router-dom"
 import { LandmarkContext } from "../landmarks/LandmarkProvider"
 
 export const NavBar = (props) => {
@@ -44,11 +41,7 @@ export const NavBar = (props) => {
 
         } else if (trip.current.value !== 0) {
             parseInt(localStorage.setItem("current_trip_id", trip.current.value))
-            // props.history.push(`/landmarks/${currentCityId}`)
-            // props.history.push(`/trips/${trip.current.value}`)
-
-            // add route in application view to match above path and render tripdetail component
-            // need tripdetail component that gets landmarks for this trip
+            props.history.push(`/trips/${trip.current.value}`)
         }
     }
     // console.log("dropdownprop", props)
@@ -71,8 +64,10 @@ export const NavBar = (props) => {
 
             <br></br>
 
-            < select defaultValue=""
-                onChange={handleTripSelect}
+            < select defaultValue="0"
+                onChange={() => {
+                    handleTripSelect()
+                }}
                 name="trip" ref={trip} id="createdTrip" className="form-control" >
                 <option value="0">Select Your Trip</option>
                 {

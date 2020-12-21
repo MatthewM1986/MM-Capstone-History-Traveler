@@ -335,7 +335,7 @@
       "pricing": "$15.00",
       "description": "One of the first mansions built in Middle Tennessee",
       "websiteURL": "https://historictravellersrest.org/",
-      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/5/53/SavageHouseNashville.jpg",
+      "imageURL": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Travellers_Rest_Nashville_TN_2013-07-20_016.jpg",
       "typeId": 1,
       "cityId": 3
     },
@@ -421,36 +421,61 @@
       "id": 1
     },
     {
-      "name": "Test Trip 1",
+      "name": "Chattanooga Fall 2021",
       "userId": 1,
       "id": 2
     },
     {
-      "name": "Test Trip 2",
+      "name": "Nashville Spring Break",
       "userId": 1,
       "id": 3
-    },
-    {
-      "name": "Test Trip 3",
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "name": "Test Trip 4",
-      "userId": 1,
-      "id": 5
     }
   ],
   "landmarkTrips": [
     {
       "landmarkId": 11,
+      "tripId": 2,
+      "id": 1
+    },
+    {
+      "landmarkId": 13,
+      "tripId": 2,
+      "id": 2
+    },
+    {
+      "landmarkId": 14,
+      "tripId": 2,
+      "id": 3
+    },
+    {
+      "landmarkId": 1,
+      "tripId": 1,
+      "id": 4
+    },
+    {
+      "landmarkId": 7,
+      "tripId": 1,
+      "id": 5
+    },
+    {
+      "landmarkId": 8,
       "tripId": 1,
       "id": 6
     },
     {
-      "landmarkId": 21,
+      "landmarkId": 9,
       "tripId": 1,
       "id": 7
+    },
+    {
+      "landmarkId": 28,
+      "tripId": 3,
+      "id": 8
+    },
+    {
+      "landmarkId": 24,
+      "tripId": 3,
+      "id": 9
     }
   ]
 }
