@@ -419,6 +419,16 @@
       "name": "Savannah 2021",
       "userId": 1,
       "id": 1
+    },
+    {
+      "name": "Chattanooga Fall 2021",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "name": "Nashville Spring Break",
+      "userId": 1,
+      "id": 3
     }
   ],
   "landmarkTrips": [
@@ -431,6 +441,21 @@
       "landmarkId": 21,
       "tripId": 1,
       "id": 7
+    },
+    {
+      "landmarkId": 9,
+      "tripId": 2,
+      "id": 8
+    },
+    {
+      "landmarkId": 1,
+      "tripId": 1,
+      "id": 9
+    },
+    {
+      "landmarkId": 2,
+      "tripId": 1,
+      "id": 10
     }
   ]
 }

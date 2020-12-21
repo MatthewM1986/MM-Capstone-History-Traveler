@@ -25,7 +25,6 @@ export const TripCreate = (props) => {
     useEffect(() => {
         getTrips()
         // .then(console.log("I got the trips"))
-        // .then(getLandmarks())
     }, [])
 
 
@@ -33,11 +32,6 @@ export const TripCreate = (props) => {
         getLandmarksByTripId(tripId)
     }, [tripsArray])
     // console.log("error", props.match.params.tripId)
-
-    // useEffect(() => {
-    //     const tripId = landmarkTripsArray.filter(nt => nt.id === +props.match.params.tripId) || {}
-    //     setTrips(newTrip)
-    // }, [tripsArray])
 
     useEffect(() => {
         const newTrip = tripsArray.find(nt => nt.id === tripId) || {}
@@ -51,27 +45,11 @@ export const TripCreate = (props) => {
                 name: trip.current.value,
                 userId: +localStorage.getItem("app_user_id")
             })
-                .then(() => props.history.push(`/landmarks/${props.match.params.cityId}`))
+                .then(() => props.history.push(`/trips/${tripId}`))
                 // .then(console.log("I created a trip"))
                 .then(getLandmarks)
         }
     }
-
-    // const deleteNewLandmarkTripObj = () => {
-    //     //get landmarkid 
-    //     const landmarkId = +props.match.params.landmarkId
-    //     //get tripid
-    //     const tripId = +localStorage.getItem("current_trip_id")
-    //     //put values into an object and call the function that will post to database
-    //     {
-    //         releaseLandmark({
-    //             landmarkId: landmarkId,
-    //             tripId: tripId
-    //         })
-    //             //Need to figure out how to define cityId
-    //             .then(() => props.history.push(`/landmarks/${currentCityId}`))
-    //     }
-    // }
 
     return (
         <section className="landmarks_container">
@@ -88,7 +66,7 @@ export const TripCreate = (props) => {
                     <div>
                         <h3>Add Landmarks to Visit</h3>
                     </div>
-                    <div>
+                    <div className="singleTrip">
                         {tripsArray.map(ta => {
                             // console.log("trips array", ta)
                             const tripList = landmarkTripsArray.filter(lta => lta.tripId === ta.id)
@@ -112,28 +90,21 @@ export const TripCreate = (props) => {
                                                             onClick={() => {
                                                                 releaseLandmark(tl.id)
                                                                     .then(getLandmarksByTripId(tripId))
-
-                                                                // .then(() => {
-                                                                //     props.history.push(`/landmarks/${currentCityId}`)
-                                                                // })
                                                             }}
                                                         >Delete</button>
-                                                        {/* <button onClick={deleteNewLandmarkTripObj} >
-                                                            Delete
-                                                        </button> */}
                                                     </div>)
                                             })}
+                                    </div>
+                                    <div>
+                                        <button className="btn--submit"
+
+                                        >Submit</button>
                                     </div>
                                 </section>
                             )
                         })
                         }
                     </div>
-                    {/* <div>
-                            <button className="btn--submit"
-
-                            >Submit</button>
-                        </div> */}
                 </div >
             </div>
         </section>
