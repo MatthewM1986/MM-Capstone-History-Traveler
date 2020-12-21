@@ -1,7 +1,9 @@
 import React, { useContext, useEffect, useState } from "react"
 import { TripContext } from "./TripProvider"
 import { LandmarkContext } from "../landmarks/LandmarkProvider"
+import { LandmarkHTML } from "../landmarks/LandmarkHTML"
 import "./Trip.css"
+import { TypeContext } from "../types/TypeProvider"
 
 
 export const TripDetails = (props) => {
@@ -9,7 +11,10 @@ export const TripDetails = (props) => {
 
     const { tripsArray, getTrips, getLandmarksByTripId, landmarkTripsArray } = useContext(TripContext)
     const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
+    const { typesArray, getTypes } = useContext(TypeContext)
 
+    const [typeOfLandmark, setTypeOfLandmark] = useState({})
+    const [landmark, setLandmark] = useState({})
     const [newTrip, setTrips] = useState({})
 
     useEffect(() => {
@@ -17,13 +22,20 @@ export const TripDetails = (props) => {
     }, [])
 
     useEffect(() => {
-        getLandmarks()
-    }, [])
-
-    useEffect(() => {
         const trip = tripsArray.find(t => t.id === +props.match.params.tripId) || {}
         setTrips(trip)
     }, [tripsArray])
+
+
+    useEffect(() => {
+        getTypes()
+            .then(getLandmarks)
+    }, [])
+
+    // useEffect(() => {
+    //     const landmark = landmarksArray.find(lm => lm.id === +props.match.params.landmarkId) || {}
+    //     setLandmark(landmark)
+    // }, [landmarksArray])
 
 
 
@@ -48,9 +60,8 @@ export const TripDetails = (props) => {
                                             // console.log("landmark array", landmarksArray)
                                             // console.log("landmark selected", landmarksSelected)
                                             return (
-                                                <div key={"landmarks--" + landmarksSelected.id} className="landmarkCard">
-                                                    <h3 className="landmark__name">{landmarksSelected.name}</h3>
-                                                    <div className="landmark__image"><img src={landmarksSelected.imageURL}></img></div>
+                                                <div className="landmarkTripCard">
+                                                    < LandmarkHTML key={landmarksSelected.id} typeObj={typeOfLandmark} landmarkObj={landmarksSelected} />
                                                 </div>)
                                         })}
                                 </div>
