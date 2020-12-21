@@ -62,26 +62,3 @@ export const TripDetails = (props) => {
         </section >
     )
 }
-
-
-
-
-
-
-//     return (
-//         <section className="landmarks_container">
-//             <div className="landmarks">
-//                 {/* <h1>${trip.name}</h1> */}
-//                 {
-//                     landmarksArray.filter(lm => lm.cityId === +props.match.params.tripId).map(tripObj => {
-//                         // console.log("before map", landmarksArray.filter(lm => lm.cityId === +props.match.params.cityId)
-//                         return (
-//                             <div key={tripObj.id} className="landmarkCard">
-//                                 <h3 className="landmark__name">{tripObj.name}</h3>
-//                                 <div className="landmark__image"><img src={tripObj.imageURL}></img></div>
-//                             </div>)
-//                     })}
-//             </div>
-//         </section >
-//     )
-// }
