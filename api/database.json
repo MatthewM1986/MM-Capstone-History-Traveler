@@ -424,11 +424,6 @@
       "name": "Chattanooga Fall 2021",
       "userId": 1,
       "id": 2
-    },
-    {
-      "name": "Nashville Spring Break",
-      "userId": 1,
-      "id": 3
     }
   ],
   "landmarkTrips": [
@@ -441,11 +436,6 @@
       "landmarkId": 13,
       "tripId": 2,
       "id": 2
-    },
-    {
-      "landmarkId": 14,
-      "tripId": 2,
-      "id": 3
     },
     {
       "landmarkId": 1,
@@ -466,16 +456,6 @@
       "landmarkId": 9,
       "tripId": 1,
       "id": 7
-    },
-    {
-      "landmarkId": 28,
-      "tripId": 3,
-      "id": 8
-    },
-    {
-      "landmarkId": 24,
-      "tripId": 3,
-      "id": 9
     }
   ]
 }

@@ -9,7 +9,7 @@ import { TypeContext } from "../types/TypeProvider"
 export const TripDetails = (props) => {
     console.log("props", props)
 
-    const { tripsArray, getTrips, getLandmarksByTripId, landmarkTripsArray } = useContext(TripContext)
+    const { tripsArray, getTrips, getLandmarksByTripId, landmarkTripsArray, releaseTrip } = useContext(TripContext)
     const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
     const { typesArray, getTypes } = useContext(TypeContext)
 
@@ -57,6 +57,16 @@ export const TripDetails = (props) => {
                                         < LandmarkHTML key={foundLandmarkObj.id} typeObj={typeOfLandmark} landmarkObj={foundLandmarkObj} />
                                     </div>)
                             })}
+                    </div>
+                    <div>
+                        <button className="btn--release"
+                            onClick={() => {
+                                releaseTrip(trip.id)
+                                    .then(() => {
+                                        props.history.push("/")
+                                    })
+                            }}>
+                            Delete</button>
                     </div>
                 </section>
             </ div>
