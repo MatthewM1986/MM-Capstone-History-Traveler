@@ -4,27 +4,21 @@ import { LandmarkContext } from "../landmarks/LandmarkProvider"
 import "./Trip.css"
 
 export const TripCreate = (props) => {
-    const { tripsArray, getTrips, addTrip, getLandmarksByTripId, landmarkTripsArray, releaseLandmark } = useContext(TripContext)
+    const { tripsArray, getTrips, addTrip } = useContext(TripContext)
     const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
 
-    const [newTrip, setTrips] = useState({})
+    //Use State holds two arrays that = useState(the initial state value)
+    //the left holds the current state and the right holds the function that updates the state
+    const [currentCityId, setCurrentCityId] = useState(null)
+    const [newTrips, setTrips] = useState({})
 
     const trip = useRef(null)
 
     const tripId = localStorage.getItem("current_trip_id")
 
     useEffect(() => {
-        getLandmarks()
-    }, [])
-
-    useEffect(() => {
         getTrips()
     }, [])
-
-
-    useEffect(() => {
-        getLandmarksByTripId(tripId)
-    }, [tripsArray])
 
 
     useEffect(() => {
@@ -34,14 +28,14 @@ export const TripCreate = (props) => {
 
     const addNewTrip = () => {
 
-        {
-            addTrip({
-                name: trip.current.value,
-                userId: +localStorage.getItem("app_user_id")
-            })
-                .then(() => props.history.push(`/trips/${tripId}`))
-                .then(getLandmarks)
-        }
+
+        addTrip({
+            name: trip.current.value,
+            userId: +localStorage.getItem("app_user_id")
+        })
+
+            .then(() => props.history.push("/"))
+
     }
 
     return (
@@ -53,42 +47,10 @@ export const TripCreate = (props) => {
                         onClick={evt => {
                             evt.preventDefault()
                             addNewTrip()
+                            console.log("new trip", tripsArray)
                         }}
                         className="btn btn-create">
-                        Create Trip</button>
-                    <div>
-                        <h3>Add Landmarks to Visit</h3>
-                    </div>
-                    <div className="singleTrip">
-                        {tripsArray.map(ta => {
-                            const tripList = landmarkTripsArray.filter(lta => lta.tripId === ta.id)
-                            return (
-                                <section>
-                                    <h2>
-                                        {ta.name}
-                                    </h2>
-                                    <div className="landmarksTrip">
-                                        {
-                                            tripList.map(tl => {
-                                                const landmarksSelected = landmarksArray.find(lm => tl.landmarkId === lm.id)
-                                                return (
-                                                    <div key={"landmark--" + landmarksSelected.id} className="landmarkCard">
-                                                        <h3 className="landmark__name">{landmarksSelected.name}</h3>
-                                                        <div className="landmark__image"><img src={landmarksSelected.imageURL}></img></div>
-                                                        <button className="btn--release"
-                                                            onClick={() => {
-                                                                releaseLandmark(tl.id)
-                                                                    .then(getLandmarksByTripId(tripId))
-                                                            }}
-                                                        >Delete</button>
-                                                    </div>)
-                                            })}
-                                    </div>
-                                </section>
-                            )
-                        })
-                        }
-                    </div>
+                        Create New Trip</button>
                 </div >
             </div>
         </section>

@@ -9,14 +9,14 @@ import { TypeContext } from "../types/TypeProvider"
 export const TripDetails = (props) => {
     console.log("props", props)
 
-    const { tripsArray, getTrips, getLandmarksByTripId, landmarkTripsArray } = useContext(TripContext)
+    const { tripsArray, getTrips, getLandmarksByTripId, landmarkTripsArray, releaseTrip } = useContext(TripContext)
     const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
-    const { typesArray, getTypes } = useContext(TypeContext)
+    const { getTypes } = useContext(TypeContext)
 
     const [typeOfLandmark, setTypeOfLandmark] = useState({})
-    const [landmark, setLandmark] = useState({})
     const [trip, setTrips] = useState({})
     const [landmarkTripsChosen, setLandmarkTripsChosen] = useState([])
+
 
     useEffect(() => {
         getTrips()
@@ -26,7 +26,7 @@ export const TripDetails = (props) => {
         const foundTrip = tripsArray.find(t => t.id === +props.match.params.tripId) || {}
         setTrips(foundTrip)
         getLandmarksByTripId(foundTrip.id)
-        // this watches the proprty of a URL
+        // this watches the property of a URL(tripId)
     }, [tripsArray, props.match.params.tripId])
 
     useEffect(() => {
@@ -48,15 +48,28 @@ export const TripDetails = (props) => {
                     <h2>
                         {trip.name}
                     </h2>
+                    <h3>
+                        Choose a city and add the landmarks you would like to visit to this trip
+                    </h3>
                     <div className="landmarksTrip">
                         {
                             landmarkTripsChosen.map(tl => {
-                                const foundLandmarkObj = landmarksArray.find(lm => tl.landmarkId === lm.id)
+                                const foundLandmarkObj = landmarksArray.find(lm => tl.landmarkId === lm.id) || {}
                                 return (
-                                    <div className="landmarkTripCard">
-                                        < LandmarkHTML key={foundLandmarkObj.id} typeObj={typeOfLandmark} landmarkObj={foundLandmarkObj} />
+                                    <div key={foundLandmarkObj.id} className="landmarkTripCard">
+                                        < LandmarkHTML typeObj={typeOfLandmark} landmarkObj={foundLandmarkObj} />
                                     </div>)
                             })}
+                    </div>
+                    <div>
+                        <button className="btn--release"
+                            onClick={() => {
+                                releaseTrip(trip.id)
+                                    .then(() => {
+                                        props.history.push("/")
+                                    })
+                            }}>
+                            Delete</button>
                     </div>
                 </section>
             </ div>

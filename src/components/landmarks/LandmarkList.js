@@ -22,7 +22,6 @@ export const LandmarkList = (props) => {
     return (
         <section className="landmarks_container">
             <div className="landmarks">
-                {/* <h1>${cities.name}</h1> */}
                 {
                     landmarksArray.filter(lm => lm.cityId === +props.match.params.cityId).map(landmarkObj => {
                         return (

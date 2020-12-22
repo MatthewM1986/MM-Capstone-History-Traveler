@@ -15,14 +15,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border: 3px solid goldenrod;
   }
 
   .landmarksTrip {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border: 3px solid goldenrod;
   }
 
   .singleTrip {
@@ -36,7 +34,6 @@
       flex-basis: 28%;
       margin: 1em;
       padding: 1em;
-      border: 1px solid goldenrod;
       max-width: auto;
       height: auto;
   }
@@ -45,7 +42,6 @@
       flex-basis: 28%;
       margin: 1em;
       padding: 1em;
-      border: 1px solid goldenrod;
       max-width:200px;
       height: auto;
   }
@@ -54,7 +50,6 @@
           flex-basis: 28%;
       margin: 1em;
       padding: 1em;
-      border: 1px solid goldenrod;
       max-width:200px;
       height: auto;
   }
