@@ -5,8 +5,10 @@ import { Register } from "./auth/Register"
 import { ApplicationView } from "./ApplicationView"
 import { NavBar } from "./nav/NavBar"
 import "./HistoryTraveler.css"
+import { TripCreate } from "./trips/TripCreate"
 import { CityProvider } from "./cities/CityProvider"
 import { TripProvider } from "./trips/TripProvider"
+import { TypeProvider } from "./types/TypeProvider"
 import { LandmarkProvider } from "./landmarks/LandmarkProvider"
 
 export const HistoryTraveler = () => (
@@ -19,7 +21,13 @@ export const HistoryTraveler = () => (
                         <CityProvider>
                             <TripProvider>
                                 <LandmarkProvider>
-                                    <Route render={props => <NavBar {...props} />} />
+                                    <TypeProvider>
+                                        <Route render={props => <NavBar {...props} />} />
+
+                                        <Route exact path="/" render={
+                                            props => <TripCreate {...props} />
+                                        } />
+                                    </TypeProvider>
                                 </LandmarkProvider>
                             </TripProvider>
                         </CityProvider>

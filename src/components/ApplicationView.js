@@ -39,9 +39,9 @@ export const ApplicationView = () => {
                 <TypeProvider>
                     <LandmarkProvider>
                         <CityProvider>
-                            <Route exact path="/landmarks/:cityId(\d+)" render={
+                            {/* <Route exact path="/" render={
                                 props => <TripCreate {...props} />
-                            } />
+                            } /> */}
 
                             <Route exact path="/trips/:tripId(\d+)" render={
                                 props => <TripDetails {...props} />

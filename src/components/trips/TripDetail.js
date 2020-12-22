@@ -17,6 +17,7 @@ export const TripDetails = (props) => {
     const [landmark, setLandmark] = useState({})
     const [trip, setTrips] = useState({})
     const [landmarkTripsChosen, setLandmarkTripsChosen] = useState([])
+    const [tripState, setTripState] = useState({})
 
     useEffect(() => {
         getTrips()
@@ -26,7 +27,7 @@ export const TripDetails = (props) => {
         const foundTrip = tripsArray.find(t => t.id === +props.match.params.tripId) || {}
         setTrips(foundTrip)
         getLandmarksByTripId(foundTrip.id)
-        // this watches the proprty of a URL
+        // this watches the property of a URL(tripId)
     }, [tripsArray, props.match.params.tripId])
 
     useEffect(() => {
@@ -51,10 +52,10 @@ export const TripDetails = (props) => {
                     <div className="landmarksTrip">
                         {
                             landmarkTripsChosen.map(tl => {
-                                const foundLandmarkObj = landmarksArray.find(lm => tl.landmarkId === lm.id)
+                                const foundLandmarkObj = landmarksArray.find(lm => tl.landmarkId === lm.id) || {}
                                 return (
-                                    <div className="landmarkTripCard">
-                                        < LandmarkHTML key={foundLandmarkObj.id} typeObj={typeOfLandmark} landmarkObj={foundLandmarkObj} />
+                                    <div key={foundLandmarkObj.id} className="landmarkTripCard">
+                                        < LandmarkHTML typeObj={typeOfLandmark} landmarkObj={foundLandmarkObj} />
                                     </div>)
                             })}
                     </div>
