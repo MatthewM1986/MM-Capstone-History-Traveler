@@ -424,51 +424,6 @@
       "name": "Chattanooga Fall 2021",
       "userId": 1,
       "id": 2
-    },
-    {
-      "name": "trip 8",
-      "userId": 1,
-      "id": 3
-    },
-    {
-      "name": "trip 5",
-      "userId": 1,
-      "id": 4
-    },
-    {
-      "name": "trip 6",
-      "userId": 1,
-      "id": 5
-    },
-    {
-      "name": "trip 9",
-      "userId": 1,
-      "id": 6
-    },
-    {
-      "name": "trip 10",
-      "userId": 1,
-      "id": 7
-    },
-    {
-      "name": "trip 11",
-      "userId": 1,
-      "id": 8
-    },
-    {
-      "name": "trip 12",
-      "userId": 1,
-      "id": 9
-    },
-    {
-      "name": "trip 13",
-      "userId": 1,
-      "id": 10
-    },
-    {
-      "name": "trip 14",
-      "userId": 1,
-      "id": 11
     }
   ],
   "landmarkTrips": [
@@ -501,16 +456,6 @@
       "landmarkId": 9,
       "tripId": 1,
       "id": 7
-    },
-    {
-      "landmarkId": 1,
-      "tripId": 3,
-      "id": 8
-    },
-    {
-      "landmarkId": 1,
-      "tripId": 11,
-      "id": 9
     }
   ]
 }

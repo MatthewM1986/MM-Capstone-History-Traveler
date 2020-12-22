@@ -2,7 +2,6 @@ import React, { useContext, useRef, useEffect, useState } from "react"
 import { TripContext } from "./TripProvider"
 import { LandmarkContext } from "../landmarks/LandmarkProvider"
 import "./Trip.css"
-import { CityContext } from "../cities/CityProvider"
 
 export const TripCreate = (props) => {
     const { tripsArray, getTrips, addTrip } = useContext(TripContext)
@@ -22,11 +21,6 @@ export const TripCreate = (props) => {
     }, [])
 
 
-    // useEffect(() => {
-    //     getLandmarksByTripId(tripId)
-    // }, [tripsArray])
-
-
     useEffect(() => {
         const newTrip = tripsArray.find(nt => nt.id === tripId) || {}
         setTrips(newTrip)
@@ -39,10 +33,8 @@ export const TripCreate = (props) => {
             name: trip.current.value,
             userId: +localStorage.getItem("app_user_id")
         })
-            // console.log("trip", tripsArray)
 
             .then(() => props.history.push("/"))
-        // .then(getLandmarks)
 
     }
 

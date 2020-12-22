@@ -11,13 +11,12 @@ export const TripDetails = (props) => {
 
     const { tripsArray, getTrips, getLandmarksByTripId, landmarkTripsArray, releaseTrip } = useContext(TripContext)
     const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
-    const { typesArray, getTypes } = useContext(TypeContext)
+    const { getTypes } = useContext(TypeContext)
 
     const [typeOfLandmark, setTypeOfLandmark] = useState({})
-    const [landmark, setLandmark] = useState({})
     const [trip, setTrips] = useState({})
     const [landmarkTripsChosen, setLandmarkTripsChosen] = useState([])
-    const [tripState, setTripState] = useState({})
+
 
     useEffect(() => {
         getTrips()
@@ -49,6 +48,9 @@ export const TripDetails = (props) => {
                     <h2>
                         {trip.name}
                     </h2>
+                    <h3>
+                        Choose a city and add the landmarks you would like to visit to this trip
+                    </h3>
                     <div className="landmarksTrip">
                         {
                             landmarkTripsChosen.map(tl => {

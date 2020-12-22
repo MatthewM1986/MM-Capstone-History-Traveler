@@ -9,7 +9,6 @@ import { Link } from "react-router-dom"
 export const NavBar = (props) => {
     const { citiesArray, getCities } = useContext(CityContext)
     const { tripsArray, getTrips } = useContext(TripContext)
-    const { currentCityId } = useContext(CityContext)
     const { getLandmarks } = useContext(LandmarkContext)
 
     const city = useRef(null)
@@ -53,13 +52,9 @@ export const NavBar = (props) => {
 
     return (
         <div className="navbar">
-            {/* <button to="/">
-                home
-            </button> */}
 
-            <button onClick={() => { }}
-                to="/"
-            >Home</button>
+            <button onClick={() => props.history.push("/")}>
+                Home</button>
 
             <section>
                 <label>Browse Cities</label>
@@ -101,23 +96,6 @@ export const NavBar = (props) => {
             <button onClick={() => { clearLocalStorage() }}
                 to="/login"
             >Log Out</button>
-
-            {/* 
-            <br></br>
-
-            <section>
-                <div className="trip--name">
-                    <input type="text" ref={trip} id="tripName" className="form-control" placeholder="Name Your Future Trip" />
-                    <button className="create"
-                        onClick={evt => {
-                            evt.preventDefault()
-                            addNewTrip()
-                        }}
-                        className="btn btn-create">
-                        Create Trip</button>
-                </div>
-            </section> */}
-        </div >
-
+        </div>
     )
 }
