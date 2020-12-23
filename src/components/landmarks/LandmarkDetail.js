@@ -52,7 +52,7 @@ export const LandmarkDetails = (props) => {
                 //Need to figure out how to define cityId
                 .then(() => props.history.push(`/landmarks/${currentCityId}`))
         } else {
-            alert("Choose Trip First")
+            window.alert("Select Your Trip First")
         }
 
     }

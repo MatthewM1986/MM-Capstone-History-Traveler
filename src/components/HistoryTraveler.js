@@ -24,9 +24,9 @@ export const HistoryTraveler = () => (
                                     <TypeProvider>
                                         <Route render={props => <NavBar {...props} />} />
 
-                                        <Route exact path="/" render={
+                                        {/* <Route exact path="/" render={
                                             props => <TripCreate {...props} />
-                                        } />
+                                        } /> */}
                                     </TypeProvider>
                                 </LandmarkProvider>
                             </TripProvider>

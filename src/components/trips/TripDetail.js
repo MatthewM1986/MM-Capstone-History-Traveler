@@ -7,7 +7,6 @@ import { TypeContext } from "../types/TypeProvider"
 
 
 export const TripDetails = (props) => {
-    console.log("props", props)
 
     const { tripsArray, getTrips, getLandmarksByTripId, landmarkTripsArray, releaseTrip } = useContext(TripContext)
     const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
@@ -49,7 +48,7 @@ export const TripDetails = (props) => {
                         {trip.name}
                     </h2>
                     <h3>
-                        Choose a city and add the landmarks you would like to visit to this trip
+                        Choose a city and add the landmarks you would like to visit on this trip
                     </h3>
                     <div className="landmarksTrip">
                         {
