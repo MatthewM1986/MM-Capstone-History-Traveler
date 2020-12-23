@@ -10,7 +10,7 @@ export const TripContext = React.createContext()
  This component establishes what data can be used.
  */
 export const TripProvider = (props) => {
-
+    console.log("props provider component", props)
     const [tripsArray, setTrips] = useState([])
     const [landmarkTripsArray, setLandmarkTrips] = useState([])
     // useState returns [initial value of state variable, a function to set the value of the state variable]

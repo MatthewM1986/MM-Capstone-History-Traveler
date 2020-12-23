@@ -426,9 +426,34 @@
       "id": 2
     },
     {
-      "name": "Test Trip 1",
+      "name": "Test Trip",
       "userId": 1,
       "id": 3
+    },
+    {
+      "name": "Test Trip 2",
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "name": "Test Trip 3",
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "name": "Test Trip 4",
+      "userId": 1,
+      "id": 6
+    },
+    {
+      "name": "Test Trip 7",
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "name": "0",
+      "userId": 1,
+      "id": 8
     }
   ],
   "landmarkTrips": [
