@@ -424,6 +424,11 @@
       "name": "Chattanooga Fall 2021",
       "userId": 1,
       "id": 2
+    },
+    {
+      "name": "Test Trip 1",
+      "userId": 1,
+      "id": 3
     }
   ],
   "landmarkTrips": [

@@ -5,11 +5,10 @@ import "./Trip.css"
 
 export const TripCreate = (props) => {
     const { tripsArray, getTrips, addTrip } = useContext(TripContext)
-    const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
+
 
     //Use State holds two arrays that = useState(the initial state value)
     //the left holds the current state and the right holds the function that updates the state
-    const [currentCityId, setCurrentCityId] = useState(null)
     const [newTrips, setTrips] = useState({})
 
     const trip = useRef(null)
@@ -33,10 +32,15 @@ export const TripCreate = (props) => {
             name: trip.current.value,
             userId: +localStorage.getItem("app_user_id")
         })
-
-            .then(() => props.history.push("/"))
-
+            // .then(() => props.history.push("/"))
+            .then(() => props.history.push(`/trips/${newTrips}`))
+            .then(console.log("new trip id", tripsArray))
     }
+
+
+
+
+
 
     return (
         <section className="landmarks_container">
