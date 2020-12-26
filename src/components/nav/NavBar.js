@@ -1,18 +1,19 @@
 
-import React, { useContext, useRef, useEffect } from "react"
+import React, { useContext, useRef, useEffect, useState } from "react"
 import "./NavBar.css"
 import { CityContext } from "../cities/CityProvider"
 import { TripContext } from "../trips/TripProvider"
 import { LandmarkContext } from "../landmarks/LandmarkProvider"
-import { Link } from "react-router-dom"
 
 export const NavBar = (props) => {
+    //this component is giving access to the properties from my TripProvider.js through the useContext
     const { citiesArray, getCities } = useContext(CityContext)
-    //I am allowing this component is giving access to the three properties from my TripProvider.js
     const { tripsArray, getTrips, addTrip } = useContext(TripContext)
     const { getLandmarks } = useContext(LandmarkContext)
 
 
+    //a reference point that holds the value of the text box
+    //null makes it blank when page renders and trip holds what is typed in the text box
     const city = useRef(null)
     const trip = useRef(null)
 
@@ -22,24 +23,11 @@ export const NavBar = (props) => {
             .then(getCities())
     }, [])
 
-    //a reference point that holds the value of the text box
-    //null makes it blank when page renders and trip holds what is typed in the text box
+    //this grabs my trips array from my json immediatly after the page renders the first time
     useEffect(() => {
-        //this grabs my trips array from my json immediatly after the page renders the first time
         getTrips()
         //the empty array tells it to run just once
     }, [])
-
-    //this builds out a new trip object to post to trips database
-    const addNewTrip = () => {
-        addTrip({
-            name: trip.current.value,
-            userId: +localStorage.getItem("app_user_id")
-        })
-            //this redirects the user to the new trip details view that was created by changing the endpoint of the url with the newest trip value
-            .then(() => props.history.push(`/trips/${trip.current.value.id}`))
-        // .then(() => props.history.push("/"))
-    }
 
     const handleCitySelect = () => {
         //*=== needs "" wrapped around value if not a string, or just put == instead of ===
@@ -75,16 +63,8 @@ export const NavBar = (props) => {
             </section>
 
             <section>
-                <div >
-                    <input type="text" ref={trip} id="tripName" className="form-control" placeholder="Name Your Future Trip" />
-                    <button className="create"
-                        onClick={evt => {
-                            evt.preventDefault()
-                            addNewTrip()
-                        }}
-                        className="btn btn-create">
-                        Create New Trip</button>
-                </div >
+                <button onClick={() => props.history.push("/trips")}>
+                    Go Travel</button>
             </section>
 
             <section>
