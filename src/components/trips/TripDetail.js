@@ -64,10 +64,8 @@ export const TripDetails = (props) => {
                                         < LandmarkHTML typeObj={typeOfLandmark} landmarkObj={foundLandmarkObj} />
                                         < button className="btn--release"
                                             onClick={() => {
-                                                releaseLandmark(foundLandmarkObj.id)
-                                                    .then(() => {
-                                                        props.history.push(`/trips/${trip.id}`)
-                                                    })
+                                                releaseLandmark(tl.id)
+                                                    .then(getLandmarksByTripId(tripId))
                                             }}
                                         >Remove</button>
                                     </div>)
