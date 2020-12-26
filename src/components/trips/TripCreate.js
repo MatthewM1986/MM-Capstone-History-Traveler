@@ -24,7 +24,6 @@ export const TripCreate = (props) => {
     //this builds out a new trip object to post to trips database
     const addNewTrip = () => {
 
-
         addTrip({
             name: trip.current.value,
             userId: +localStorage.getItem("app_user_id")
