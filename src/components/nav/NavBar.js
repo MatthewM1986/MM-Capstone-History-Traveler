@@ -16,7 +16,6 @@ export const NavBar = (props) => {
     //null makes it blank when page renders and trip holds what is typed in the text box
     const city = useRef(null)
     const trip = useRef(null)
-    const newTrip = useRef(null)
 
 
     useEffect(() => {
@@ -29,17 +28,6 @@ export const NavBar = (props) => {
         getTrips()
         //the empty array tells it to run just once
     }, [])
-
-    //this builds out a new trip object to post to trips database
-    const addNewTrip = () => {
-        addTrip({
-            name: newTrip.current.value,
-            userId: +localStorage.getItem("app_user_id")
-        })
-            //this redirects the user to the new trip details view that was created by changing the endpoint of the url with the newest trip value
-            .then(() => props.history.push(`/trips/${newTrip.current.value}`))
-        // .then(() => props.history.push("/"))
-    }
 
     const handleCitySelect = () => {
         //*=== needs "" wrapped around value if not a string, or just put == instead of ===
@@ -75,18 +63,8 @@ export const NavBar = (props) => {
             </section>
 
             <section>
-                <div >
-                    <input type="text" ref={newTrip} id="tripName" className="form-control" placeholder="Name Your Future Trip" />
-                    {
-                        <button
-                            onClick={evt => {
-                                evt.preventDefault()
-                                addNewTrip()
-                            }}
-                            className="btn btn-create">
-                            Create New Trip</button>
-                    }
-                </div >
+                <button onClick={() => props.history.push("/trips")}>
+                    Go Travel</button>
             </section>
 
             <section>

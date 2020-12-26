@@ -476,23 +476,29 @@
       "id": 12
     },
     {
-      "name": "Test Trip 11",
+      "name": "0",
       "userId": 1,
       "id": 13
     },
     {
-      "name": "Test Trip 12",
+      "name": "0",
       "userId": 1,
       "id": 14
     },
     {
-      "name": "test trip 15",
+      "name": "test trip 13",
       "userId": 1,
       "id": 15
     },
     {
+      "name": "xmas test 1",
       "userId": 1,
       "id": 16
+    },
+    {
+      "name": "xmas trip 2",
+      "userId": 1,
+      "id": 17
     }
   ],
   "landmarkTrips": [
