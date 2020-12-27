@@ -426,79 +426,104 @@
       "id": 2
     },
     {
-      "name": "Test Trip",
+      "name": "Nashville Spring 2021",
       "userId": 1,
       "id": 3
     },
     {
-      "name": "Test Trip 2",
+      "name": "Test Trip",
       "userId": 1,
       "id": 4
     },
     {
-      "name": "Test Trip 3",
+      "name": "Nw Test Trip",
       "userId": 1,
       "id": 5
     },
     {
-      "name": "Test Trip 4",
+      "name": "Let's hope this works",
       "userId": 1,
       "id": 6
     },
     {
-      "name": "Test Trip 5",
+      "name": "This is the one!!!",
       "userId": 1,
       "id": 7
     },
     {
-      "name": "Test Trip 6",
+      "name": "Will this clear",
       "userId": 1,
       "id": 8
     },
     {
-      "name": "Test Trip 7",
+      "name": "test test test",
       "userId": 1,
       "id": 9
     },
     {
-      "name": "test trip 8",
+      "name": "try this",
       "userId": 1,
       "id": 10
     },
     {
-      "name": "Test Trip 9",
+      "name": "no default",
       "userId": 1,
       "id": 11
     },
     {
-      "name": "Test Trip 10",
+      "name": "new trip",
       "userId": 1,
       "id": 12
     },
     {
-      "name": "0",
+      "name": "one more time",
       "userId": 1,
       "id": 13
     },
     {
-      "name": "0",
+      "name": "new trip id",
       "userId": 1,
       "id": 14
     },
     {
-      "name": "test trip 13",
+      "name": "pleaseeeeeeee",
       "userId": 1,
       "id": 15
     },
     {
-      "name": "xmas test 1",
+      "name": "key",
       "userId": 1,
       "id": 16
     },
     {
-      "name": "xmas trip 2",
+      "name": "array ",
       "userId": 1,
       "id": 17
+    },
+    {
+      "name": "madi trip",
+      "userId": 1,
+      "id": 18
+    },
+    {
+      "name": "madi trip 2",
+      "userId": 1,
+      "id": 19
+    },
+    {
+      "name": "Test Trip 1",
+      "userId": 1,
+      "id": 20
+    },
+    {
+      "name": "let's try this",
+      "userId": 1,
+      "id": 21
+    },
+    {
+      "name": "create trip",
+      "userId": 1,
+      "id": 22
     }
   ],
   "landmarkTrips": [
@@ -521,6 +546,11 @@
       "landmarkId": 8,
       "tripId": 1,
       "id": 6
+    },
+    {
+      "landmarkId": 10,
+      "tripId": 1,
+      "id": 7
     }
   ]
 }
