@@ -68,7 +68,7 @@ export const NavBar = (props) => {
             </section>
 
             <section>
-                <label>Browse Cities</label>
+                {/* <label>Browse Cities</label> */}
                 <select defaultValue="0"
                     onChange={() => {
                         handleCitySelect()
@@ -86,7 +86,7 @@ export const NavBar = (props) => {
             </section>
 
             <section>
-                <label>Browse Created Trips</label>
+                {/* <label>Browse Created Trips</label> */}
                 < select defaultValue="0"
                     onChange={() => {
                         handleTripSelect()

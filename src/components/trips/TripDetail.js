@@ -8,7 +8,7 @@ import { TypeContext } from "../types/TypeProvider"
 
 export const TripDetails = (props) => {
 
-    const { tripsArray, getTrips, getLandmarksByTripId, landmarkTripsArray, releaseTrip } = useContext(TripContext)
+    const { tripsArray, getTrips, getLandmarksByTripId, landmarkTripsArray, releaseTrip, releaseLandmark } = useContext(TripContext)
     const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
     const { getTypes } = useContext(TypeContext)
 
@@ -16,6 +16,11 @@ export const TripDetails = (props) => {
     const [trip, setTrips] = useState({})
     const [landmarkTripsChosen, setLandmarkTripsChosen] = useState([])
 
+    const tripId = localStorage.getItem("current_trip_id")
+    useEffect(() => {
+        getTrips()
+            .then(getLandmarks())
+    }, [])
 
     useEffect(() => {
         getTrips()
@@ -41,7 +46,7 @@ export const TripDetails = (props) => {
 
     return (
         <section className="landmarks_container">
-            < div className="landmarks" ></div>
+            < div ></div>
             < div >
                 <section>
                     <h2>
@@ -50,13 +55,19 @@ export const TripDetails = (props) => {
                     <h3>
                         Choose a city and add the landmarks you would like to visit on this trip
                     </h3>
-                    <div className="landmarksTrip">
+                    <div className="landmarks">
                         {
                             landmarkTripsChosen.map(tl => {
                                 const foundLandmarkObj = landmarksArray.find(lm => tl.landmarkId === lm.id) || {}
                                 return (
                                     <div key={foundLandmarkObj.id} className="landmarkTripCard">
                                         < LandmarkHTML typeObj={typeOfLandmark} landmarkObj={foundLandmarkObj} />
+                                        < button className="btn--release"
+                                            onClick={() => {
+                                                releaseLandmark(tl.id)
+                                                    .then(getLandmarksByTripId(tripId))
+                                            }}
+                                        >Remove</button>
                                     </div>)
                             })}
                     </div>
@@ -68,7 +79,7 @@ export const TripDetails = (props) => {
                                         props.history.push("/")
                                     })
                             }}>
-                            Delete</button>
+                            Delete Trip</button>
                     </div>
                 </section>
             </ div>
