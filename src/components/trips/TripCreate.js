@@ -26,7 +26,6 @@ export const TripCreate = (props) => {
         const newTrip = tripsArray.find(nt => nt.id === +props.match.params.tripId) || {}
         //This sets the trip id into the newTripId variable for the UseState
         setTrips(newTrip)
-        // .then(addNewTrip)
         //This refreshes everytime the trips array's state is changed
     }, [tripsArray])
 
@@ -45,8 +44,8 @@ export const TripCreate = (props) => {
 
 
     return (
-        <section className="landmarks_container">
-            < div className="landmarks" >
+        <section className="trips_container">
+            < div className="trips" >
                 <>
                     <h2>Begin Your History Travels Now!</h2>
                     <h3>Create a New Trip, Browse Cities or Choose a Saved Trip!</h3>
@@ -54,14 +53,13 @@ export const TripCreate = (props) => {
                 <>
                     <h2>Please Enter a Trip Name</h2>
                 </>
-                <div className="trip--name">
+                <div className="tripName">
                     <input type="text" ref={trip} id="tripName" className="form-control" placeholder="Name Your Future Trip" />
-                    <button className="create"
+                    <button className="newTrip">
                         onClick={evt => {
                             evt.preventDefault()
                             addNewTrip()
                         }}
-                        className="btn btn-create">
                         Create New Trip</button>
                 </div >
             </div>

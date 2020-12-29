@@ -50,24 +50,24 @@ export const TripDetails = (props) => {
 
 
     return (
-        <section className="landmarks_container">
+        <section className="trips_container">
             < div ></div>
             < div >
                 <section>
-                    <h2>
+                    <h2 className="tripName">
                         {trip.name}
                     </h2>
                     <h3>
                         Choose a city and add the landmarks you would like to visit on this trip
                     </h3>
-                    <div className="landmarks">
+                    <div className="trips">
                         {
                             landmarkTripsChosen.map(tl => {
                                 const foundLandmarkObj = landmarksArray.find(lm => tl.landmarkId === lm.id) || {}
                                 return (
                                     <div key={foundLandmarkObj.id} className="landmarkTripCard">
                                         < LandmarkHTML typeObj={typeOfLandmark} landmarkObj={foundLandmarkObj} />
-                                        < button className="btn--release"
+                                        < button className="remove"
                                             onClick={() => {
                                                 releaseLandmark(tl.id)
                                                     .then(getLandmarksByTripId(tripId))
@@ -77,7 +77,7 @@ export const TripDetails = (props) => {
                             })}
                     </div>
                     <div>
-                        <button className="btn--release"
+                        <button className="delete"
                             onClick={() => {
                                 releaseTrip(trip.id)
                                     .then(() => {

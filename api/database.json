@@ -574,6 +574,11 @@
       "name": "Badda Bing",
       "userId": 1,
       "id": 32
+    },
+    {
+      "name": "I hate React",
+      "userId": 1,
+      "id": 33
     }
   ],
   "landmarkTrips": [
@@ -601,6 +606,11 @@
       "landmarkId": 10,
       "tripId": 1,
       "id": 7
+    },
+    {
+      "landmarkId": 1,
+      "tripId": 33,
+      "id": 8
     }
   ]
 }

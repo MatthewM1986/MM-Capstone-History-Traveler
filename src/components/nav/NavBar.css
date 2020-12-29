@@ -12,7 +12,15 @@
   height: 10p;
 }
 
-.headerImage {
-  
+.Logo {
+  display: flex;
+}
+
+.homeButton {
+display: flex;
+}
+
+.logout {
+  display: flex;
 }
 
