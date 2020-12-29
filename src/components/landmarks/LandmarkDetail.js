@@ -16,6 +16,7 @@ export const LandmarkDetails = (props) => {
     const [typeOfLandmark, setTypeOfLandmark] = useState({})
     const [tripId, setTripId] = useState(0)
 
+    // useRef stores the value of trip until it is referenced later
     const trip = useRef(null)
 
     useEffect(() => {
@@ -27,37 +28,43 @@ export const LandmarkDetails = (props) => {
         getTrips()
     }, [])
 
+    //This looks throught the landmarks array and finds the landmark id that matches the landmark id stores in props
     useEffect(() => {
         const landmark = landmarksArray.find(lm => lm.id === +props.match.params.landmarkId) || {}
+        //This sets the found id into the useState
         setLandmark(landmark)
     }, [landmarksArray])
 
-
+    //This looks throught the types array and finds the type id that matches the landmark type id
     useEffect(() => {
         const typeOfLandmark = typesArray.find(t => t.id === landmark.typeId) || {}
+        //This sets the found id into the useState
         setTypeOfLandmark(typeOfLandmark)
     }, [landmark])
 
+
     const addNewLandmarkTripObj = () => {
-        //get landmarkid 
+        //get landmarkid and parses through props to find the landmark id
         const landmarkId = +props.match.params.landmarkId
         if (tripId !== 0) {
 
-            //put values into an object and call the function that will post to database
-
+            //puts values into an object and then call the function that will post to the database
             addLandmarkToTrip({
                 landmarkId: landmarkId,
                 tripId: tripId
             })
-                //Need to figure out how to define cityId
+                //This pushes the new object to a page that equals the id attached to it
                 .then(() => props.history.push(`/landmarks/${currentCityId}`))
         } else {
+            //This is a pop up window that tells the visitor to first select from the dropdown before clicking the button
             window.alert("Select Your Trip First")
         }
 
     }
 
+    // On change looks for handleTripSelect's value
     const handleTripSelect = (event) => {
+        //Parsing the event id then sets the TripId to the trip array
         setTripId(+event.target.value)
     }
 

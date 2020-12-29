@@ -10,14 +10,39 @@ import { LandmarkProvider } from "./landmarks/LandmarkProvider"
 import { LandmarkList } from "./landmarks/LandmarkList"
 import { LandmarkDetails } from "./landmarks/LandmarkDetail"
 import { Home } from "./home/Home"
+import { NavBar } from "./nav/NavBar"
 
 
 export const ApplicationView = () => {
     return (
         <>
-            <Route exact path="/">
-                <Home></Home>
-            </Route>
+            <CityProvider>
+                <TripProvider>
+                    <LandmarkProvider>
+                        <Route path="/" render={props => <NavBar {...props} />} />
+                    </LandmarkProvider>
+                </TripProvider>
+            </CityProvider>
+
+            <TripProvider>
+                <TypeProvider>
+                    <LandmarkProvider>
+                        <CityProvider>
+                            <Route exact path="/" render={
+                                props => <TripCreate {...props} />
+                            } />
+
+                            <Route exact path="/trips/:tripId(\d+)" render={
+                                props => <TripDetails {...props} />
+                            } />
+
+                            <Route exact path="/trips" render={
+                                props => <TripList {...props} />
+                            } />
+                        </CityProvider>
+                    </LandmarkProvider>
+                </TypeProvider>
+            </TripProvider>
 
             <TripProvider>
                 <TypeProvider>
@@ -29,23 +54,6 @@ export const ApplicationView = () => {
 
                             <Route exact path="/landmarks/detail/:landmarkId(\d+)" render={
                                 props => <LandmarkDetails cityId={props.match.params.cityId} {...props} />
-                            } />
-                        </CityProvider>
-                    </LandmarkProvider>
-                </TypeProvider>
-            </TripProvider>
-
-
-            <TripProvider>
-                <TypeProvider>
-                    <LandmarkProvider>
-                        <CityProvider>
-                            <Route exact path="/trips" render={
-                                props => <TripCreate {...props} />
-                            } />
-
-                            <Route exact path="/trips/:tripId(\d+)" render={
-                                props => <TripDetails {...props} />
                             } />
                         </CityProvider>
                     </LandmarkProvider>

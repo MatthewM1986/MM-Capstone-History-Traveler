@@ -7,15 +7,13 @@ export const TripCreate = (props) => {
     const { tripsArray, getTrips, addTrip } = useContext(TripContext)
     //Create a newTrip state variable with the initual value of an empty object
     //the left holds the current state and the right holds the function that updates the state
-    // const [newTrip, setTrips] = useState({})
-    // console.log("new trip state", newTrip)
     const [newTripId, setTrips] = useState([])
     //a reference point that holds the value of the text box
     //null makes it blank when page renders and trip holds what is typed in the text box
     const trip = useRef(null)
-    // console.log("trip", trip)
 
-    const tripId = localStorage.getItem("current_trip_id")
+    //This pulls the current trip id stored in the local storage
+    // const tripId = localStorage.getItem("current_trip_id")
 
     //this grabs my trips array from my json immediatly after the page renders the first time
     useEffect(() => {
@@ -23,9 +21,13 @@ export const TripCreate = (props) => {
         //the empty array tells it to run just once
     }, [])
 
+    //This goes through the trips array to find the trip id
     useEffect(() => {
-        const newTrip = tripsArray.find(nt => nt.id === tripId) || {}
+        const newTrip = tripsArray.find(nt => nt.id === +props.match.params.tripId) || {}
+        //This sets the trip id into the newTripId variable for the UseState
         setTrips(newTrip)
+        // .then(addNewTrip)
+        //This refreshes everytime the trips array's state is changed
     }, [tripsArray])
 
     //this builds out a new trip object to post to trips database
@@ -35,8 +37,9 @@ export const TripCreate = (props) => {
             name: trip.current.value,
             userId: +localStorage.getItem("app_user_id")
         })
+            //This pushes to the /trips url
             .then(() => props.history.push("/trips"))
-        // console.log("new trip id button click", newTrip)
+        console.log("new trip id button click", tripsArray)
         // .then(getTrips)
     }
 
@@ -44,6 +47,10 @@ export const TripCreate = (props) => {
     return (
         <section className="landmarks_container">
             < div className="landmarks" >
+                <>
+                    <h2>Begin Your History Travels Now!</h2>
+                    <h3>Create a New Trip, Browse Cities or Choose a Saved Trip!</h3>
+                </>
                 <>
                     <h2>Please Enter a Trip Name</h2>
                 </>
@@ -57,10 +64,6 @@ export const TripCreate = (props) => {
                         className="btn btn-create">
                         Create New Trip</button>
                 </div >
-                <>
-                    <h3>Once a name is entered and you create the trip, select the City you are travelling too and choose which landmarks to visit on your trip</h3>
-                    <h3>After you finish selecting the landmarks you want to visit on your travels go to your trip page to edit the trip</h3>
-                </>
             </div>
         </section>
     )

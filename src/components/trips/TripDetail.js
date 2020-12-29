@@ -16,6 +16,7 @@ export const TripDetails = (props) => {
     const [trip, setTrips] = useState({})
     const [landmarkTripsChosen, setLandmarkTripsChosen] = useState([])
 
+    //This pulls the trip id from local storage
     const tripId = localStorage.getItem("current_trip_id")
     useEffect(() => {
         getTrips()
@@ -26,13 +27,17 @@ export const TripDetails = (props) => {
         getTrips()
     }, [])
 
+    //This finds the trip id that matches the trip id stores in props
     useEffect(() => {
         const foundTrip = tripsArray.find(t => t.id === +props.match.params.tripId) || {}
+        //This puts the found id into UseState variable trip
         setTrips(foundTrip)
         getLandmarksByTripId(foundTrip.id)
-        // this watches the property of a URL(tripId)
+        // this watches the property of a URL endpoint(tripId)
     }, [tripsArray, props.match.params.tripId])
 
+
+    //This filters through landmarkTrips array and finds all the landmarkTrip id's that match the trip id's in the UseState variable trip
     useEffect(() => {
         const chosenLandmarkTrips = landmarkTripsArray.filter(lta => lta.tripId === trip.id) || []
         setLandmarkTripsChosen(chosenLandmarkTrips)
