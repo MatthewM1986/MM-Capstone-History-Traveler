@@ -4,11 +4,14 @@ import "./NavBar.css"
 import { CityContext } from "../cities/CityProvider"
 import { TripContext } from "../trips/TripProvider"
 import { LandmarkContext } from "../landmarks/LandmarkProvider"
+// import logo from "../images/HistoryTravelerLogo.jpg"
 
 export const NavBar = (props) => {
-    //this component is giving access to the properties from my TripProvider.js through the useContext
+    //this component is giving access to the properties from my CityProvider.js through the useContext
     const { citiesArray, getCities } = useContext(CityContext)
+    //this component is giving access to the properties from my TripProvider.js through the useContex
     const { tripsArray, getTrips, addTrip } = useContext(TripContext)
+    //this component is giving access to the properties from my LandmarkProvider.js through the useContex
     const { getLandmarks } = useContext(LandmarkContext)
 
 
@@ -30,26 +33,26 @@ export const NavBar = (props) => {
     }, [])
 
     const handleCitySelect = () => {
-        //*=== needs "" wrapped around value if not a string, or just put == instead of ===
+        //If statement so the drop down element with 0 returns to homepage
         if (city.current.value === "0") {
             props.history.push("/")
 
+            //else if statement so the drop down elements go to the id value's selected page when clicked
         } else if (city.current.value !== 0) {
             props.history.push(`/landmarks/${city.current.value}`)
         }
     }
 
     const handleTripSelect = () => {
-        //*if current city value = 0 then push to home (make sure == and not ===)
         if (trip.current.value === "0") {
             props.history.push("/")
 
         } else if (trip.current.value !== 0) {
-            // parseInt(localStorage.setItem("current_trip_id", trip.current.value))
             props.history.push(`/trips/${trip.current.value}`)
         }
     }
 
+    //This clears the local storage of the logged in user
     const clearLocalStorage = () => {
         localStorage.removeItem("app_user_id")
 
@@ -57,14 +60,13 @@ export const NavBar = (props) => {
 
     return (
         <div className="navbar">
-            <section>
+            {/* <section className="Logo"> */}
+            {/* <img src={logo} alt="Logo" /> */}
+            <img className="Logo" src="HistoryTravelerLog.jpg" alt="Logo" />
+            {/* </section> */}
+            <section className="homeButton">
                 <button onClick={() => props.history.push("/")}>
                     Home</button>
-            </section>
-
-            <section>
-                <button onClick={() => props.history.push("/trips")}>
-                    Go Travel</button>
             </section>
 
             <section>
@@ -102,7 +104,7 @@ export const NavBar = (props) => {
                     }
                 </select >
             </section>
-            <section>
+            <section className="logout">
                 <button onClick={() => { clearLocalStorage() }}
                     to="/login"
                 >Log Out</button>

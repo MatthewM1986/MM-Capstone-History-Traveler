@@ -524,6 +524,61 @@
       "name": "create trip",
       "userId": 1,
       "id": 22
+    },
+    {
+      "name": "let's work today",
+      "userId": 1,
+      "id": 23
+    },
+    {
+      "name": "one for the money",
+      "userId": 1,
+      "id": 24
+    },
+    {
+      "name": "Two for the show",
+      "userId": 1,
+      "id": 25
+    },
+    {
+      "name": "I hate this",
+      "userId": 1,
+      "id": 26
+    },
+    {
+      "name": "Travis trip",
+      "userId": 1,
+      "id": 27
+    },
+    {
+      "name": "props trip",
+      "userId": 1,
+      "id": 28
+    },
+    {
+      "name": "Test Trip",
+      "userId": 1,
+      "id": 29
+    },
+    {
+      "name": "Did Danny fix it!?",
+      "userId": 1,
+      "id": 30
+    },
+    {
+      "name": "Let's try this again",
+      "userId": 1,
+      "id": 31
+    },
+    {
+      "name": "Badda Bing",
+      "userId": 1,
+      "id": 32
+    },
+    {
+      "name": "I hate React",
+      "userId": 1,
+      "id": 33
     }
   ],
   "landmarkTrips": [
@@ -551,6 +606,11 @@
       "landmarkId": 10,
       "tripId": 1,
       "id": 7
+    },
+    {
+      "landmarkId": 1,
+      "tripId": 33,
+      "id": 8
     }
   ]
 }

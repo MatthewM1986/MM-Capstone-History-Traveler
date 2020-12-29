@@ -31,6 +31,7 @@ export const TripProvider = (props) => {
         }).then(getTrips)
     }
 
+    //this expands into the landmarkTrips table to find the trip id associated with the landmarkTrip
     const getLandmarksByTripId = (tripId) => {
         return fetch(`http://localhost:8088/landmarkTrips?_expand=trip&tripId=${tripId}`)
             .then(res => res.json())
