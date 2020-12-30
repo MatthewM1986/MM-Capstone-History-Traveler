@@ -429,6 +429,11 @@
       "name": "Nashville Spring 2021",
       "userId": 1,
       "id": 3
+    },
+    {
+      "name": "Test Trip",
+      "userId": 1,
+      "id": 4
     }
   ],
   "landmarkTrips": [
