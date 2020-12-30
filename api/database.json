@@ -431,14 +431,19 @@
       "id": 3
     },
     {
-      "name": "Test Trip",
-      "userId": 1,
-      "id": 4
+      "name": "Dylana trip",
+      "userId": 2,
+      "id": 6
     },
     {
-      "name": "Test Trip 2",
+      "name": "Dylana test trip 2",
+      "userId": 2,
+      "id": 7
+    },
+    {
+      "name": "Matt's trip",
       "userId": 1,
-      "id": 5
+      "id": 8
     }
   ],
   "landmarkTrips": [
@@ -486,6 +491,26 @@
       "landmarkId": 29,
       "tripId": 3,
       "id": 11
+    },
+    {
+      "landmarkId": 3,
+      "tripId": 6,
+      "id": 12
+    },
+    {
+      "landmarkId": 4,
+      "tripId": 6,
+      "id": 13
+    },
+    {
+      "landmarkId": 5,
+      "tripId": 6,
+      "id": 14
+    },
+    {
+      "landmarkId": 6,
+      "tripId": 6,
+      "id": 15
     }
   ]
 }

@@ -12,9 +12,6 @@ export const Home = (props) => {
     //null makes it blank when page renders and trip holds what is typed in the text box
     const trip = useRef(null)
 
-    //This pulls the current trip id stored in the local storage
-    // const tripId = localStorage.getItem("current_trip_id")
-
     //this grabs my trips array from my json immediatly after the page renders the first time
     useEffect(() => {
         getTrips()
