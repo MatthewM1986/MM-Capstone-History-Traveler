@@ -32,6 +32,7 @@ export const TripDetails = (props) => {
         const foundTrip = tripsArray.find(t => t.id === +props.match.params.tripId) || {}
         //This puts the found id into UseState variable trip
         setTrips(foundTrip)
+        //This gets the landmarks associated with the updated tripsid
         getLandmarksByTripId(foundTrip.id)
         // this watches the property of a URL endpoint(tripId)
     }, [tripsArray, props.match.params.tripId])

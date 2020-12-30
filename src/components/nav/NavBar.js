@@ -106,8 +106,10 @@ export const NavBar = (props) => {
                     </select >
                 </section>
                 <section className="logout">
-                    <button onClick={() => { clearLocalStorage() }}
-                        to="/login"
+                    <button onClick={() => {
+                        clearLocalStorage()
+                        props.history.push("/login")
+                    }}
                     >Log Out</button>
                 </section>
             </div>
