@@ -12,9 +12,7 @@ export const HistoryTraveler = () => (
             if (localStorage.getItem("app_user_id")) {
                 return (
                     <>
-
                         <Route render={props => <ApplicationView {...props} />} />
-
                     </>
                 )
             } else {

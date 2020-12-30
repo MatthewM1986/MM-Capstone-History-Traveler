@@ -1,8 +1,8 @@
 import React, { useContext, useRef, useEffect, useState } from "react"
-import { TripContext } from "./TripProvider"
-import "./Trip.css"
+import { TripContext } from "../trips/TripProvider"
+import "./Home.css"
 
-export const TripCreate = (props) => {
+export const Home = (props) => {
     //this component is giving access to the three properties from my TripProvider.js
     const { tripsArray, getTrips, addTrip } = useContext(TripContext)
     //Create a newTrip state variable with the initual value of an empty object

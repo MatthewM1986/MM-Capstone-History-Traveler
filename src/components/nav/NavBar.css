@@ -1,14 +1,22 @@
   
+.navbar-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
 .navbar {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  background-color: beige
 }
 
 .form-control {
   list-style-type: none;
-    max-width: 500px;
+    width: 500px;
   height: 10p;
 }
 
@@ -18,9 +26,15 @@
 
 .homeButton {
 display: flex;
+width: 100px;
 }
 
 .logout {
   display: flex;
 }
+
+ /* img {
+    max-width:1000px;
+    height: auto;
+  } */
 

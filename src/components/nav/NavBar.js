@@ -4,13 +4,13 @@ import "./NavBar.css"
 import { CityContext } from "../cities/CityProvider"
 import { TripContext } from "../trips/TripProvider"
 import { LandmarkContext } from "../landmarks/LandmarkProvider"
-// import logo from "../images/HistoryTravelerLogo.jpg"
+import logo from "../images/HistoryTravelerLogo.jpg"
 
 export const NavBar = (props) => {
     //this component is giving access to the properties from my CityProvider.js through the useContext
     const { citiesArray, getCities } = useContext(CityContext)
     //this component is giving access to the properties from my TripProvider.js through the useContex
-    const { tripsArray, getTrips, addTrip } = useContext(TripContext)
+    const { tripsArray, getTrips } = useContext(TripContext)
     //this component is giving access to the properties from my LandmarkProvider.js through the useContex
     const { getLandmarks } = useContext(LandmarkContext)
 
@@ -55,60 +55,62 @@ export const NavBar = (props) => {
     //This clears the local storage of the logged in user
     const clearLocalStorage = () => {
         localStorage.removeItem("app_user_id")
-
     }
 
     return (
-        <div className="navbar">
-            {/* <section className="Logo"> */}
-            {/* <img src={logo} alt="Logo" /> */}
-            <img className="Logo" src="HistoryTravelerLog.jpg" alt="Logo" />
-            {/* </section> */}
-            <section className="homeButton">
-                <button onClick={() => props.history.push("/")}>
-                    Home</button>
+        <div className="navbar-container">
+            <section className="Logo">
+                <img src={logo} alt="Logo" />
             </section>
 
-            <section>
-                {/* <label>Browse Cities</label> */}
-                <select defaultValue="0"
-                    onChange={() => {
-                        handleCitySelect()
-                    }}
-                    name="city" ref={city} id="destinationCity" className="form-control">
-                    <option value="0">Select a City</option>
-                    {
-                        citiesArray.map(city => (
-                            <option key={city.id} value={city.id}>
-                                {city.name}
-                            </option>
-                        ))
-                    }
-                </select >
-            </section>
 
-            <section>
-                {/* <label>Browse Created Trips</label> */}
-                < select defaultValue="0"
-                    onChange={() => {
-                        handleTripSelect()
-                    }}
-                    name="trip" ref={trip} id="createdTrip" className="form-control" >
-                    <option value="0">Select Your Trip</option>
-                    {
-                        tripsArray.map(trip => (
-                            <option key={trip.id} value={trip.id}>
-                                {trip.name}
-                            </option>
-                        ))
-                    }
-                </select >
-            </section>
-            <section className="logout">
-                <button onClick={() => { clearLocalStorage() }}
-                    to="/login"
-                >Log Out</button>
-            </section>
+            <div className="navbar">
+                <section className="homeButton">
+                    <button onClick={() => props.history.push("/")}>
+                        Home</button>
+                </section>
+
+                <section>
+                    {/* <label>Browse Cities</label> */}
+                    <select defaultValue="0"
+                        onChange={() => {
+                            handleCitySelect()
+                        }}
+                        name="city" ref={city} id="destinationCity" className="form-control">
+                        <option value="0">Select a City</option>
+                        {
+                            citiesArray.map(city => (
+                                <option key={city.id} value={city.id}>
+                                    {city.name}
+                                </option>
+                            ))
+                        }
+                    </select >
+                </section>
+
+                <section>
+                    {/* <label>Browse Created Trips</label> */}
+                    < select defaultValue="0"
+                        onChange={() => {
+                            handleTripSelect()
+                        }}
+                        name="trip" ref={trip} id="createdTrip" className="form-control" >
+                        <option value="0">Select Your Trip</option>
+                        {
+                            tripsArray.map(trip => (
+                                <option key={trip.id} value={trip.id}>
+                                    {trip.name}
+                                </option>
+                            ))
+                        }
+                    </select >
+                </section>
+                <section className="logout">
+                    <button onClick={() => { clearLocalStorage() }}
+                        to="/login"
+                    >Log Out</button>
+                </section>
+            </div>
         </div >
     )
 }
