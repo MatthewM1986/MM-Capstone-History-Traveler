@@ -4,7 +4,6 @@ import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import { ApplicationView } from "./ApplicationView"
 import "./HistoryTraveler.css"
-import background from "./images/OldMapBlue.jpg"
 
 export const HistoryTraveler = () => (
     <>

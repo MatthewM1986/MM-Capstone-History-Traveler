@@ -17,7 +17,10 @@ export const ApplicationView = () => {
     return (
         <>
             <section
-                style={{ backgroundImage: `url(${background})` }}>
+                style={{
+                    backgroundImage: `url(${background})`, backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'cover'
+                }} >
 
                 <CityProvider>
                     <TripProvider>

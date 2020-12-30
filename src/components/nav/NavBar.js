@@ -59,55 +59,59 @@ export const NavBar = (props) => {
     }
 
     return (
-        <div className="navbar">
+        <div className="navbar-container">
             <section className="Logo">
                 <img src={logo} alt="Logo" />
             </section>
-            <section className="homeButton">
-                <button onClick={() => props.history.push("/")}>
-                    Home</button>
-            </section>
 
-            <section>
-                {/* <label>Browse Cities</label> */}
-                <select defaultValue="0"
-                    onChange={() => {
-                        handleCitySelect()
-                    }}
-                    name="city" ref={city} id="destinationCity" className="form-control">
-                    <option value="0">Select a City</option>
-                    {
-                        citiesArray.map(city => (
-                            <option key={city.id} value={city.id}>
-                                {city.name}
-                            </option>
-                        ))
-                    }
-                </select >
-            </section>
 
-            <section>
-                {/* <label>Browse Created Trips</label> */}
-                < select defaultValue="0"
-                    onChange={() => {
-                        handleTripSelect()
-                    }}
-                    name="trip" ref={trip} id="createdTrip" className="form-control" >
-                    <option value="0">Select Your Trip</option>
-                    {
-                        tripsArray.map(trip => (
-                            <option key={trip.id} value={trip.id}>
-                                {trip.name}
-                            </option>
-                        ))
-                    }
-                </select >
-            </section>
-            <section className="logout">
-                <button onClick={() => { clearLocalStorage() }}
-                    to="/login"
-                >Log Out</button>
-            </section>
+            <div className="navbar">
+                <section className="homeButton">
+                    <button onClick={() => props.history.push("/")}>
+                        Home</button>
+                </section>
+
+                <section>
+                    {/* <label>Browse Cities</label> */}
+                    <select defaultValue="0"
+                        onChange={() => {
+                            handleCitySelect()
+                        }}
+                        name="city" ref={city} id="destinationCity" className="form-control">
+                        <option value="0">Select a City</option>
+                        {
+                            citiesArray.map(city => (
+                                <option key={city.id} value={city.id}>
+                                    {city.name}
+                                </option>
+                            ))
+                        }
+                    </select >
+                </section>
+
+                <section>
+                    {/* <label>Browse Created Trips</label> */}
+                    < select defaultValue="0"
+                        onChange={() => {
+                            handleTripSelect()
+                        }}
+                        name="trip" ref={trip} id="createdTrip" className="form-control" >
+                        <option value="0">Select Your Trip</option>
+                        {
+                            tripsArray.map(trip => (
+                                <option key={trip.id} value={trip.id}>
+                                    {trip.name}
+                                </option>
+                            ))
+                        }
+                    </select >
+                </section>
+                <section className="logout">
+                    <button onClick={() => { clearLocalStorage() }}
+                        to="/login"
+                    >Log Out</button>
+                </section>
+            </div>
         </div >
     )
 }

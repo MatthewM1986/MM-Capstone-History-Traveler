@@ -44,13 +44,13 @@ export const TripCreate = (props) => {
 
 
     return (
-        <section className="trips_container">
-            < div className="trips" >
-                <>
+        <section className="createTrips_container">
+            < div className="createTrips" >
+                <div className="intro">
                     <h2>Begin Your History Travels Now!</h2>
                     <h3>Create a New Trip, Browse Cities or Choose a Saved Trip!</h3>
-                </>
-                <div className="tripName">
+                </div>
+                <div className="createTripName">
                     <input type="text" ref={trip} id="tripName" className="form-control" placeholder="Name Your Future Trip" />
                     <button className="newTrip"
                         onClick={evt => {
@@ -59,9 +59,9 @@ export const TripCreate = (props) => {
                         }}
                     >Create New Trip</button>
                 </div >
-                <>
+                <div className="intro">
                     <h2>Please Enter a Trip Name</h2>
-                </>
+                </div>
             </div>
         </section>
     )

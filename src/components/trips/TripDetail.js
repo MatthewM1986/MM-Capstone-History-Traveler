@@ -57,9 +57,6 @@ export const TripDetails = (props) => {
                     <h2 className="tripName">
                         {trip.name}
                     </h2>
-                    <h3>
-                        Choose a city and add the landmarks you would like to visit on this trip
-                    </h3>
                     <div className="trips">
                         {
                             landmarkTripsChosen.map(tl => {
