@@ -22,18 +22,11 @@ export const ApplicationView = () => {
                     backgroundSize: 'cover'
                 }} >
 
-
                 <CityProvider>
                     <TripProvider>
                         <LandmarkProvider>
                             <Route path="/" render={props => <NavBar {...props} />} />
-                        </LandmarkProvider>
-                    </TripProvider>
-                </CityProvider>
 
-                <CityProvider>
-                    <TripProvider>
-                        <LandmarkProvider>
                             <Route exact path="/" render={props => <Home {...props} />} />
                         </LandmarkProvider>
                     </TripProvider>

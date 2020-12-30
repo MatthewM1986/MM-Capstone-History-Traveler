@@ -434,6 +434,11 @@
       "name": "Test Trip",
       "userId": 1,
       "id": 4
+    },
+    {
+      "name": "Test Trip 2",
+      "userId": 1,
+      "id": 5
     }
   ],
   "landmarkTrips": [

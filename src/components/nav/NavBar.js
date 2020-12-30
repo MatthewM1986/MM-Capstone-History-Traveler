@@ -10,7 +10,7 @@ export const NavBar = (props) => {
     //this component is giving access to the properties from my CityProvider.js through the useContext
     const { citiesArray, getCities } = useContext(CityContext)
     //this component is giving access to the properties from my TripProvider.js through the useContex
-    const { tripsArray, getTrips, addTrip } = useContext(TripContext)
+    const { tripsArray, getTrips } = useContext(TripContext)
     //this component is giving access to the properties from my LandmarkProvider.js through the useContex
     const { getLandmarks } = useContext(LandmarkContext)
 
@@ -55,7 +55,6 @@ export const NavBar = (props) => {
     //This clears the local storage of the logged in user
     const clearLocalStorage = () => {
         localStorage.removeItem("app_user_id")
-
     }
 
     return (
