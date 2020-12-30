@@ -15,8 +15,9 @@ export const TripProvider = (props) => {
     const [landmarkTripsArray, setLandmarkTrips] = useState([])
     // useState returns [initial value of state variable, a function to set the value of the state variable]
 
+    const activeUserId = localStorage.getItem("app_user_id")
     const getTrips = () => {
-        return fetch("http://localhost:8088/trips")
+        return fetch(`http://localhost:8088/trips/?userId=${activeUserId}`)
             .then(res => res.json())
             .then(setTrips)
     }
