@@ -50,18 +50,18 @@ export const TripCreate = (props) => {
                     <h2>Begin Your History Travels Now!</h2>
                     <h3>Create a New Trip, Browse Cities or Choose a Saved Trip!</h3>
                 </>
-                <>
-                    <h2>Please Enter a Trip Name</h2>
-                </>
                 <div className="tripName">
                     <input type="text" ref={trip} id="tripName" className="form-control" placeholder="Name Your Future Trip" />
-                    <button className="newTrip">
+                    <button className="newTrip"
                         onClick={evt => {
                             evt.preventDefault()
                             addNewTrip()
                         }}
-                        Create New Trip</button>
+                    >Create New Trip</button>
                 </div >
+                <>
+                    <h2>Please Enter a Trip Name</h2>
+                </>
             </div>
         </section>
     )

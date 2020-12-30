@@ -12,23 +12,23 @@
   }
 
 .tripName{
-
+display: flex;
   }
 
 .form-control{
-    
+    display: flex;
   }
 
 .newTrip{
-
+display: flex;
 }
 
 .tripList{
-  
+  display: flex;
 }
 
 .tripName{
-
+display: flex;
 }
 
   .landmarksTrip {
@@ -69,11 +69,11 @@
   }
 
   .remove{
-
+display: flex;
   }
 
    .delete{
-
+display: flex;
   }
 
   img {

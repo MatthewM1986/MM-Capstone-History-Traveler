@@ -4,7 +4,7 @@ import "./NavBar.css"
 import { CityContext } from "../cities/CityProvider"
 import { TripContext } from "../trips/TripProvider"
 import { LandmarkContext } from "../landmarks/LandmarkProvider"
-// import logo from "../images/HistoryTravelerLogo.jpg"
+import logo from "../images/HistoryTravelerLogo.jpg"
 
 export const NavBar = (props) => {
     //this component is giving access to the properties from my CityProvider.js through the useContext
@@ -60,10 +60,9 @@ export const NavBar = (props) => {
 
     return (
         <div className="navbar">
-            {/* <section className="Logo"> */}
-            {/* <img src={logo} alt="Logo" /> */}
-            <img className="Logo" src="HistoryTravelerLog.jpg" alt="Logo" />
-            {/* </section> */}
+            <section className="Logo">
+                <img src={logo} alt="Logo" />
+            </section>
             <section className="homeButton">
                 <button onClick={() => props.history.push("/")}>
                     Home</button>
