@@ -1,5 +1,5 @@
 
-import React, { useContext, useRef, useEffect, useState } from "react"
+import React, { useContext, useRef, useEffect } from "react"
 import "./NavBar.css"
 import { CityContext } from "../cities/CityProvider"
 import { TripContext } from "../trips/TripProvider"
@@ -77,7 +77,7 @@ export const NavBar = (props) => {
                             handleCitySelect()
                         }}
                         name="city" ref={city} id="destinationCity" className="form-control">
-                        <option value="0">Select a City</option>
+                        <option value="0">City Select</option>
                         {
                             citiesArray.map(city => (
                                 <option key={city.id} value={city.id}>
@@ -95,7 +95,7 @@ export const NavBar = (props) => {
                             handleTripSelect()
                         }}
                         name="trip" ref={trip} id="createdTrip" className="form-control" >
-                        <option value="0">Select Your Trip</option>
+                        <option value="0">Trip Select</option>
                         {
                             tripsArray.map(trip => (
                                 <option key={trip.id} value={trip.id}>

@@ -7,10 +7,6 @@
     display: flex;
   }
 
-.tripName{
-display: flex;
-  }
-
 .form-control{
     display: flex;
   }
@@ -21,40 +17,25 @@ max-width: 200px;
 max-height: 150px;
 }
 
+.tripListContainer{
+  display: flex;
+      background-color: beige;
+    border: 3px solid green;
+}
+
 .tripList{
   display: flex;
+    flex-direction: column;
+  flex-wrap: nowrap;
+    justify-content: center;
 }
 
 .tripName{
 display: flex;
 color: green;
+background-color: beige;
     margin: 1em;
     padding: 1em;
-}
-
-  .landmarksTrip {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-.createTrips_container{
-  display: flex;
-}
-
-.intro{
-  display: flex;
-  color: green;
-    margin: 1em;
-    padding: 1em;
-}
-
-.createTrips{
-  display: flex;
-}
-
-.createTripName{
-  display: flex;
 }
 
   .landmarkTripCard{
