@@ -416,11 +416,6 @@
   ],
   "trips": [
     {
-      "name": "Savannah 2021",
-      "userId": 1,
-      "id": 1
-    },
-    {
       "name": "Chattanooga Fall 2021",
       "userId": 1,
       "id": 2
@@ -431,19 +426,9 @@
       "id": 3
     },
     {
-      "name": "Dylana trip",
+      "name": "Big 2021 Trip",
       "userId": 2,
-      "id": 6
-    },
-    {
-      "name": "Dylana test trip 2",
-      "userId": 2,
-      "id": 7
-    },
-    {
-      "name": "Matt's trip",
-      "userId": 1,
-      "id": 8
+      "id": 9
     }
   ],
   "landmarkTrips": [
@@ -456,26 +441,6 @@
       "landmarkId": 13,
       "tripId": 2,
       "id": 2
-    },
-    {
-      "landmarkId": 1,
-      "tripId": 1,
-      "id": 4
-    },
-    {
-      "landmarkId": 8,
-      "tripId": 1,
-      "id": 6
-    },
-    {
-      "landmarkId": 10,
-      "tripId": 1,
-      "id": 7
-    },
-    {
-      "landmarkId": 1,
-      "tripId": 33,
-      "id": 8
     },
     {
       "landmarkId": 24,
@@ -493,24 +458,34 @@
       "id": 11
     },
     {
-      "landmarkId": 3,
-      "tripId": 6,
+      "landmarkId": 25,
+      "tripId": 9,
       "id": 12
     },
     {
-      "landmarkId": 4,
-      "tripId": 6,
+      "landmarkId": 26,
+      "tripId": 9,
       "id": 13
     },
     {
-      "landmarkId": 5,
-      "tripId": 6,
+      "landmarkId": 27,
+      "tripId": 9,
       "id": 14
     },
     {
-      "landmarkId": 6,
-      "tripId": 6,
+      "landmarkId": 13,
+      "tripId": 9,
       "id": 15
+    },
+    {
+      "landmarkId": 5,
+      "tripId": 9,
+      "id": 16
+    },
+    {
+      "landmarkId": 10,
+      "tripId": 9,
+      "id": 17
     }
   ]
 }

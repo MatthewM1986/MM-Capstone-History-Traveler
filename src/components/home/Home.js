@@ -35,7 +35,6 @@ export const Home = (props) => {
         })
             //This pushes to the /trips url
             .then(() => props.history.push("/trips"))
-        console.log("new trip id button click", tripsArray)
         // .then(getTrips)
     }
 
@@ -45,6 +44,7 @@ export const Home = (props) => {
             < div className="createTrips" >
                 <div className="intro">
                     <h2>Begin Your History Travels Now!</h2>
+                    <br></br>
                     <h3>Create a New Trip, Browse Cities or Choose a Saved Trip!</h3>
                 </div>
                 <div className="createTripName">
@@ -56,9 +56,6 @@ export const Home = (props) => {
                         }}
                     >Create New Trip</button>
                 </div >
-                <div className="intro">
-                    <h2>Please Enter a Trip Name</h2>
-                </div>
             </div>
         </section>
     )

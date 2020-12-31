@@ -1,82 +1,49 @@
+    
+    .createTrips_container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+    }
+    
+    .createTrips{
+        display: flex;
+        flex-basis: 28%;
+        margin: 1em;
+        padding: 1em;
+        background-color: beige;
+        border: 3px solid green;
+        max-width: auto;
+        height: auto;
+                flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    
+    .intro{
+        display: flex;
+        color: saddlebrown;
+        margin: 1em;
+        padding: 1em;
+                flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    
+    .createTripName{
+        display: flex;
+    }
+    
+    .form-control{
+        display: flex;
+    }
+    
+    .newTrip{
+        display: flex;
+        max-width: 200px;
+        max-height: 150px;
+      }
 
-.trips_container {
-    display: flex;
-}
 
-.trips {
-    display: flex;
-  }
-
-.tripName{
-display: flex;
-  }
-
-.form-control{
-    display: flex;
-  }
-
-.newTrip{
-display: flex;
-max-width: 200px;
-max-height: 150px;
-}
-
-.tripList{
-  display: flex;
-}
-
-.tripName{
-display: flex;
-color: green;
-    margin: 1em;
-    padding: 1em;
-}
-
-  .landmarksTrip {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-.createTrips_container{
-  display: flex;
-}
-
-.intro{
-  display: flex;
-  color: green;
-    margin: 1em;
-    padding: 1em;
-}
-
-.createTrips{
-  display: flex;
-}
-
-.createTripName{
-  display: flex;
-}
-
-  .landmarkTripCard{
-     flex-basis: 28%;
-    margin: 1em;
-    padding: 1em;
-    background-color: beige;
-    border: 3px solid green;
-    max-width:200px;
-    height: auto;
-    overflow-wrap: break-word;
-  }
-
-  .remove{
-display: flex;
-  }
-
-   .delete{
-display: flex;
-  }
-
-  img {
+    img {
            max-width:200px;
         height: auto;
       border: black 3px solid; 

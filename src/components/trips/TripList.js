@@ -3,7 +3,15 @@ import React from "react"
 export const TripList = () => {
     return (
         <>
-            <h2 className="TripList">Choose the City to Visit and choose your landmarks you want to see</h2>
+            <section className="tripListContainer">
+                <div className="tripList">
+                    <h2>Now choose the city you are traveling to</h2>
+                    <br></br>
+                    <h2>Then select which landmarks to see on your travels</h2>
+                    <br></br>
+                    <h2>Lastly go visit your created trip to edit</h2>
+                </div>
+            </section>
         </>
     )
 } 

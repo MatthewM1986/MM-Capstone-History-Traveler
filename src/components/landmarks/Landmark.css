@@ -30,7 +30,8 @@ display: flex;
     flex-basis: 28%;
     margin: 1em;
     padding: 1em;
-    border: 1px solid goldenrod;
+        background-color: beige;
+    border: 3px solid green;
     max-width: auto;
     height: auto;
   }
