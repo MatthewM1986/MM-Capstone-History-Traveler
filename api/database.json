@@ -429,6 +429,11 @@
       "name": "Big 2021 Trip",
       "userId": 2,
       "id": 9
+    },
+    {
+      "name": "Test Trip",
+      "userId": 1,
+      "id": 10
     }
   ],
   "landmarkTrips": [

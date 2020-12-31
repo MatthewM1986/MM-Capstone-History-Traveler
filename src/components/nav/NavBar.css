@@ -21,9 +21,10 @@
   height: 10p;
 }
 
-.Logo {
-  display: flex;
-}
+/* .Logo {
+      width:100%;
+    height: auto;
+} */
 
 .homeButton {
 display: flex;

@@ -59,8 +59,8 @@ export const NavBar = (props) => {
 
     return (
         <div className="navbar-container">
-            <section className="Logo">
-                <img src={logo} alt="Logo" />
+            <section >
+                <img className="Logo" src={logo} alt="Logo" />
             </section>
 
 

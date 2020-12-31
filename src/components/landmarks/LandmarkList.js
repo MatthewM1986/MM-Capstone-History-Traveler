@@ -23,6 +23,8 @@ export const LandmarkList = (props) => {
         <section className="landmarks_container">
             <div className="landmarks">
                 {
+                    //This filters through the landmarks array and finds the cityid stored in props and mathces it with the landmark array cityid
+                    //Then it maps through the filtered array
                     landmarksArray.filter(lm => lm.cityId === +props.match.params.cityId).map(landmarkObj => {
                         return (
                             <div key={landmarkObj.id} className="landmarkCard">
