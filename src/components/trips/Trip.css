@@ -1,10 +1,16 @@
 
 .trips_container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    justify-content: center;
+            width: auto;
+        min-height: 720px;
 }
 
 .trips {
     display: flex;
+    flex-wrap: wrap;
   }
 
 .form-control{
@@ -17,22 +23,41 @@ max-width: 200px;
 max-height: 150px;
 }
 
+.tripListContainerTwo{
+        display: flex;
+        flex-basis: 28%;
+        margin: 1em;
+        padding: 1em;
+        background-color: beige;
+        border: 3px solid saddlebrown;
+        min-width: 700px;
+        max-height: 300px;
+                flex-direction: column;
+        flex-wrap: nowrap;
+}
+
 .tripListContainer{
-  display: flex;
-      background-color: beige;
-    border: 3px solid green;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        width: auto;
+        min-height: 720px;
 }
 
 .tripList{
-  display: flex;
-    flex-direction: column;
-  flex-wrap: nowrap;
-    justify-content: center;
+      display: flex;
+        color: saddlebrown;
+        margin: 1em;
+        padding: 1em;
+                flex-direction: column;
+        flex-wrap: nowrap;
+        text-align: center;
 }
 
 .tripName{
 display: flex;
-color: green;
+color: saddlebrown;
 background-color: beige;
     margin: 1em;
     padding: 1em;
@@ -43,7 +68,7 @@ background-color: beige;
     margin: 1em;
     padding: 1em;
     background-color: beige;
-    border: 3px solid green;
+    border: 3px solid saddlebrown;
     max-width:200px;
     height: auto;
     overflow-wrap: break-word;
@@ -51,14 +76,12 @@ background-color: beige;
 
   .remove{
 display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
    .delete{
 display: flex;
-  }
-
-  img {
-           max-width:200px;
-        height: auto;
-      border: black 3px solid; 
+    justify-content: center;
+    align-items: center;
   }

@@ -30,12 +30,13 @@ export const Home = (props) => {
     const addNewTrip = () => {
 
         addTrip({
+            //This sends the current referenced value to json
             name: trip.current.value,
+            //This sends the userid that is performing the action to json
             userId: +localStorage.getItem("app_user_id")
         })
             //This pushes to the /trips url
             .then(() => props.history.push("/trips"))
-        // .then(getTrips)
     }
 
 
@@ -49,7 +50,7 @@ export const Home = (props) => {
                 </div>
                 <div className="createTripName">
                     <input type="text" ref={trip} id="tripName" className="form-control" placeholder="Name Your Future Trip" />
-                    <button className="newTrip"
+                    <button className="newTripButton"
                         onClick={evt => {
                             evt.preventDefault()
                             addNewTrip()

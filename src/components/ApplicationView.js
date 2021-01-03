@@ -10,9 +10,10 @@ import { LandmarkProvider } from "./landmarks/LandmarkProvider"
 import { LandmarkList } from "./landmarks/LandmarkList"
 import { LandmarkDetails } from "./landmarks/LandmarkDetail"
 import { NavBar } from "./nav/NavBar"
+// import "./ApplicationView.css"
 import background from "./images/OldMapBlue.jpg"
 
-
+//this executes each module that is routed through here
 export const ApplicationView = () => {
     return (
         <>

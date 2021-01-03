@@ -2,13 +2,14 @@
 .landmarks_container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+            width: auto;
+        min-height: 720px;
 }
 
 .landmarks {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
 .landmarkCard {
@@ -16,36 +17,58 @@
     margin: 1em;
     padding: 1em;
     background-color: beige;
-    border: 3px solid green;
+    border: 3px solid saddlebrown;
     max-width:200px;
     height: auto;
+    text-align: center;
   }
 
   .btn--details{
 display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
+  .landmarkContainer{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        width: auto;
+        min-height: 720px;
+  }
   
-  .landmark {
+  .landmarkDetail {
     flex-basis: 28%;
     margin: 1em;
     padding: 1em;
         background-color: beige;
-    border: 3px solid green;
-    max-width: auto;
+    border: 3px solid saddlebrown;
+    min-width: 600px;
     height: auto;
   }
   
   .form-control{
     display: flex;
   }
-  
-  img {
-    max-width:200px;
+
+  .landmark__name{
+  text-align: center;
+  color: saddlebrown;
+  }
+
+  .landmark__image{
+    max-width:100%;
     height: auto;
-    border: black 3px solid; 
+    border: black 3px solid;
   }
 
   .landmark__website{
     max-width:200px;
+  }
+
+  .add-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }

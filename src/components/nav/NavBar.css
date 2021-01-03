@@ -5,37 +5,40 @@
   flex-wrap: wrap;
   justify-content: space-around;
       background-color: beige;
+    }
+
+.Logo {
+      max-width: 100%;
 }
 
 .navbar {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: space-evenly;
-  background-color: beige
+  justify-content: space-between;
+  background-color: beige;
 }
 
 .form-control {
   list-style-type: none;
-    width: 500px;
-  height: 10p;
-}
-
-.Logo {
-  display: flex;
+    min-width: 300px;
+  max-height: 10p;
+        margin: 1em;
 }
 
 .homeButton {
 display: flex;
-width: 100px;
+min-width: 100px;
+    margin: 1em;
+    justify-content: center;
+    align-items: center;
 }
 
 .logout {
   display: flex;
+  min-width: 100px;
+      margin: 1em;
+    justify-content: center;
+    align-items: center;
 }
-
- /* img {
-    max-width:1000px;
-    height: auto;
-  } */
 
