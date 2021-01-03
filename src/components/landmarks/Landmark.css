@@ -25,16 +25,26 @@
 
   .btn--details{
 display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
+  .landmarkContainer{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+        width: auto;
+        min-height: 720px;
+  }
   
-  .landmark {
+  .landmarkDetail {
     flex-basis: 28%;
     margin: 1em;
     padding: 1em;
         background-color: beige;
     border: 3px solid saddlebrown;
-    max-width: auto;
+    min-width: 600px;
     height: auto;
   }
   
@@ -42,12 +52,23 @@ display: flex;
     display: flex;
   }
 
+  .landmark__name{
+  text-align: center;
+  color: saddlebrown;
+  }
+
   .landmark__image{
-    max-width:200px;
+    max-width:100%;
     height: auto;
     border: black 3px solid;
   }
 
   .landmark__website{
     max-width:200px;
+  }
+
+  .add-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }

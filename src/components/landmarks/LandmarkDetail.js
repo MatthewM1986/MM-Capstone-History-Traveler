@@ -79,24 +79,26 @@ export const LandmarkDetails = (props) => {
     }
 
     return (
-        <div className="landmark">
-            < LandmarkHTML key={landmark.id} typeObj={typeOfLandmark} landmarkObj={landmark} />
-            < select defaultValue="0"
-                onChange={handleTripSelect}
-                name="trip" ref={trip} id="createdTrip" className="form-control" >
-                <option value="0">Select Your Trip</option>
-                {
-                    tripsArray.map(trip => (
-                        <option key={trip.id} value={trip.id}>
-                            {trip.name}
-                        </option>
-                    ))
-                }
-            </select >
-            <button onClick={addNewLandmarkTripObj} >
-                Add to Trip
+        <section className="landmarkContainer">
+            <div className="landmarkDetail">
+                < LandmarkHTML key={landmark.id} typeObj={typeOfLandmark} landmarkObj={landmark} />
+                < select defaultValue="0"
+                    onChange={handleTripSelect}
+                    name="trip" ref={trip} id="createdTrip" className="form-control" >
+                    <option value="0">Select Your Trip</option>
+                    {
+                        tripsArray.map(trip => (
+                            <option key={trip.id} value={trip.id}>
+                                {trip.name}
+                            </option>
+                        ))
+                    }
+                </select >
+                <button className="add-button" onClick={addNewLandmarkTripObj} >
+                    Add to Trip
             </button>
-        </div >
+            </div >
+        </section >
 
     )
 }
