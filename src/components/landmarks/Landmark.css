@@ -19,6 +19,7 @@
     background-color: beige;
     border: 3px solid saddlebrown;
     max-width:200px;
+    max-height:300px;
     height: auto;
     text-align: center;
   }
