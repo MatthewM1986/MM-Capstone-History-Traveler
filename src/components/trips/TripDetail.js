@@ -46,9 +46,9 @@ export const TripDetails = (props) => {
             < div ></div>
             < div >
                 <section>
-                    <h2 className="tripName">
+                    {/* <h2 className="tripName">
                         {trip.name}
-                    </h2>
+                    </h2> */}
                     <div className="trips">
                         {
                             //this maps through the filtered landmarks array from the useEffect

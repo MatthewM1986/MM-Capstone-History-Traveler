@@ -50,7 +50,7 @@ export const Home = (props) => {
                 </div>
                 <div className="createTripName">
                     <input type="text" ref={trip} id="tripName" className="form-control" placeholder="Name Your Future Trip" />
-                    <button className="newTrip"
+                    <button className="newTripButton"
                         onClick={evt => {
                             evt.preventDefault()
                             addNewTrip()

@@ -19,6 +19,7 @@
     border: 3px solid green;
     max-width:200px;
     height: auto;
+    text-align: center;
   }
 
   .btn--details{
