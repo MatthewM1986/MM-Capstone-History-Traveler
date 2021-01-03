@@ -56,9 +56,3 @@ display: flex;
    .delete{
 display: flex;
   }
-
-  img {
-           max-width:200px;
-        height: auto;
-      border: black 3px solid; 
-  }

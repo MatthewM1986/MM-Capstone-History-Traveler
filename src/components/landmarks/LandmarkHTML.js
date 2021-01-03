@@ -4,7 +4,7 @@ import "./Landmark.css"
 export const LandmarkHTML = ({ typeObj, landmarkObj }) => (
     <section>
         <h3 className="landmark__name">{landmarkObj.name}</h3>
-        <div className="landmark__image"><img src={landmarkObj.imageURL}></img></div>
+        <img className="landmark__image" src={landmarkObj.imageURL}></img>
         <h5>Type of Landmark</h5>
         <div className="landmark__type">{typeObj.type}</div>
         <h5>Year built or year that the historic event happened</h5>

@@ -12,7 +12,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-evenly;
-  background-color: beige
+  background-color: beige;
 }
 
 .form-control {
@@ -21,10 +21,10 @@
   height: 10p;
 }
 
-/* .Logo {
-      width:100%;
+.Logo {
+      width: auto;
     height: auto;
-} */
+}
 
 .homeButton {
 display: flex;
@@ -34,9 +34,4 @@ width: 100px;
 .logout {
   display: flex;
 }
-
- /* img {
-    max-width:1000px;
-    height: auto;
-  } */
 

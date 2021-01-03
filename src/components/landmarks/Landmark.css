@@ -39,11 +39,11 @@ display: flex;
   .form-control{
     display: flex;
   }
-  
-  img {
+
+  .landmark__image{
     max-width:200px;
     height: auto;
-    border: black 3px solid; 
+    border: black 3px solid;
   }
 
   .landmark__website{

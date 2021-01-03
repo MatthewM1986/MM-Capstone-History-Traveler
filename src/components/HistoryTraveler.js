@@ -5,6 +5,7 @@ import { Register } from "./auth/Register"
 import { ApplicationView } from "./ApplicationView"
 import "./HistoryTraveler.css"
 
+
 export const HistoryTraveler = () => (
     <>
         < Route render={() => {

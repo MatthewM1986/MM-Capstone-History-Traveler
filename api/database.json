@@ -450,6 +450,11 @@
       "name": "new trip",
       "userId": 3,
       "id": 12
+    },
+    {
+      "name": "Awesome trip",
+      "userId": 3,
+      "id": 13
     }
   ],
   "landmarkTrips": [
@@ -532,6 +537,11 @@
       "landmarkId": 7,
       "tripId": 12,
       "id": 22
+    },
+    {
+      "landmarkId": 12,
+      "tripId": 13,
+      "id": 23
     }
   ]
 }

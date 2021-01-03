@@ -62,58 +62,61 @@ export const NavBar = (props) => {
 
     return (
         <div className="navbar-container">
-            <section >
-                <img className="Logo" src={logo} alt="Logo" />
+            <section>
+                <div >
+                    <img className="Logo" src={logo} alt="Logo" />
+                </div>
+
+
+                <div className="navbar">
+                    <section className="homeButton">
+
+                        <button onClick={() => props.history.push("/")}>
+                            Home</button>
+                    </section>
+
+                    <section>
+                        <select defaultValue="0"
+                            onChange={() => {
+                                handleCitySelect()
+                            }}
+                            name="city" ref={city} id="destinationCity" className="form-control">
+                            <option value="0">City Select</option>
+                            {
+                                citiesArray.map(city => (
+                                    <option key={city.id} value={city.id}>
+                                        {city.name}
+                                    </option>
+                                ))
+                            }
+                        </select >
+                    </section>
+
+                    <section>
+                        < select defaultValue="0"
+                            onChange={() => {
+                                handleTripSelect()
+                            }}
+                            name="trip" ref={trip} id="createdTrip" className="form-control" >
+                            <option value="0">Trip Select</option>
+                            {
+                                tripsArray.map(trip => (
+                                    <option key={trip.id} value={trip.id}>
+                                        {trip.name}
+                                    </option>
+                                ))
+                            }
+                        </select >
+                    </section>
+                    <section className="logout">
+                        <button onClick={() => {
+                            clearLocalStorage()
+                            props.history.push("/login")
+                        }}
+                        >Log Out</button>
+                    </section>
+                </div>
             </section>
-
-
-            <div className="navbar">
-                <section className="homeButton">
-                    <button onClick={() => props.history.push("/")}>
-                        Home</button>
-                </section>
-
-                <section>
-                    <select defaultValue="0"
-                        onChange={() => {
-                            handleCitySelect()
-                        }}
-                        name="city" ref={city} id="destinationCity" className="form-control">
-                        <option value="0">City Select</option>
-                        {
-                            citiesArray.map(city => (
-                                <option key={city.id} value={city.id}>
-                                    {city.name}
-                                </option>
-                            ))
-                        }
-                    </select >
-                </section>
-
-                <section>
-                    < select defaultValue="0"
-                        onChange={() => {
-                            handleTripSelect()
-                        }}
-                        name="trip" ref={trip} id="createdTrip" className="form-control" >
-                        <option value="0">Trip Select</option>
-                        {
-                            tripsArray.map(trip => (
-                                <option key={trip.id} value={trip.id}>
-                                    {trip.name}
-                                </option>
-                            ))
-                        }
-                    </select >
-                </section>
-                <section className="logout">
-                    <button onClick={() => {
-                        clearLocalStorage()
-                        props.history.push("/login")
-                    }}
-                    >Log Out</button>
-                </section>
-            </div>
         </div >
     )
 }

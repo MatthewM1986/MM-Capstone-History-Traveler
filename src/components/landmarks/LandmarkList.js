@@ -33,7 +33,7 @@ export const LandmarkList = (props) => {
                         return (
                             <div key={landmarkObj.id} className="landmarkCard">
                                 <h3 className="landmark__name">{landmarkObj.name}</h3>
-                                <div className="landmark__image"><img src={landmarkObj.imageURL}></img></div>
+                                <img className="landmark__image" src={landmarkObj.imageURL}></img>
                                 < button className="btn--details"
                                     //This tells the button that when clicked push to the details page of the current landmark
                                     onClick={() => props.history.push(`/landmarks/detail/${landmarkObj.id}`)}>Details</button>
