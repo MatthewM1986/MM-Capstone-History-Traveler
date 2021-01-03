@@ -2,13 +2,14 @@
 .landmarks_container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+            width: auto;
+        min-height: 720px;
 }
 
 .landmarks {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 
 .landmarkCard {
@@ -16,7 +17,7 @@
     margin: 1em;
     padding: 1em;
     background-color: beige;
-    border: 3px solid green;
+    border: 3px solid saddlebrown;
     max-width:200px;
     height: auto;
     text-align: center;
@@ -32,7 +33,7 @@ display: flex;
     margin: 1em;
     padding: 1em;
         background-color: beige;
-    border: 3px solid green;
+    border: 3px solid saddlebrown;
     max-width: auto;
     height: auto;
   }

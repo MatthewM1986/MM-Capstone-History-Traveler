@@ -45,7 +45,7 @@ export const TripDetails = (props) => {
         <section className="trips_container">
             < div ></div>
             < div >
-                <section>
+                <section >
                     {/* <h2 className="tripName">
                         {trip.name}
                     </h2> */}

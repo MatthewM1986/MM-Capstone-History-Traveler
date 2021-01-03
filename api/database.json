@@ -455,6 +455,11 @@
       "name": "Awesome trip",
       "userId": 3,
       "id": 13
+    },
+    {
+      "name": "test",
+      "userId": 3,
+      "id": 14
     }
   ],
   "landmarkTrips": [
