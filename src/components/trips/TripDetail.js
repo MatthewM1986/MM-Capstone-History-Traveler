@@ -8,23 +8,20 @@ import { TypeContext } from "../types/TypeProvider"
 
 export const TripDetails = (props) => {
 
+    //These get the context listed in the brackets from the providers = to
     const { tripsArray, getTrips, getLandmarksByTripId, landmarkTripsArray, releaseTrip, releaseLandmark } = useContext(TripContext)
     const { landmarksArray, getLandmarks } = useContext(LandmarkContext)
-    const { getTypes } = useContext(TypeContext)
+    const { typesArray, getTypes } = useContext(TypeContext)
 
-    const [typeOfLandmark, setTypeOfLandmark] = useState({})
+    //the left holds the current state and the right holds the function that updates the state
     const [trip, setTrips] = useState({})
     const [landmarkTripsChosen, setLandmarkTripsChosen] = useState([])
+    //Create a typeOfLandmark state variable with the initual value of an empty object
 
-    //This pulls the trip id from local storage
-    const tripId = localStorage.getItem("current_trip_id")
     useEffect(() => {
         getTrips()
+            .then(getTypes())
             .then(getLandmarks())
-    }, [])
-
-    useEffect(() => {
-        getTrips()
     }, [])
 
     //This finds the trip id that matches the trip id stores in props
@@ -37,17 +34,11 @@ export const TripDetails = (props) => {
         // this watches the property of a URL endpoint(tripId)
     }, [tripsArray, props.match.params.tripId])
 
-
     //This filters through landmarkTrips array and finds all the landmarkTrip id's that match the trip id's in the UseState variable trip
     useEffect(() => {
         const chosenLandmarkTrips = landmarkTripsArray.filter(lta => lta.tripId === trip.id) || []
         setLandmarkTripsChosen(chosenLandmarkTrips)
     }, [landmarkTripsArray])
-
-    useEffect(() => {
-        getTypes()
-            .then(getLandmarks)
-    }, [])
 
 
     return (
@@ -60,15 +51,18 @@ export const TripDetails = (props) => {
                     </h2>
                     <div className="trips">
                         {
+                            //this maps through the filtered landmarks array from the useEffect
                             landmarkTripsChosen.map(tl => {
-                                const foundLandmarkObj = landmarksArray.find(lm => tl.landmarkId === lm.id) || {}
+                                //this finds the landmark id that matches the join table landmark id
+                                const foundLandmarkObj = landmarksArray.find(lm => tl.landmarkId === lm.id)
+                                const foundTypeOfLandmark = typesArray.find(t => t.id === foundLandmarkObj.typeId)
                                 return (
                                     <div key={foundLandmarkObj.id} className="landmarkTripCard">
-                                        < LandmarkHTML typeObj={typeOfLandmark} landmarkObj={foundLandmarkObj} />
+                                        < LandmarkHTML typeObj={foundTypeOfLandmark} landmarkObj={foundLandmarkObj} />
                                         < button className="remove"
                                             onClick={() => {
                                                 releaseLandmark(tl.id)
-                                                    .then(getLandmarksByTripId(tripId))
+                                                    .then(getLandmarksByTripId(+props.match.params.tripId))
                                             }}
                                         >Remove</button>
                                     </div>)

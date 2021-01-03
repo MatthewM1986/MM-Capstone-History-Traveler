@@ -12,7 +12,7 @@ import { LandmarkDetails } from "./landmarks/LandmarkDetail"
 import { NavBar } from "./nav/NavBar"
 import background from "./images/OldMapBlue.jpg"
 
-
+//this executes each module that is routed through here
 export const ApplicationView = () => {
     return (
         <>

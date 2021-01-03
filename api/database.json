@@ -11,6 +11,12 @@
       "password": "123abcd",
       "name": "Dylana  Miller",
       "id": 2
+    },
+    {
+      "email": "matt@matt.com",
+      "password": "matthew",
+      "name": "Matt M",
+      "id": 3
     }
   ],
   "landmarks": [
@@ -434,6 +440,16 @@
       "name": "Test Trip",
       "userId": 1,
       "id": 10
+    },
+    {
+      "name": "New Trip",
+      "userId": 1,
+      "id": 11
+    },
+    {
+      "name": "new trip",
+      "userId": 3,
+      "id": 12
     }
   ],
   "landmarkTrips": [
@@ -491,6 +507,31 @@
       "landmarkId": 10,
       "tripId": 9,
       "id": 17
+    },
+    {
+      "landmarkId": 12,
+      "tripId": 11,
+      "id": 18
+    },
+    {
+      "landmarkId": 12,
+      "tripId": 12,
+      "id": 19
+    },
+    {
+      "landmarkId": 5,
+      "tripId": 12,
+      "id": 20
+    },
+    {
+      "landmarkId": 4,
+      "tripId": 12,
+      "id": 21
+    },
+    {
+      "landmarkId": 7,
+      "tripId": 12,
+      "id": 22
     }
   ]
 }

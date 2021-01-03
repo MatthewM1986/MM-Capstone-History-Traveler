@@ -20,10 +20,12 @@ export const NavBar = (props) => {
     const city = useRef(null)
     const trip = useRef(null)
 
-
+    //this grabs my landmarks array from my json immediatly after the page renders the first time
     useEffect(() => {
         getLandmarks()
+            //This then grabs my cities array
             .then(getCities())
+        //the empty array tells it to run just once
     }, [])
 
     //this grabs my trips array from my json immediatly after the page renders the first time
@@ -35,6 +37,7 @@ export const NavBar = (props) => {
     const handleCitySelect = () => {
         //If statement so the drop down element with 0 returns to homepage
         if (city.current.value === "0") {
+            //This pushes the page view to home
             props.history.push("/")
 
             //else if statement so the drop down elements go to the id value's selected page when clicked
@@ -71,7 +74,6 @@ export const NavBar = (props) => {
                 </section>
 
                 <section>
-                    {/* <label>Browse Cities</label> */}
                     <select defaultValue="0"
                         onChange={() => {
                             handleCitySelect()
@@ -89,7 +91,6 @@ export const NavBar = (props) => {
                 </section>
 
                 <section>
-                    {/* <label>Browse Created Trips</label> */}
                     < select defaultValue="0"
                         onChange={() => {
                             handleTripSelect()
