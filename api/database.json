@@ -351,6 +351,19 @@
       "imageURL": "https://upload.wikimedia.org/wikipedia/commons/4/48/Two_Rivers_Mansion_%28Nashville%2C_Tennessee%29.JPG",
       "typeId": 1,
       "cityId": 3
+    },
+    {
+      "id": 31,
+      "name": "Battlefield Memorial Park",
+      "age": 1779,
+      "address": "Corner of Louisville and MLK jr. Blvd.",
+      "hours": "Sunrise-Sunset",
+      "pricing": "FREE",
+      "description": "Main fighting of the Battle of Savannah took place here in 1779",
+      "websiteURL": "https://www.savannah.com/battlefield-park/",
+      "imageURL": "https://tse2.mm.bing.net/th?id=OIP.PS7E80e_FtDCL2LIyjkxQQHaE8&pid=Api&P=0&w=293&h=196",
+      "typeId": 4,
+      "cityId": 1
     }
   ],
   "cities": [
