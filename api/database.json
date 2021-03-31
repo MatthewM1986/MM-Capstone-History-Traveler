@@ -472,6 +472,76 @@
       "id": 3,
       "name": "Nashville",
       "stateId": 2
+    },
+    {
+      "id": 4,
+      "name": "Knoxville",
+      "stateId": 2
+    },
+    {
+      "id": 5,
+      "name": "Memphis",
+      "stateId": 2
+    },
+    {
+      "id": 6,
+      "name": "Atlanta",
+      "stateId": 1
+    },
+    {
+      "id": 7,
+      "name": "Lexington",
+      "stateId": 3
+    },
+    {
+      "id": 8,
+      "name": "Charleston",
+      "stateId": 4
+    },
+    {
+      "id": 9,
+      "name": "Raleigh",
+      "stateId": 5
+    },
+    {
+      "id": 10,
+      "name": "Williamsburg",
+      "stateId": 6
+    },
+    {
+      "id": 11,
+      "name": "Richmond",
+      "stateId": 6
+    },
+    {
+      "id": 12,
+      "name": "Mobile",
+      "stateId": 7
+    },
+    {
+      "id": 13,
+      "name": "Birmingham",
+      "stateId": 7
+    },
+    {
+      "id": 14,
+      "name": "Biloxi",
+      "stateId": 8
+    },
+    {
+      "id": 15,
+      "name": "New Orleans",
+      "stateId": 9
+    },
+    {
+      "id": 16,
+      "name": "St. Augustine",
+      "stateId": 10
+    },
+    {
+      "id": 17,
+      "name": "Pensacola",
+      "stateId": 10
     }
   ],
   "states": [
@@ -482,6 +552,38 @@
     {
       "id": 2,
       "name": "Tennessee"
+    },
+    {
+      "id": 3,
+      "name": "Kentucky"
+    },
+    {
+      "id": 4,
+      "name": "South Carolina"
+    },
+    {
+      "id": 5,
+      "name": "North Carolina"
+    },
+    {
+      "id": 6,
+      "name": "Virginia"
+    },
+    {
+      "id": 7,
+      "name": "Alabama"
+    },
+    {
+      "id": 8,
+      "name": "Mississippi"
+    },
+    {
+      "id": 9,
+      "name": "Louisiana"
+    },
+    {
+      "id": 10,
+      "name": "Florida"
     }
   ],
   "types": [
@@ -520,11 +622,6 @@
   ],
   "trips": [
     {
-      "name": "Chattanooga Fall 2021",
-      "userId": 1,
-      "id": 2
-    },
-    {
       "name": "Nashville Spring 2021",
       "userId": 1,
       "id": 3
@@ -536,16 +633,6 @@
     }
   ],
   "landmarkTrips": [
-    {
-      "landmarkId": 11,
-      "tripId": 2,
-      "id": 1
-    },
-    {
-      "landmarkId": 13,
-      "tripId": 2,
-      "id": 2
-    },
     {
       "landmarkId": 24,
       "tripId": 3,
